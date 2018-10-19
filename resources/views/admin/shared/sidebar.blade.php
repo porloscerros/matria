@@ -6,6 +6,13 @@
         </a>
     </li>
 
+    <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.media')">
+        <a class="nav-link {{ request()->route()->named('admin.media.*') ? 'active' : '' }}" href="{{ route('admin.media.index') }}">
+            <i class="fa fa-file" aria-hidden="true"></i>&nbsp;
+            <span class="nav-link-text">@lang('dashboard.media')</span>
+        </a>
+    </li>
+
     <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.posts')">
         <a class="nav-link {{ request()->route()->named('admin.posts.*') ? 'active' : '' }}" href="{{ route('admin.posts.index') }}">
             <i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;
@@ -13,24 +20,19 @@
         </a>
     </li>
 
+    <!--
     <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.comments')">
         <a class="nav-link {{ request()->route()->named('admin.comments.*') ? 'active' : '' }}" href="{{ route('admin.comments.index') }}">
             <i class="fa fa-comments" aria-hidden="true"></i>&nbsp;
             <span class="nav-link-text">@lang('dashboard.comments')</span>
         </a>
     </li>
+    -->
 
     <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.users')">
         <a class="nav-link {{ request()->route()->named('admin.users.*') ? 'active' : '' }}" href="{{ route('admin.users.index') }}">
             <i class="fa fa-users" aria-hidden="true"></i>&nbsp;
             <span class="nav-link-text">@lang('dashboard.users')</span>
-        </a>
-    </li>
-
-    <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.media')">
-        <a class="nav-link {{ request()->route()->named('admin.media.*') ? 'active' : '' }}" href="{{ route('admin.media.index') }}">
-            <i class="fa fa-file" aria-hidden="true"></i>&nbsp;
-            <span class="nav-link-text">@lang('dashboard.media')</span>
         </a>
     </li>
 
