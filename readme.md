@@ -31,7 +31,7 @@ Development environment requirements :
 
 Setting up your development environment on your local machine :
 ```
-$ git clone ...
+$ git clone git@github.com:porloscerros/matria.git
 $ cd matria
 $ cp .env.example .env
 $ docker-compose run --rm --no-deps matria-server composer install
