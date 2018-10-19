@@ -17,7 +17,10 @@ class MediaLibraryController extends Controller
     public function index(Request $request): View
     {
         return view('media.index', [
-            'media' => MediaLibrary::first()->media()->get()
+            'media' => MediaLibrary::first()
+                ->media()
+                ->orderBy('created_at', 'desc')
+                ->get()
         ]);
     }
 
