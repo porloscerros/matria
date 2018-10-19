@@ -17,6 +17,15 @@
                 </ul>
             @endadmin
 
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    {{ link_to_route('posts', __('Posts'), [], ['class' => 'nav-link']) }}
+                </li>
+                <li class="nav-item">
+                    {{ link_to_route('media', __('Media'), [], ['class' => 'nav-link']) }}
+                </li>
+            </ul>
+
             <ul class="navbar-nav ml-auto">
                 @guest
                     <!--
