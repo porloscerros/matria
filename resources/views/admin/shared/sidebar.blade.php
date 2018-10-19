@@ -8,7 +8,7 @@
 
     <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.media')">
         <a class="nav-link {{ request()->route()->named('admin.media.*') ? 'active' : '' }}" href="{{ route('admin.media.index') }}">
-            <i class="fa fa-file" aria-hidden="true"></i>&nbsp;
+            <i class="fa fa-file-image-o" aria-hidden="true"></i>&nbsp;
             <span class="nav-link-text">@lang('dashboard.media')</span>
         </a>
     </li>

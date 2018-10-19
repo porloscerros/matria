@@ -10,6 +10,7 @@ return [
   'show' => 'Show',
   'delete' => 'Delete',
   'count' => ':count image|:count images',
+  'new_media' => 'new image|new images',
 
   'attributes' => [
     'image' => 'Image',
