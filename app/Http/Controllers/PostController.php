@@ -15,6 +15,7 @@ class PostController extends Controller
     {
         return view('posts.index', [
             'posts' => Post::search($request->input('q'))
+                             ->where('published', true)
                              ->with('author', 'likes')
                              ->withCount('comments', 'thumbnail', 'likes')
                              ->latest()

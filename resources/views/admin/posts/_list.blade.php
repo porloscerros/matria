@@ -9,6 +9,7 @@
             <th><i class="fa fa-comments" aria-hidden="true"></i></th>
             <th><i class="fa fa-heart" aria-hidden="true"></i></th>
             -->
+            <th class="text-center">@lang('media.attributes.published')</th>
             <th></th>
         </tr>
     </thead>
@@ -22,6 +23,7 @@
                 <td><span class="badge badge-pill badge-secondary">{{ $post->comments_count }}</span></td>
                 <td><span class="badge badge-pill badge-secondary">{{ $post->likes_count }}</span></td>
                 -->
+                <td class="text-center">{{ Form::checkbox('published', true, $post->published, ['disabled']) }}</td>
                 <td>
                     <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-primary btn-sm">
                         <i class="fa fa-pencil" aria-hidden="true"></i>

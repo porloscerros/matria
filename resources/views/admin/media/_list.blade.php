@@ -6,7 +6,7 @@
             <th>@lang('media.attributes.name')</th>
             <th>@lang('media.attributes.tags')</th>
             <th>@lang('media.attributes.url')</th>
-            <th>@lang('media.attributes.published')</th>
+            <th class="text-center">@lang('media.attributes.published')</th>
             <th></th>
         </tr>
     </thead>

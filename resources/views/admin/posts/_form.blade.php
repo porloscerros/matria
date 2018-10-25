@@ -49,3 +49,9 @@
         <span class="invalid-feedback">{{ $errors->first('content') }}</span>
     @endif
 </div>
+
+<div class="form-group">
+    {!! Form::label('published', __('media.attributes.publish')) !!}
+    {!! Form::hidden('published', 0) !!}
+    {!! Form::checkbox('published', true, isset($post) ? $post->published : false) !!}
+</div>
