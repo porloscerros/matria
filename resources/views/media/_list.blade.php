@@ -4,7 +4,7 @@
         <tr>
             <th>@lang('media.attributes.image')</th>
             <th>@lang('media.attributes.name')</th>
-            <th>@lang('media.attributes.posted_at')</th>
+            <th>@lang('media.attributes.tags')</th>
             <th></th>
         </tr>
     </thead>
@@ -17,7 +17,11 @@
                     </a>
                 </td>
                 <td>{{ $medium->name }}</td>
-                <td>{{ humanize_date($medium->posted_at, 'd/m/Y H:i:s') }}</td>
+                <td>
+                    @foreach($medium->tags as $tag)
+                        #{{ $tag->name }}
+                    @endforeach
+                </td>
                 <td>
                     <a href="{{ $medium->getUrl() }}" title="{{ __('media.show') }}" class="btn btn-primary btn-sm" target="_blank">
                         <i class="fa fa-eye" aria-hidden="true"></i>

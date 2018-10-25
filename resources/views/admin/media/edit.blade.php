@@ -1,16 +1,11 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    <h1>@lang('media.create')</h1>
 
-    {!! Form::open(['route' => ['admin.media.store'], 'method' =>'POST', 'files' => true]) !!}
+    {!! Form::model($medium, ['route' => ['admin.media.update', 'id' => $medium->id], 'method' =>'PUT']) !!}
+
         <div class="form-group">
-            {!! Form::label('image', __('media.attributes.image')) !!}
-            {!! Form::file('image', ['accept' => 'image/*', 'class' => 'form-control' . ($errors->has('image') ? ' is-invalid' : ''), 'required']) !!}
-
-            @if ($errors->has('image'))
-                <span class="invalid-feedback">{{ $errors->first('image') }}</span>
-            @endif
+            <img src="{{ $medium->getUrl('thumb') }}" alt="{{ $medium->name }}" width="100">
         </div>
 
         <div class="form-group">
@@ -24,14 +19,22 @@
 
         <div class="form-group">
             {!! Form::label('tags', __('media.attributes.tags')) !!}
-            {!! Form::text('tags', null, ['class' => 'form-control' . ($errors->has('tags') ? ' is-invalid' : '')]) !!}
+            {!! Form::text('tags', $tags, ['class' => 'form-control' . ($errors->has('tags') ? ' is-invalid' : '')]) !!}
 
             @if ($errors->has('tags'))
                 <span class="invalid-feedback">{{ $errors->first('tags') }}</span>
             @endif
         </div>
 
+
+    <div class="pull-left">
         {{ link_to_route('admin.media.index', __('forms.actions.back'), [], ['class' => 'btn btn-secondary']) }}
-        {!! Form::submit(__('forms.actions.save'), ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit(__('forms.actions.update'), ['class' => 'btn btn-primary']) !!}
+    </div>
     {!! Form::close() !!}
+
+    {!! Form::model($medium, ['method' => 'DELETE', 'route' => ['admin.media.destroy', $medium], 'class' => 'form-inline pull-right', 'data-confirm' => __('forms.media.delete')]) !!}
+    {!! Form::button('<i class="fa fa-trash" aria-hidden="true"></i> ' . __('media.delete'), ['class' => 'btn btn-link text-danger', 'name' => 'submit', 'type' => 'submit']) !!}
+    {!! Form::close() !!}
+
 @endsection

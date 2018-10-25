@@ -34,7 +34,7 @@ class MediaLibraryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form to create a new resource.
      */
     public function create(Request $request): View
     {
@@ -53,10 +53,40 @@ class MediaLibraryController extends Controller
             $name = $request->input('name');
         }
 
-        MediaLibrary::first()
+        $model = MediaLibrary::first()
             ->addMedia($image)
             ->usingName($name)
             ->toMediaCollection();
+
+        $tags = explode(',', $request->tags);
+        $model->attachTags($tags);
+
+        return redirect()->route('admin.media.index')->withSuccess(__('media.created'));
+    }
+
+    /**
+     * Show the form to edit a resource.
+     */
+    public function edit(Media $medium): View
+    {
+        $tags = implode (", ", $medium->tags->pluck('name')->toArray());
+        return view('admin.media.edit', [
+            'medium' => $medium,
+            'tags' => $tags
+        ]);
+    }
+
+    /**
+     * Update media resource name and tags
+     */
+    public function update(Request $request, Media $medium): RedirectResponse
+    {
+        $model = Media::findOrFail($medium->id);
+        $model->name = $request->input('name');
+        $model->save();
+
+        $tags = explode(',', $request->tags);
+        $model->syncTags($tags);
 
         return redirect()->route('admin.media.index')->withSuccess(__('media.created'));
     }

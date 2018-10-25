@@ -14,6 +14,7 @@ return [
   'attributes' => [
     'image' => 'Image',
     'name' => 'Nom',
+    'tags' => 'Tags',
     'posted_at' => 'Postée le',
     'url' => 'URL',
   ],
