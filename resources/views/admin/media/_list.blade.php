@@ -6,7 +6,7 @@
             <th>@lang('media.attributes.name')</th>
             <th>@lang('media.attributes.tags')</th>
             <th>@lang('media.attributes.url')</th>
-            <th>@lang('media.attributes.posted_at')</th>
+            <th>@lang('media.attributes.published')</th>
             <th></th>
         </tr>
     </thead>
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 </td>
-                <td>{{ humanize_date($medium->posted_at, 'd/m/Y H:i:s') }}</td>
+                <td class="text-center">{{ Form::checkbox('published', true, $medium->getCustomProperty('published'), ['disabled']) }}</td>
                 <td>
                     <a href="{{ $medium->getUrl() }}" title="{{ __('media.show') }}" class="btn btn-primary btn-sm" target="_blank">
                         <i class="fa fa-eye" aria-hidden="true"></i>

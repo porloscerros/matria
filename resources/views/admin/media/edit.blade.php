@@ -26,6 +26,12 @@
             @endif
         </div>
 
+        <div class="form-group">
+            {!! Form::label('publish', __('media.attributes.publish')) !!}
+            {!! Form::hidden('publish', 0) !!}
+            {!! Form::checkbox('publish', true, $publish) !!}
+        </div>
+
 
     <div class="pull-left">
         {{ link_to_route('admin.media.index', __('forms.actions.back'), [], ['class' => 'btn btn-secondary']) }}

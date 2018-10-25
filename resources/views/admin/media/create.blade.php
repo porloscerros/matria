@@ -31,6 +31,12 @@
             @endif
         </div>
 
+        <div class="form-group">
+            {!! Form::label('publish', __('media.attributes.publish')) !!}
+            {!! Form::hidden('publish', 0) !!}
+            {!! Form::checkbox('publish', true, ['class' => 'form-control']) !!}
+        </div>
+
         {{ link_to_route('admin.media.index', __('forms.actions.back'), [], ['class' => 'btn btn-secondary']) }}
         {!! Form::submit(__('forms.actions.save'), ['class' => 'btn btn-primary']) !!}
     {!! Form::close() !!}

@@ -16,11 +16,14 @@ class MediaLibraryController extends Controller
      */
     public function index(Request $request): View
     {
+        $media = MediaLibrary::first()
+            ->media()
+            ->where('custom_properties->published', '1')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
         return view('media.index', [
-            'media' => MediaLibrary::first()
-                ->media()
-                ->orderBy('created_at', 'desc')
-                ->get()
+            'media' => $media
         ]);
     }
 

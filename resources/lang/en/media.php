@@ -17,6 +17,8 @@ return [
     'name' => 'Name',
     'posted_at' => 'Posted at',
     'url' => 'URL',
+    'publish' => 'Publish',
+    'published' => 'Published',
   ],
 
 ];

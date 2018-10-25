@@ -17,6 +17,8 @@ return [
     'tags' => 'Tags',
     'posted_at' => 'Postée le',
     'url' => 'URL',
+    'publish' => 'Publicar',
+    'published' => 'Publicado',
   ],
 
 ];

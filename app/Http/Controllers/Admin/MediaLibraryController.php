@@ -48,6 +48,7 @@ class MediaLibraryController extends Controller
     {
         $image = $request->file('image');
         $name = $image->getClientOriginalName();
+        $published = $request->input('publish');
 
         if ($request->filled('name')) {
             $name = $request->input('name');
@@ -56,6 +57,7 @@ class MediaLibraryController extends Controller
         $model = MediaLibrary::first()
             ->addMedia($image)
             ->usingName($name)
+            ->withCustomProperties(['published' => $published])
             ->toMediaCollection();
 
         $tags = explode(',', $request->tags);
@@ -70,9 +72,11 @@ class MediaLibraryController extends Controller
     public function edit(Media $medium): View
     {
         $tags = implode (", ", $medium->tags->pluck('name')->toArray());
+        $published = $medium->getCustomProperty('published');
         return view('admin.media.edit', [
             'medium' => $medium,
-            'tags' => $tags
+            'tags' => $tags,
+            'publish' => $published
         ]);
     }
 
@@ -83,6 +87,7 @@ class MediaLibraryController extends Controller
     {
         $model = Media::findOrFail($medium->id);
         $model->name = $request->input('name');
+        $model->setCustomProperty('published', $request->publish);
         $model->save();
 
         $tags = explode(',', $request->tags);
