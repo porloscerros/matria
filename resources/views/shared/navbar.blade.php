@@ -19,10 +19,13 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    {{ link_to_route('posts', __('Posts'), [], ['class' => 'nav-link']) }}
+                    {{ link_to_route('posts', __('posts.posts'), [], ['class' => 'nav-link']) }}
                 </li>
                 <li class="nav-item">
-                    {{ link_to_route('media', __('Media'), [], ['class' => 'nav-link']) }}
+                    {{ link_to_route('media', __('media.media'), [], ['class' => 'nav-link']) }}
+                </li>
+                <li class="nav-item">
+                    {{ link_to_route('contact', __('contact-us.contact'), [], ['class' => 'nav-link']) }}
                 </li>
             </ul>
 

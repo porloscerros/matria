@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Password Reminder Language Lines
+    | Password Reset Language Lines
     |--------------------------------------------------------------------------
     |
     | The following language lines are the default lines which match reasons
@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'password' => 'Les mots de passe doivent contenir au moins six caractères et doivent être identiques.',
-    'reset'    => 'Votre mot de passe a été réinitialisé !',
-    'sent'     => 'Nous vous avons envoyé par courriel le lien de réinitialisation du mot de passe !',
-    'token'    => "Ce jeton de réinitialisation du mot de passe n'est pas valide.",
-    'user'     => "Aucun utilisateur n'a été trouvé avec cette adresse e-mail.",
+    'password' => 'La contraseña debe tener al menos seis caracteres y coincidir con la de confirmación.',
+    'reset' => 'Su contraseña ha sido reseteada!',
+    'sent' => 'Le hemos enviado un email con el link de reseteo!',
+    'token' => 'El token de reseteo de contraseña es inválido.',
+    'user' => "No encontramos ninguna usuaria con esa dirección de email.",
 
 ];

@@ -1,24 +1,26 @@
 <?php
 
 return [
-  'media' => 'Media',
-  'create' => 'Ajouter une image',
-  'created' => 'Image créée avec succès',
-  'updated' => 'Image mise à jour avec succès',
-  'deleted' => 'Image supprimée avec succès',
-  'download' => 'Télécharger',
-  'show' => 'Voir',
-  'delete' => 'Supprimer',
-  'count' => ':count image|:count images',
+  'media' => 'Imágenes',
+  'create' => 'Agregar una imagen',
+  'created' => 'Imagen agregada',
+  'updated' => 'Imagen actualizada',
+  'deleted' => 'Imagen borrada',
+  'download' => 'Descargar',
+  'show' => 'Ver',
+  'edit' => 'Editar',
+  'delete' => 'Borrar',
+  'count' => ':count imagen|:count imágenes',
+  'new_media' => 'nueva imagen|nuevas imágenes',
 
   'attributes' => [
-    'image' => 'Image',
-    'name' => 'Nom',
-    'tags' => 'Tags',
-    'posted_at' => 'Postée le',
+    'image' => 'Imágen',
+    'name' => 'Nombre',
+    'posted_at' => 'Subida el',
     'url' => 'URL',
     'publish' => 'Publicar',
-    'published' => 'Publicado',
+    'published' => 'Publicada',
+    'tags' => 'Etiquetas',
   ],
 
 ];

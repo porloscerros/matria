@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'dashboard' => 'Dashboard',
-    'this_week' => 'Cette semaine',
-    'details' => 'Voir en détails',
-    'posts' => 'Articles',
-    'comments' => 'Commentaires',
-    'users' => 'Utilisateurs',
-    'media' => 'Galerie',
+    'dashboard' => 'Panel de Administración',
+    'this_week' => 'Esta semana',
+    'details' => 'Detalles',
+    'posts' => 'Artículos',
+    'comments' => 'Comentarios',
+    'users' => 'Usuarias',
+    'media' => 'Galería',
 ];

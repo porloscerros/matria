@@ -3,29 +3,29 @@
 return [
 
   'actions' => [
-    'save' => 'Sauvegarder',
-    'update' => 'Mettre à jour',
-    'back' => 'Retour',
-    'generate' => 'Générer',
-    'delete' => 'Supprimer',
-    'add' => 'Ajouter',
+    'save' => 'Guardar',
+    'update' => 'Actualizar',
+    'back' => 'Volver',
+    'generate' => 'Generar',
+    'delete' => 'Borrar',
+    'add' => 'Agregar',
   ],
 
   'comments' => [
-    'delete' => 'Êtes-vous sûr de vouloir supprimer ce commentaires ?'
+    'delete' => 'Confirma borrar este comentario?'
   ],
 
   'posts' => [
-    'delete' => 'Êtes-vous sûr de vouloir supprimer cet article ?',
-    'delete_thumbnail' => "Êtes-vous sûr de vouloir supprimer l'image à la une ?"
+    'delete' => 'Confirma borrar este artículo?',
+    'delete_thumbnail' => "Confirma borrar la imagen?"
   ],
 
   'tokens' => [
-    'generate' => 'Êtes-vous sûr de vouloir générer une clé ? Toutes ses API seront déconnectées.',
+    'generate' => 'Confirma que desea generar una clave? Todas estas APIs van a ser desconectadas.',
   ],
 
   'media' => [
-    'delete' => 'Êtes-vous sûr de vouloir supprimer cette image ?',
+    'delete' => 'Confirma borrar esta imágen?',
   ],
 
 ];

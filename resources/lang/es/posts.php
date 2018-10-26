@@ -1,35 +1,36 @@
 <?php
 
 return [
-  'publish' => 'Publier',
-  'posts' => 'Articles',
-  'delete' => 'Supprimer',
-  'delete_thumbnail' => "Supprimer l'image à la une",
-  'edit' => 'Éditer',
-  'last_posts' => 'Les derniers articles',
-  'create' => 'Ajouter un article',
-  'created' => 'Article créé avec succès',
-  'updated' => 'Article mis à jour avec succès',
-  'deleted' => 'Article supprimé avec succès',
-  'empty' => "Il n'y a aucun article pour le moment.",
-  'new_posts' => 'nouvel article|nouveaux articles',
-  'count' => ':count article|:count articles',
-  'show' => "Voir l'article",
-  'search' => "Recherche ...",
-  'search_results' => ":count article trouvé|:count articles trouvés",
+  'publish' => 'Publicar',
+  'posts' => 'Artículos',
+  'delete' => 'Borrar',
+  'delete_thumbnail' => "Borrar la imágen",
+  'edit' => 'Editar',
+  'last_posts' => 'Artículos recientes',
+  'create' => 'Crear artículo',
+  'created' => 'Artículo creado',
+  'updated' => 'Artículo actualizado',
+  'deleted' => 'Artículo borrado',
+  'empty' => "No hay artículos por el momento.",
+  'new_posts' => 'nuevo artículo|nuevos artículos',
+  'count' => ':count artículo|:count artículos',
+  'show' => "Ver artículo",
+  'search' => "Buscar ...",
+  'search_results' => ":count artículo encontrado|:count artículos encontrados",
 
   'attributes' => [
-    'title' => 'Titre',
-    'content' => 'Contenu',
-    'author' => 'Auteur',
-    'thumbnail' => 'Image à la une',
-    'posted_at' => 'Posté le',
-    'thumbnail' => "L'image de couverture",
+    'title' => 'Título',
+    'content' => 'Contenido',
+    'author' => 'Autora',
+    'thumbnail' => 'Imagen del artículo',
+    'posted_at' => 'Subido el',
+    'publish' => 'Publicar',
+    'published' => 'Publicado',
   ],
 
   'placeholder' => [
-    'title' => 'Votre titre',
-    'content' => 'Votre contenu',
-    'thumbnail' => 'Choisissez une image à la une...'
+    'title' => 'Su título',
+    'content' => 'Su contenido',
+    'thumbnail' => 'Elija una imagen'
   ]
 ];

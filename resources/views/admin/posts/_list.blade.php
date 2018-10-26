@@ -9,7 +9,7 @@
             <th><i class="fa fa-comments" aria-hidden="true"></i></th>
             <th><i class="fa fa-heart" aria-hidden="true"></i></th>
             -->
-            <th class="text-center">@lang('media.attributes.published')</th>
+            <th class="text-center">@lang('posts.attributes.published')</th>
             <th></th>
         </tr>
     </thead>
