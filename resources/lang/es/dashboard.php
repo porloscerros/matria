@@ -8,4 +8,5 @@ return [
     'comments' => 'Comentarios',
     'users' => 'Usuarias',
     'media' => 'Galería',
+    'contacts' => 'Contactos',
 ];

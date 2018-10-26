@@ -13,7 +13,7 @@
             </div>
             <div class="">
                 <p>
-                    <span class="fa fa-envelope"></span> Email:
+                    <span class="fa fa-envelope-o"></span> Email:
                     <a href="mailto:talladoscarteles@gmail.com"> talladoscarteles@gmail.com</a>
                 </p>
             </div>
@@ -22,14 +22,9 @@
                     <span class="fa fa-map-marker"></span> Las Chacras, Traslasierra
                 </p>
             </div>
-            <hr>
 
             <div class="map">
-                <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108306.15217938386!2d-65.05211983752602!3d-31.972634719983464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDU4JzIxLjUiUyA2NMKwNTgnNTUuNSJX!5e0!3m2!1ses!2sar!4v1515765912096"></iframe>
-                <br/>
-                <small>
-                    <a href=""></a>
-                </small>
+                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border:0" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2724.6085702970468!2d-65.04691868534806!3d-32.23118798114022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDEzJzUyLjMiUyA2NcKwMDInNDEuMCJX!5e1!3m2!1ses!2sar!4v1540584711225"></iframe>
             </div>
         </div>
 

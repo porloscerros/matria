@@ -20,6 +20,13 @@
         </a>
     </li>
 
+    <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.contacts')">
+        <a class="nav-link {{ request()->route()->named('admin.contacts.*') ? 'active' : '' }}" href="{{ route('admin.contacts.index') }}">
+            <i class="fa fa-address-book" aria-hidden="true"></i>&nbsp;
+            <span class="nav-link-text">@lang('dashboard.contacts')</span>
+        </a>
+    </li>
+
     <!--
     <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.comments')">
         <a class="nav-link {{ request()->route()->named('admin.comments.*') ? 'active' : '' }}" href="{{ route('admin.comments.index') }}">
