@@ -9,6 +9,7 @@ return [
     'generate' => 'Generar',
     'delete' => 'Borrar',
     'add' => 'Agregar',
+    'send' => 'Enviar',
   ],
 
   'comments' => [

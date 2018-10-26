@@ -17,5 +17,7 @@ Route::resource('posts', 'PostController')->only('show');
 Route::resource('users', 'UserController')->only('show');
 Route::get('/posts', 'PostController@index')->name('posts');
 Route::get('/media', 'MediaLibraryController@index')->name('media');
+Route::get('/contact', 'ContactUsController@show')->name('contact');
+Route::post('/contact', 'ContactUsController@store')->name('contact.store');
 
 Route::get('newsletter-subscriptions/unsubscribe', 'NewsletterSubscriptionController@unsubscribe')->name('newsletter-subscriptions.unsubscribe');

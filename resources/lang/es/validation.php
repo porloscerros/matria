@@ -39,7 +39,7 @@ return [
     'digits_between'       => 'The :attribute must be between :min and :max digits.',
     'dimensions'           => 'The :attribute has invalid image dimensions.',
     'distinct'             => 'The :attribute field has a duplicate value.',
-    'email'                => 'The :attribute must be a valid email address.',
+    'email'                => 'El :attribute debe ser una dirección de email válida.',
     'exists'               => 'The selected :attribute is invalid.',
     'file'                 => 'The :attribute must be a file.',
     'filled'               => 'The :attribute field must have a value.',
@@ -129,7 +129,7 @@ return [
 
     'custom' => [
         'can_be_author' => [
-            'accepted' => "La autora seleccionado no es válido.",
+            'accepted' => "La autora seleccionada no es válida.",
         ],
         'current_password' => [
             'accepted' => "La contraseña actual no es válida.",
