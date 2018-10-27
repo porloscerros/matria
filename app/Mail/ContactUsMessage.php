@@ -30,13 +30,13 @@ class ContactUsMessage extends Mailable
      */
     public function build()
     {
-        return $this->from($this->msg['email'], "matria.site")
-                    ->subject("mensaje recibido en el formulario de contacto de tu sitio")
+        return $this->from($this->msg['email'], env('APP_NAME') . ' Site')
+                    ->subject(env('ADMIN_NAME') . '. ' . __('contact-us.you-received'))
                     ->view('emails.contact-us')
                     ->with([
                       'name'     => $this->msg['name'],
                       'email'     => $this->msg['email'],
                       'msg'     => $this->msg['msg']
-                      ]);
+                    ]);
     }
 }

@@ -7,6 +7,9 @@ use App\Mail\ContactUsMessage;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\ContactUsRequest;
 use Mail;
+use Validator;
+use App\Models\Contact;
+use App\Models\Email;
 
 class ContactUsController extends Controller
 {
@@ -24,7 +27,15 @@ class ContactUsController extends Controller
         $contact['email'] = $request->get('email');
         $contact['msg'] = $request->get('msg');
 
-        //save to contacts table
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|unique:emails|max:255',
+        ]);
+
+        if (!$validator->fails()) {
+            $contact = Contact::create(['name' => $request->get('name')]);
+            $email = Email::firstOrNew(['contact_id' => $contact->id, 'email' => $request->email, 'default' => true]);
+            $email->save();
+        }
 
         $this->mailToAdmin($contact);
 
@@ -33,7 +44,7 @@ class ContactUsController extends Controller
 
     private function mailToAdmin($message)
     {
-        \Mail::to(env('ADMIN_EMAIL'), env('ADMIN_NAME'))->send(new ContactUsMessage($message));
+        Mail::to(env('ADMIN_EMAIL'), env('ADMIN_NAME'))->send(new ContactUsMessage($message));
 
         return redirect('/#contact')->withSuccess('Su mensaje ha sido enviado con éxito.');
     }

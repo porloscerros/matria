@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\AlphaName;
 
 class ContactUsRequest extends FormRequest
 {
@@ -24,7 +25,7 @@ class ContactUsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'    => 'required',
+            'name' => ['required', 'string', 'max:100', new AlphaName],
             'email'   => 'required|email',
             'msg'     => 'required'
         ];
