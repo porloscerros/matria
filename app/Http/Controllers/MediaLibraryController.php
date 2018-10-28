@@ -19,8 +19,7 @@ class MediaLibraryController extends Controller
         $media = MediaLibrary::first()
             ->media()
             ->where('custom_properties->published', '1')
-            ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(10);
 
         return view('media.index', [
             'media' => $media

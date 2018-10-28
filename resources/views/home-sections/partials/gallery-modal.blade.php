@@ -1,5 +1,5 @@
 
-<div class="modal" id="gallery-modal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal" id="gallery-modal-{{ $modal }}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-full" role="document">
         <div class="modal-content bg-translucent">
             <div class="modal-header border-0">
@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body text-center p-4" id="result">
-                    <img class="img-fluid" src="{{ $medium->getUrl() }}" alt="{{ $medium->name }}">
+                    <img class="img-fluid" src="{{ $url }}" alt="{{ $name }}">
             </div>
         </div>
     </div>

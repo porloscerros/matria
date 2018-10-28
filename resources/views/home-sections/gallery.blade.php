@@ -14,9 +14,11 @@
                 @foreach($media as $medium)
                     <div class="row">
                         <div class="col d-flex justify-content-center" id="gallery-deck">
-                            <a href="#gallery-modal" data-toggle="modal">
+                            <a href="#gallery-modal-home" data-toggle="modal">
                                 <img class="img-thumbnail" src="{{ $medium->getUrl('thumb') }}" alt="{{ $medium->name }}">
                             </a>
+                            <!-- The Gallery Modal -->
+                            @include('home-sections.partials.gallery-modal', ['modal' => 'home', 'url' => $medium->getUrl(), 'name' => $medium->name])
                         </div>
                     </div>
 
@@ -37,6 +39,3 @@
         </div>
     </div>
 </section>
-
-<!-- The Gallery Modal -->
-@include('home-sections.partials.gallery-modal')
