@@ -2,6 +2,7 @@
 
 return [
   'media' => 'Imágenes',
+  'gallery' => 'Galería',
   'create' => 'Agregar una imagen',
   'created' => 'Imagen agregada',
   'updated' => 'Imagen actualizada',
