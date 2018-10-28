@@ -21,7 +21,6 @@
 
       <!-- Styles -->
       <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
-      <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     @stack('styles')
 
     <!-- Facebook meta tags -->
@@ -41,7 +40,7 @@
     @include('home-sections/footer')
     <!-- Scripts -->
     <script src="{{ mix('/js/app.js') }}"></script>
-    <script src="{{ asset('/js/home.js') }}"></script>
+    <script src="{{ mix('/js/home.js') }}"></script>
     @stack('inline-scripts')
   </body>
 </html>

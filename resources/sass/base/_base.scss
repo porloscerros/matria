@@ -24,3 +24,17 @@ body > #app > .container-fluid {
     padding-bottom: 15px;
     padding-top: 15px;
 }
+
+.home-section {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-translucent {
+    background-color: rgba(3, 3, 3, 0.3);
+    color: #fff;
+}
