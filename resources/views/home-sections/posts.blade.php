@@ -25,7 +25,7 @@
                             <div class="col-md-8">
                                 <div class="h-75">
                                     <h4 class="card-title">{{ $post->title }}</h4>
-                                    <p class="card-text text-justify">{!! str_limit($post->content, 100) !!}...</p>
+                                    <p class="card-text text-justify">{!! str_limit($post->content, 100) !!}</p>
                                 </div>
 
                                 <a href="{{ route('posts.show', $post)}}" class="align-bottom float-right">@lang('posts.continue-reading')</a>

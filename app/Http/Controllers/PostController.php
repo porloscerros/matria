@@ -19,7 +19,7 @@ class PostController extends Controller
                              ->with('author', 'likes')
                              ->withCount('comments', 'thumbnail', 'likes')
                              ->latest()
-                             ->paginate(20)
+                             ->paginate(10)
         ]);
     }
 
