@@ -23,7 +23,7 @@
 
     <div class="form-group col-md-6">
         {!! Form::label('posted_at', __('posts.attributes.posted_at')) !!}
-        <input type="datetime-local" name="posted_at" class="form-control {{ ($errors->has('posted_at') ? ' is-invalid' : '') }}" required value="{{ $posted_at }}">
+        <input type="datetime-local" name="posted_at" class="form-control {{ ($errors->has('posted_at') ? ' is-invalid' : '') }}" required value="{{ $posted_at ? : \Carbon\Carbon::now()->format('Y-m-d\TH:i') }}">
 
         @if ($errors->has('posted_at'))
             <span class="invalid-feedback">{{ $errors->first('posted_at') }}</span>
