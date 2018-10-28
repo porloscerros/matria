@@ -17,21 +17,8 @@
                 </ul>
             @endadmin
 
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    {{ link_to_route('posts', __('posts.posts'), [], ['class' => 'nav-link']) }}
-                </li>
-                <li class="nav-item">
-                    {{ link_to_route('media', __('media.media'), [], ['class' => 'nav-link']) }}
-                </li>
-            </ul>
-
             <ul class="navbar-nav ml-auto">
                 @guest
-                    <!--
-                    <li class="nav-item">{{ link_to_route('login', __('auth.login'), [], ['class' => 'nav-link']) }}</li>
-                    <li class="nav-item">{{ link_to_route('register', __('auth.register'), [], ['class' => 'nav-link']) }}</li>
-                    -->
                 @else
                     <li class="nav-item dropdown">
                         <a v-pre href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
