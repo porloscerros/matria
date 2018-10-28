@@ -24,9 +24,6 @@
                 <li class="nav-item">
                     {{ link_to_route('media', __('media.media'), [], ['class' => 'nav-link']) }}
                 </li>
-                <li class="nav-item">
-                    {{ link_to_route('contact', __('contact-us.contact'), [], ['class' => 'nav-link']) }}
-                </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">

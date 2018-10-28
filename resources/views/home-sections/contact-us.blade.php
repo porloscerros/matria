@@ -1,7 +1,6 @@
 <!-- Contact Us Section-->
 <section id="home-contact-us" class="home-section">
     <div class="container h-100">
-        @include('shared/alerts')
         <div class="row h-100 align-items-center">
             <div class="col-12 text-center">
                 <h3 class="m-0 display-4">@lang('home.contact-us')</h3>
@@ -62,7 +61,8 @@
                 </div>
 
                 <div class="col-md-8">
-                    {!! Form::open(['route' => 'contact.store']) !!}
+                    @include('shared/alerts')
+                    {!! Form::open(['route' => 'mail-to-admin']) !!}
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
