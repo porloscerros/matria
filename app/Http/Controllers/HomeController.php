@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\SiteSection;
 use App\Models\MediaLibrary;
 use App\Models\Post;
 
@@ -35,8 +36,12 @@ class HomeController extends Controller
             ->latest()
             ->paginate(1, ['*'], 'posts');
 
+        $sections = SiteSection::where('public', true)
+            ->get();
+
 
         return view('home', [
+            'sections' => $sections,
             'media' => $media,
             'posts' => $posts
         ]);

@@ -9,4 +9,5 @@ return [
     'users' => 'Usuarias',
     'media' => 'Galería',
     'contacts' => 'Contactos',
+    'customize-site' => 'Personalizar Sitio',
 ];

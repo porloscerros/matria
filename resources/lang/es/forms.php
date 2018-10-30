@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'edit' => 'Editar',
 
   'actions' => [
     'save' => 'Guardar',

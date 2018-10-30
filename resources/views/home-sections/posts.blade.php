@@ -1,9 +1,20 @@
 <!-- Posts Section -->
-<section id="home-posts" class="home-section">
+<section id="home-posts" class="home-section"  @if($section->custom->bg_img)style="background-image: url({{$section->custom->bg_img}});"@endif>
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 text-center">
-                <h3 class="m-0 display-4">@lang('home.posts')</h3>
+                <h3 class="m-0 display-4">
+                    @if($section->custom->title)
+                        {{$section->custom->title}}
+                    @else
+                        @lang('home.posts')
+                    @endif
+                </h3>
+                @if($section->custom->subtitle)
+                    <h2 class="m-2">
+                        {{$section->custom->subtitle}}
+                    </h2>
+                @endif
             </div>
 
             <div class="col d-flex justify-content-end">
