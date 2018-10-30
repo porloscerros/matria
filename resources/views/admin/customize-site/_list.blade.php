@@ -53,7 +53,7 @@
                     @include('admin.customize-site._form')
 
                     <div class="pull-right">
-                        {{ link_to_route('admin.customize-site', __('preview'), [], ['class' => 'btn btn-secondary']) }}
+                        {{ link_to_route('admin.customize-site.index', __('preview'), [], ['class' => 'btn btn-secondary']) }}
                         {!! Form::submit(__('forms.actions.save'), ['class' => 'btn btn-primary']) !!}
                     </div>
                     {!! Form::close() !!}
