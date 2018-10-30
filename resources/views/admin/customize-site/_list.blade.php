@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 </td>
-                <td class="home-section-preview" @if($section->custom->bg_img)style="background-image: url({{$section->custom->bg_img}});"@endif>
+                <td class="home-section-preview" @if( $section->custom->hasBackground() )style="background-image: url({{ $section->background() }}) !important;"@endif>
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-12 text-center">

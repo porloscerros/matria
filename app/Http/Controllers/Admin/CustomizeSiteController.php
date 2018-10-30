@@ -10,6 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Models\SiteSection;
 use App\Models\SiteSectionAttributes;
 use App\Models\MediaLibrary;
+use Illuminate\Support\Facades\Log;
 
 class CustomizeSiteController extends Controller
 {
@@ -44,9 +45,16 @@ class CustomizeSiteController extends Controller
     /**
      * Update the specified section.
      */
-    public function update(Request $request, SiteSectionAttributes $section): RedirectResponse
+    public function update(Request $request, $id): RedirectResponse
     {
-        $section->update($request->only(['title', 'subtitle', 'bg_img_id', 'text_color']));
+        try {
+            $section = SiteSectionAttributes::findOrFail($id);
+            $section->update($request->only(['title', 'subtitle', 'bg_img_id', 'text_color']));
+
+        } catch(\Exception $e) {
+            Log::error($e->getMessage());
+            Log::debug($e->getTraceAsString());
+        }
 
         return redirect()->route('admin.customize-site.index', $section)->withSuccess(__('customize-site.updated'));
     }

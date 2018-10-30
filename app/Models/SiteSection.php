@@ -17,4 +17,12 @@ class SiteSection extends Model
     {
         return $this->hasOne(SiteSectionAttributes::class);
     }
+
+    /**
+     * Return the sections's background image
+     */
+    public function background()
+    {
+        return $this->custom->background->getUrl();
+    }
 }

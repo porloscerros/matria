@@ -17,11 +17,11 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('bg_img', __('customize-site.section-attributes.bg-img')) !!}
-    {!! Form::select('bg_img', $media, null, ['class' => 'form-control' . ($errors->has('bg_img') ? ' is-invalid' : '')]) !!}
+    {!! Form::label('bg_img_id', __('customize-site.section-attributes.bg-img')) !!}
+    {!! Form::select('bg_img_id', $media, null, ['class' => 'form-control' . ($errors->has('bg_img_id') ? ' is-invalid' : '')]) !!}
 
-    @if ($errors->has('bg_img'))
-        <span class="invalid-feedback">{{ $errors->first('bg_img') }}</span>
+    @if ($errors->has('bg_img_id'))
+        <span class="invalid-feedback">{{ $errors->first('bg_img_id') }}</span>
     @endif
 </div>
 
