@@ -7,7 +7,10 @@
 @endsection
 
 @section('content')
-    << Back
+    <div class="col d-flex justify-content-start">
+        <a href="{{route('home')}}/#home-posts"><< Back</a>
+    </div>
+
 <div class="container-fluid p-3 bg-translucent">
     <!-- @include ('posts/_search_form') -->
 

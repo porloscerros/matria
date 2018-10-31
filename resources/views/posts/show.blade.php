@@ -7,6 +7,10 @@
 @endsection
 
 @section('content')
+    <div class="col d-flex justify-content-start">
+        <a href="{{ url()->previous() }}" class="btn btn-default"><< Back</a>
+    </div>
+
   <div class="bg-white p-3 post-card">
     @if ($post->hasThumbnail())
       {{ Html::image($post->thumbnail->getUrl(), $post->thumbnail->name, ['class' => 'card-img-top']) }}
