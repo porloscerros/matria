@@ -71,8 +71,9 @@ class MediaLibraryController extends Controller
      */
     public function edit(Media $medium): View
     {
-        $tags = implode (", ", $medium->tags->pluck('name')->toArray());
+        $tags = implode (",", $medium->tags->pluck('name')->toArray());
         $published = $medium->getCustomProperty('published');
+
         return view('admin.media.edit', [
             'medium' => $medium,
             'tags' => $tags,
@@ -93,7 +94,7 @@ class MediaLibraryController extends Controller
         $tags = explode(',', $request->tags);
         $model->syncTags($tags);
 
-        return redirect()->route('admin.media.index')->withSuccess(__('media.created'));
+        return redirect()->route('admin.media.index')->withSuccess(__('media.updated'));
     }
 
     /**

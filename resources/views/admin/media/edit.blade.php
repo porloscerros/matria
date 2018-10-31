@@ -1,46 +1,23 @@
 @extends('admin.layouts.app')
 
 @section('content')
+    <div class="d-flex justify-content-center">
+        <div class="col-md-6"
+            <div class="card">
+                <img src="{{ $medium->getUrl('thumb') }}" alt="{{ $medium->name }}" class="card-img-top">
+            </div>
+        </div>
+    </div>
 
     {!! Form::model($medium, ['route' => ['admin.media.update', 'id' => $medium->id], 'method' =>'PUT']) !!}
 
-        <div class="form-group">
-            <img src="{{ $medium->getUrl('thumb') }}" alt="{{ $medium->name }}" width="100">
-        </div>
+        @include('admin.media._form', ['tags' => $tags])
 
-        <div class="form-group">
-            {!! Form::label('name', __('media.attributes.name')) !!}
-            {!! Form::text('name', null, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : '')]) !!}
+    {!! Form::close() !!}
 
-            @if ($errors->has('name'))
-                <span class="invalid-feedback">{{ $errors->first('name') }}</span>
-            @endif
-        </div>
-
-        <div class="form-group">
-            {!! Form::label('tags', __('media.attributes.tags')) !!}
-            {!! Form::text('tags', $tags, ['class' => 'form-control' . ($errors->has('tags') ? ' is-invalid' : '')]) !!}
-
-            @if ($errors->has('tags'))
-                <span class="invalid-feedback">{{ $errors->first('tags') }}</span>
-            @endif
-        </div>
-
-        <div class="form-group">
-            {!! Form::label('publish', __('media.attributes.publish')) !!}
-            {!! Form::hidden('publish', 0) !!}
-            {!! Form::checkbox('publish', true, $publish) !!}
-        </div>
-
-
-    <div class="pull-left">
-        {{ link_to_route('admin.media.index', __('forms.actions.back'), [], ['class' => 'btn btn-secondary']) }}
-        {!! Form::submit(__('forms.actions.update'), ['class' => 'btn btn-primary']) !!}
+    <div class="pull-right">
+        {!! Form::model($medium, ['method' => 'DELETE', 'route' => ['admin.media.destroy', $medium], 'class' => 'form-inline pull-right', 'data-confirm' => __('forms.media.delete')]) !!}
+        {!! Form::button('<i class="fa fa-trash" aria-hidden="true"></i> ' . __('media.delete'), ['class' => 'btn btn-link text-danger', 'name' => 'submit', 'type' => 'submit']) !!}
+        {!! Form::close() !!}
     </div>
-    {!! Form::close() !!}
-
-    {!! Form::model($medium, ['method' => 'DELETE', 'route' => ['admin.media.destroy', $medium], 'class' => 'form-inline pull-right', 'data-confirm' => __('forms.media.delete')]) !!}
-    {!! Form::button('<i class="fa fa-trash" aria-hidden="true"></i> ' . __('media.delete'), ['class' => 'btn btn-link text-danger', 'name' => 'submit', 'type' => 'submit']) !!}
-    {!! Form::close() !!}
-
 @endsection
