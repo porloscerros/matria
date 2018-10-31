@@ -16,8 +16,9 @@
 
     <!-- Styles -->
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+    @stack('styles')
 </head>
-<body class="bg-light">
+<body class="bg-light" @yield('body-tag')>
     <div id="app">
         @include('shared/navbar')
 
@@ -32,6 +33,7 @@
         </div>
 
         @include('shared/footer')
+        @include('shared/porloscerros-footer')
     </div>
 
     <!-- Scripts -->

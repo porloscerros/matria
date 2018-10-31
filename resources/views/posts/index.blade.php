@@ -1,7 +1,14 @@
 @extends('layouts.app')
 
-@section('content')
+@section('body-tag')
+    @if( $section->custom->hasBackground() )
+        style="background-image: url({{ $section->background() }});"
+    @endif
+@endsection
 
+@section('content')
+    << Back
+<div class="container-fluid p-3 bg-translucent">
     <!-- @include ('posts/_search_form') -->
 
   <div class="d-flex justify-content-between">
@@ -12,14 +19,8 @@
         <h2>@lang('posts.last_posts')</h2>
       @endif
     </div>
-    <!--
-    <div class="p-2">
-      <a href="{{ route('posts.feed') }}" class="pull-right" data-turbolinks="false">
-          <i class="fa fa-rss" aria-hidden="true"></i>
-      </a>
-    </div>
-    -->
   </div>
 
   @include ('posts/_list')
+</div>
 @endsection

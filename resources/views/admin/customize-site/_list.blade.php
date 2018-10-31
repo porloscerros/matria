@@ -21,9 +21,9 @@
                         </div>
                     </div>
                 </td>
-                <td class="home-section-preview" @if( $section->custom->hasBackground() )style="background-image: url({{ $section->background() }}) !important;"@endif>
-                    <div class="container">
-                        <div class="row align-items-center">
+                <td class="home-section-preview align-middle" @if( $section->custom->hasBackground() )style="background-image: url({{ $section->background() }}) !important;"@endif>
+                    <div class="container bg-translucent">
+                        <div class="row">
                             <div class="col-12 text-center">
                                 título:
                                 <h1 class="m-1">
@@ -40,8 +40,8 @@
                                     </h2>
                                 @endif
                                 @if($section->name !== 'header')
-                                    <div class="container-fluid h-100 bg-translucent">
-                                        <div class="card-header">contenido de la sección</div>
+                                    <div class="container-fluid">
+                                        <p>contenido de la sección</p>
                                     </div>
                                 @endif
                             </div>

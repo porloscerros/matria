@@ -1,15 +1,9 @@
-<nav class="navbar navbar-dark bg-dark position-absolute footer-container">
-    <div class="container justify-content-center">
-        <ul class="navbar-nav text-center">
-            <li class="nav-item text-white m-3">
-                Made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://porloscerros.github.io" target="_blank" class="text-secondary">porloscerros</a>
-            </li>
-
-            <!--
-            <li class="nav-item m-3">
-                @include('shared/newsletter-form')
-            </li>
-            -->
-        </ul>
+<!-- Footer -->
+<footer class="font-small mb-3">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="#"> Matria</a>
     </div>
-</nav>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->

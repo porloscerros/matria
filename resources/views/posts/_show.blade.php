@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card text-dark">
     @if ($post->hasThumbnail())
         <a href="{{ route('posts.show', $post)}}">
             {{ Html::image($post->thumbnail->getUrl('thumb'), $post->thumbnail->name, ['class' => 'card-img-top']) }}

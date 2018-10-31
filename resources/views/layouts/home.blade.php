@@ -37,7 +37,8 @@
 
     @yield('content')
 
-    @include('home-sections/footer')
+    @include('shared/footer')
+    @include('shared/porloscerros-footer')
     <!-- Scripts -->
     <script src="{{ mix('/js/app.js') }}"></script>
     <script src="{{ mix('/js/home.js') }}"></script>

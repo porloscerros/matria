@@ -8,6 +8,7 @@ use App\Models\MediaLibrary;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Models\SiteSection;
 
 class MediaLibraryController extends Controller
 {
@@ -21,7 +22,11 @@ class MediaLibraryController extends Controller
             ->where('custom_properties->published', '1')
             ->paginate(10);
 
+        $section = SiteSection::where('name', 'gallery')
+            ->first();
+
         return view('media.index', [
+            'section' => $section,
             'media' => $media
         ]);
     }

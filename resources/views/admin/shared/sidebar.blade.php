@@ -1,7 +1,7 @@
 <ul class="navbar-nav navbar-sidenav">
     <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.dashboard')">
         <a class="nav-link {{ request()->route()->named('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
-            <i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;
+            <i class="fa fa-bar-chart-o" aria-hidden="true"></i>&nbsp;
             <span class="nav-link-text">@lang('dashboard.dashboard')</span>
         </a>
     </li>
@@ -27,14 +27,12 @@
         </a>
     </li>
 
-    <!--
-    <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.comments')">
-        <a class="nav-link {{ request()->route()->named('admin.comments.*') ? 'active' : '' }}" href="{{ route('admin.comments.index') }}">
-            <i class="fa fa-comments" aria-hidden="true"></i>&nbsp;
-            <span class="nav-link-text">@lang('dashboard.comments')</span>
+    <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.customize-site')">
+        <a class="nav-link {{ request()->route()->named('admin.customize-site.*') ? 'active' : '' }}" href="{{ route('admin.customize-site.index') }}">
+            <i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;
+            <span class="nav-link-text">@lang('dashboard.customize-site')</span>
         </a>
     </li>
-    -->
 
     <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.users')">
         <a class="nav-link {{ request()->route()->named('admin.users.*') ? 'active' : '' }}" href="{{ route('admin.users.index') }}">

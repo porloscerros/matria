@@ -24,7 +24,7 @@
         <span class="invalid-feedback">{{ $errors->first('bg_img_id') }}</span>
     @endif
 </div>
-
+<!--
 <div class="form-group">
     {!! Form::label('text_color', __('customize-site.section-attributes.text-color')) !!}
     <select name="text_color" class="form-control">
@@ -33,3 +33,4 @@
         @endforeach
     </select>
 </div>
+--!>

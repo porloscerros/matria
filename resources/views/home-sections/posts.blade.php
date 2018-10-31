@@ -24,7 +24,7 @@
             <div class="container">
             <div class="card-deck">
                 @foreach($posts as $post)
-                    <div class="card col-md-12 p-3 mb-3">
+                    <div class="card col-md-12 p-3 mb-3 text-dark">
                         <div class="row ">
                             <div class="col-md-4">
                                 @if ($post->hasThumbnail())
