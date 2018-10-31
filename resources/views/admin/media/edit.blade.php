@@ -11,7 +11,7 @@
 
     {!! Form::model($medium, ['route' => ['admin.media.update', 'id' => $medium->id], 'method' =>'PUT']) !!}
 
-        @include('admin.media._form', ['tags' => $tags])
+        @include('admin.media._form', ['tags' => $tags, 'tags_list' => $tags_list])
 
     {!! Form::close() !!}
 

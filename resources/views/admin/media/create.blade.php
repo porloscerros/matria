@@ -14,7 +14,7 @@
             @endif
         </div>
 
-        @include('admin.media._form')
+        @include('admin.media._form', ['tags_list' => $tags_list])
 
     {!! Form::close() !!}
 @endsection

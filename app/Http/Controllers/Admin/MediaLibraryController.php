@@ -9,6 +9,7 @@ use App\Models\MediaLibrary;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Spatie\Tags\Tag;
 
 class MediaLibraryController extends Controller
 {
@@ -38,7 +39,9 @@ class MediaLibraryController extends Controller
      */
     public function create(Request $request): View
     {
-        return view('admin.media.create');
+        return view('admin.media.create', [
+            'tags_list' => Tag::all()->pluck('name')->toArray(),
+        ]);
     }
 
     /**
@@ -60,8 +63,7 @@ class MediaLibraryController extends Controller
             ->withCustomProperties(['published' => $published])
             ->toMediaCollection();
 
-        $tags = explode(',', $request->tags);
-        $model->attachTags($tags);
+        $model->attachTags($request->tags);
 
         return redirect()->route('admin.media.index')->withSuccess(__('media.created'));
     }
@@ -71,13 +73,12 @@ class MediaLibraryController extends Controller
      */
     public function edit(Media $medium): View
     {
-        $tags = implode (",", $medium->tags->pluck('name')->toArray());
-        $published = $medium->getCustomProperty('published');
 
         return view('admin.media.edit', [
             'medium' => $medium,
-            'tags' => $tags,
-            'publish' => $published
+            'tags' => $medium->tags->pluck('name')->toArray(),
+            'publish' => $medium->getCustomProperty('published'),
+            'tags_list' => Tag::all()->pluck('name')->toArray(),
         ]);
     }
 
@@ -91,8 +92,7 @@ class MediaLibraryController extends Controller
         $model->setCustomProperty('published', $request->publish);
         $model->save();
 
-        $tags = explode(',', $request->tags);
-        $model->syncTags($tags);
+        $model->syncTags($request->tags);
 
         return redirect()->route('admin.media.index')->withSuccess(__('media.updated'));
     }

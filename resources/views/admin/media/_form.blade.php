@@ -1,5 +1,9 @@
+@push('inline-styles')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+@endpush
+
 @php
-    $tags = old('tags') ?? (isset($medium) ? $tags : null);
+    $tags = isset($medium) ? $tags : null;
 @endphp
 
 <div class="form-group">
@@ -13,11 +17,18 @@
 
 <div class="form-group">
     {!! Form::label('tags', __('media.attributes.tags')) !!}
-    {!! Form::text('tags', $tags, ['class' => 'form-control' . ($errors->has('tags') ? ' is-invalid' : '')]) !!}
-
-    @if ($errors->has('tags'))
-        <span class="invalid-feedback">{{ $errors->first('tags') }}</span>
-    @endif
+    <select class="form-control" name="tags[]" id="tag_input" multiple="multiple">
+        @if(!empty($tags))
+            @foreach($tags as $tag)
+                <option selected="selected">{{ $tag }}</option>
+            @endforeach
+        @endif
+        @if(!empty($tags_list))
+            @foreach($tags_list as $tag)
+                <option>{{ $tag }}</option>
+            @endforeach
+        @endif
+    </select>
 </div>
 
 <div class="form-group">
@@ -31,3 +42,14 @@
     {{ link_to_route('admin.media.index', __('forms.actions.back'), [], ['class' => 'btn btn-secondary']) }}
     {!! Form::submit(__('forms.actions.save'), ['class' => 'btn btn-primary']) !!}
 </div>
+
+@push('inline-scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#tag_input').select2({
+                tags: true
+            });
+        });
+    </script>
+@endpush
