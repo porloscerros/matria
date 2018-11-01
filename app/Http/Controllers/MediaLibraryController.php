@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Admin\MediaLibraryRequest;
 use App\Models\Media;
 use App\Models\MediaLibrary;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -37,5 +38,22 @@ class MediaLibraryController extends Controller
     public function show(Media $medium): Media
     {
         return $medium;
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function showCard($id)
+    {
+        try {
+            $medium = Media::findOrFail($id);
+        } catch(ModelNotFoundException $e) {
+            return redirect()->route('media');
+        }
+
+        return view('media.show', [
+            'medium' => $medium
+        ]);
+
     }
 }
