@@ -18,7 +18,7 @@
             </div>
 
             <div class="col d-flex justify-content-end">
-                {{ link_to_route('posts', __('home.view-all-posts')) }}
+                <a href="{{ route('posts') }}" class="btn btn-outline-dark" role="button">@lang('home.view-all-posts')</a>
             </div>
 
             <div class="container">

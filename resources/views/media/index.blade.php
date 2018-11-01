@@ -7,8 +7,8 @@
 @endsection
 
 @section('content')
-    <div class="col d-flex justify-content-start">
-        <a href="{{route('home')}}/#home-gallery"><< Back</a>
+    <div class="d-flex justify-content-start">
+        <a href="{{route('home')}}/#home-gallery" class="btn btn-outline-dark" role="button"><< Back</a>
     </div>
     <div class="container-fluid p-3 bg-translucent">
         <div class="page-header d-flex justify-content-between">

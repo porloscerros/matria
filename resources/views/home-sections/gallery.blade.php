@@ -18,7 +18,7 @@
             </div>
 
             <div class="col d-flex justify-content-end">
-                {{ link_to_route('media', __('home.view-all-gallery')) }}
+                <a href="{{ route('media') }}" class="btn btn-outline-dark" role="button">@lang('home.view-all-gallery')</a>
             </div>
 
             <div class="col-12" id="gallery-deck">
@@ -36,8 +36,9 @@
                     <div class="row">
                         <div class="col d-flex justify-content-center" id="gallery-deck">
                         <p>
+                            <span class="badge badge-dark"><i class="fa fa-tag" aria-hidden="true"></i></span>
                             @foreach($medium->tags as $tag)
-                                #{{ $tag->name }}
+                                <span class="badge badge-dark">#{{ $tag->name }}</span>
                             @endforeach
                         </p>
                         </div>
