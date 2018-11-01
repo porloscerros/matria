@@ -17,6 +17,9 @@
     <!-- Styles -->
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     @stack('styles')
+
+    <!-- Social Media meta tags -->
+    @include('shared.social-media.meta-tags')
 </head>
 <body class="bg-light" @yield('body-tag')>
     <div id="app">
@@ -32,8 +35,10 @@
             </div>
         </div>
 
-        @include('shared/footer')
-        @include('shared/porloscerros-footer')
+        <div class="bg-translucent">
+            @include('shared/footer')
+            @include('shared/porloscerros-footer')
+        </div>
     </div>
 
     <!-- Scripts -->
@@ -42,5 +47,19 @@
     @endif
     <script src="{{ mix('/js/app.js') }}"></script>
     @stack('inline-scripts')
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- Load Twitter Share JavaScript -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
