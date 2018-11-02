@@ -3,9 +3,9 @@
 @section('content')
     <div class="row justify-content-md-center">
         <div class="col-md-6">
-            <h1>@lang('users.create')</h1>
+            <h1>@lang('forms.users.create')</h1>
 
-            {!! Form::open(['route' => 'admin.users.store', 'role' => 'form', 'method' => 'POST', 'files' => true]) !!}
+            {!! Form::open(['route' => 'admin.users.store', 'role' => 'form', 'method' => 'POST']) !!}
             <div class="form-group">
                 {!! Form::label('name', __('validation.attributes.name'), ['class' => 'control-label']) !!}
                 {!! Form::text('name', old('name'), ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'required', 'autofocus']) !!}
@@ -43,16 +43,25 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('avatar', __('users.avatar')) !!}
-                {!! Form::file('avatar', ['accept' => 'image/*', 'class' => 'form-control' . ($errors->has('avatar') ? ' is-invalid' : '')]) !!}
+                {!! Form::label('roles', __('users.attributes.roles')) !!}
 
-                @if ($errors->has('avatar'))
-                    <span class="invalid-feedback">{{ $errors->first('avatar') }}</span>
-                @endif
+                @foreach($roles as $role)
+                    <div class="checkbox">
+                        <label>
+                            {!! Form::checkbox("roles[$role->id]", $role->id) !!}
+                            @if (Lang::has('roles.' . $role->name))
+                                {!! __('roles.' . $role->name) !!}
+                            @else
+                                {{ ucfirst($role->name) }}
+                            @endif
+                        </label>
+                    </div>
+                @endforeach
             </div>
 
             <div class="form-group">
-                {!! Form::submit(__('forms.save'), ['class' => 'btn btn-primary']) !!}
+                {{ link_to_route('admin.users.index', __('forms.actions.back'), [], ['class' => 'btn btn-secondary']) }}
+                {!! Form::submit(__('forms.actions.save'), ['class' => 'btn btn-primary']) !!}
             </div>
 
             {!! Form::close() !!}

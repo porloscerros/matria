@@ -51,4 +51,13 @@ return [
     'sections' => [
         'updated' => 'Sección actualizada'
     ],
+
+    'users' => [
+        'create' => 'Crear nueva usuaria',
+        'update' => 'Editar usuaria',
+        'delete' => 'Confirma borrar esta usuaria?',
+        'created' => 'Usuaria creada',
+        'updated' => 'Usuaria actualizada',
+        'deleted' => 'Usuaria borrada',
+    ],
 ];

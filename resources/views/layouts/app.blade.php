@@ -16,7 +16,7 @@
 
     <!-- Styles -->
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
-    @stack('styles')
+    @stack('inline-styles')
 
     <!-- Social Media meta tags -->
     @include('shared.social-media.meta-tags')

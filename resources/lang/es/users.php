@@ -17,6 +17,8 @@ return [
     'attributes' => [
         'name' => 'Nombre',
         'email' => 'Email',
+        'avatar' => 'Imagen de perfil',
+        'extract' => 'Sobre mí',
         'current_password' => 'Contraseña actual',
         'password' => 'Contraseña',
         'password_confirmation' => 'Confirmar contraseña',
@@ -26,8 +28,9 @@ return [
     ],
 
     'placeholder' => [
-        'name' => 'Su nombre',
-        'email' => 'Su email',
+        'name' => 'Su nombre...',
+        'email' => 'Su email...',
+        'extract' => 'Algo que quieras decir sobre tí...',
         'current_password' => 'Su contraseña actual',
         'password' => 'Su nueva contraseña',
         'password_confirmation' => 'Confirmar contraseña'

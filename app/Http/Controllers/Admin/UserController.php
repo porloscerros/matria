@@ -28,8 +28,8 @@ class UserController extends Controller
      */
     public function create(): View
     {
-        return view('users.create', [
-            'roles' => Role::all()
+        return view('admin.users.create', [
+            'roles' => Role::where('name', '<>', 'developer')->get()
         ]);
     }
 
@@ -44,13 +44,17 @@ class UserController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
 
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'email_verified_at' => now()
         ]);
 
-        return redirect()->route('admin.users.index')->withSuccess(__('user.created'));
+        $role_ids = array_values($request->get('roles', []));
+        $user->roles()->sync($role_ids);
+
+        return redirect()->route('admin.users.index')->withSuccess(__('forms.users.created'));
     }
 
     /**
@@ -60,7 +64,7 @@ class UserController extends Controller
     {
         return view('admin.users.edit', [
             'user' => $user,
-            'roles' => Role::all()
+            'roles' => Role::where('name', '<>', 'developer')->get()
         ]);
     }
 

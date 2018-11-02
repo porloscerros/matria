@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
     {
         // Roles
         Role::firstOrCreate(['name' => Role::ROLE_EDITOR]);
-        $role_admin = Role::firstOrCreate(['name' => Role::ROLE_ADMIN]);
+        Role::firstOrCreate(['name' => Role::ROLE_ADMIN]);
+        $role_dev = Role::firstOrCreate(['name' => Role::ROLE_DEVELOPER]);
 
         // MediaLibrary
         MediaLibrary::firstOrCreate([]);
@@ -33,7 +34,7 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        $user->roles()->sync([$role_admin->id]);
+        $user->roles()->sync([$role_dev->id]);
 
         // Posts
         $post = Post::firstOrCreate(

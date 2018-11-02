@@ -9,10 +9,17 @@ use Illuminate\Database\Eloquent\Relations\belongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
+use Spatie\Image\Manipulations;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class User extends Authenticatable implements MustVerifyEmailContract
+class User extends Authenticatable implements HasMedia, MustVerifyEmailContract
 {
     use MustVerifyEmail, Notifiable;
+
+    use HasMediaTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -20,7 +27,7 @@ class User extends Authenticatable implements MustVerifyEmailContract
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'provider', 'provider_id', 'registered_at', 'api_token'
+        'name', 'email', 'password', 'provider', 'provider_id', 'registered_at', 'api_token', 'email_verified_at', 'extract'
     ];
 
     /**
@@ -139,5 +146,18 @@ class User extends Authenticatable implements MustVerifyEmailContract
     public function roles(): belongsToMany
     {
         return $this->belongsToMany(Role::class)->withTimestamps();
+    }
+
+
+    public function registerMediaCollections()
+    {
+        $this
+            ->addMediaCollection('avatar')
+            ->singleFile()
+            ->registerMediaConversions(function (Media $media) {
+                $this
+                    ->addMediaConversion('thumb')
+                    ->fit(Manipulations::FIT_CROP, 100, 100);
+            });
     }
 }

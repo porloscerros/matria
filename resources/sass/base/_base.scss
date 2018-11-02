@@ -45,3 +45,14 @@ body > #app > .container-fluid {
     background-color: rgba(3, 3, 3, 0.3);
     color: #fff;
 }
+
+.avatar-thumb img {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(55, 55, 55, 0.5);
+}
