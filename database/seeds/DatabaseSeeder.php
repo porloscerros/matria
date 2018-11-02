@@ -45,9 +45,9 @@ class DatabaseSeeder extends Seeder
             [
                 'posted_at' => now(),
                 'content' => "
-                    Welcome to Matria-site !<br><br>
+                    Welcome to my site !<br><br>
                     Don't forget to read the README before starting.<br><br>
-                    Feel free to add a star on Matria-site on Github !<br><br>
+                    Feel free to add a star on Github !<br><br>
                     You can open an issue or (better) email me at porloscerros@gmail.com if something went wrong."
             ]
         );
