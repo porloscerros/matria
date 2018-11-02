@@ -3,31 +3,52 @@
 return [
     'edit' => 'Editar',
 
-  'actions' => [
-    'save' => 'Guardar',
-    'update' => 'Actualizar',
-    'back' => 'Volver',
-    'generate' => 'Generar',
-    'delete' => 'Borrar',
-    'add' => 'Agregar',
-    'send' => 'Enviar',
-  ],
+    'actions' => [
+        'save' => 'Guardar',
+        'update' => 'Actualizar',
+        'back' => 'Volver',
+        'generate' => 'Generar',
+        'delete' => 'Borrar',
+        'add' => 'Agregar',
+        'send' => 'Enviar',
+    ],
 
-  'comments' => [
-    'delete' => 'Confirma borrar este comentario?'
-  ],
+    'placeholder' => [
+        'name' => 'Nombre',
+        'email' => 'Email'
+    ],
 
-  'posts' => [
-    'delete' => 'Confirma borrar este artículo?',
-    'delete_thumbnail' => "Confirma borrar la imagen?"
-  ],
+    'comments' => [
+        'delete' => 'Confirma borrar este comentario?'
+    ],
 
-  'tokens' => [
-    'generate' => 'Confirma que desea generar una clave? Todas estas APIs van a ser desconectadas.',
-  ],
+    'posts' => [
+        'delete' => 'Confirma borrar este artículo?',
+        'delete_thumbnail' => "Confirma borrar la imagen?",
+        'created' => 'Artículo creado',
+        'updated' => 'Artículo actualizado',
+        'deleted' => 'Artículo borrado',
+    ],
 
-  'media' => [
-    'delete' => 'Confirma borrar esta imágen?',
-  ],
+    'tokens' => [
+        'generate' => 'Confirma que desea generar una clave? Todas estas APIs van a ser desconectadas.',
+    ],
 
+    'media' => [
+        'delete' => 'Confirma borrar esta imágen?',
+        'created' => 'Imagen agregada',
+        'updated' => 'Imagen actualizada',
+        'deleted' => 'Imagen borrada',
+    ],
+
+    'contacts' => [
+        'delete' => 'Confirma borrar este contacto?',
+        'created' => 'Contacto creado',
+        'updated' => 'Contacto actualizado',
+        'deleted' => 'Contacto borrado',
+    ],
+
+    'sections' => [
+        'updated' => 'Sección actualizada'
+    ],
 ];

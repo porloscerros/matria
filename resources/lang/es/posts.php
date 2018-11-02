@@ -8,16 +8,14 @@ return [
     'edit' => 'Editar',
     'last_posts' => 'Artículos recientes',
     'create' => 'Crear artículo',
-    'created' => 'Artículo creado',
-    'updated' => 'Artículo actualizado',
-    'deleted' => 'Artículo borrado',
     'empty' => "No hay artículos por el momento.",
     'new_posts' => 'nuevo artículo|nuevos artículos',
     'count' => ':count artículo|:count artículos',
     'show' => "Ver artículo",
     'search' => "Buscar ...",
     'search_results' => ":count artículo encontrado|:count artículos encontrados",
-    'continue-reading' => "continuar leyendo",
+    'continue-reading' => "continuar leyendo...",
+    'view-all-posts' => 'ver todos los artículos',
 
     'attributes' => [
         'title' => 'Título',

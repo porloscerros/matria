@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="d-flex justify-content-start">
-        <a href="{{route('home')}}/#home-posts" class="btn btn-outline-dark" role="button"><< Back</a>
+        <a href="{{route('home')}}/#home-posts" class="btn btn-outline-dark" role="button"><< @lang('navigation.back')</a>
     </div>
 
     <div class="container-fluid p-3 bg-translucent">

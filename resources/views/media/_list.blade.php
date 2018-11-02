@@ -2,7 +2,7 @@
     @foreach($media as $medium)
         @include('media/_show', ['modal' => $loop->index])
         <!-- The Gallery Modal -->
-        @include('home-sections.partials.gallery-modal', ['modal' => $loop->index, 'url' => $medium->getUrl(), 'name' => $medium->name])
+        @include('shared.modals.media', ['modal' => $loop->index, 'url' => $medium->getUrl(), 'name' => $medium->name])
 
     @endforeach
 </div>

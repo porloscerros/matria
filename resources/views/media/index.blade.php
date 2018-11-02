@@ -8,11 +8,17 @@
 
 @section('content')
     <div class="d-flex justify-content-start">
-        <a href="{{route('home')}}/#home-gallery" class="btn btn-outline-dark" role="button"><< Back</a>
+        <a href="{{route('home')}}/#home-gallery" class="btn btn-outline-dark" role="button"><< @lang('navigation.back')</a>
     </div>
     <div class="container-fluid p-3 bg-translucent">
         <div class="page-header d-flex justify-content-between">
-          <h1>@lang('dashboard.media')</h1>
+          <h1>
+              @if($section->custom->title)
+                  {{$section->custom->title}}
+              @else
+                  @lang('sections.gallery')
+              @endif
+          </h1>
         </div>
         @include('media/_list')
     </div>

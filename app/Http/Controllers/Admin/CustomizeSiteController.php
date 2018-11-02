@@ -56,6 +56,6 @@ class CustomizeSiteController extends Controller
             Log::debug($e->getTraceAsString());
         }
 
-        return redirect()->route('admin.customize-site.index', $section)->withSuccess(__('customize-site.updated'));
+        return redirect()->route('admin.customize-site.index', $section)->withSuccess(__('forms.sections.updated'));
     }
 }

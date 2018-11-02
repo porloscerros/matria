@@ -28,12 +28,14 @@
     </head>
 
     <body id="page-top">
+    <div id="app">
         @include('home-sections/navbar')
 
         @yield('content')
 
         @include('shared/footer')
         @include('shared/porloscerros-footer')
+    </div>
         <!-- Scripts -->
         <script src="{{ mix('/js/app.js') }}"></script>
         <script src="{{ mix('/js/home.js') }}"></script>

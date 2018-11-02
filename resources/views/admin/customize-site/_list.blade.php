@@ -14,7 +14,7 @@
                         <div class="row align-items-center">
                             <div class="col-12 text-center">
                                 <h3 class="m-1">
-                                    @lang('customize-site.sections.'.$section->name)
+                                    @lang('sections.'.$section->name)
 
                                 </h3>
                             </div>
@@ -30,7 +30,7 @@
                                     @if($section->custom->title)
                                         {{$section->custom->title}}
                                     @else
-                                        @lang('home.home')
+                                        @lang('sections.'.$section->name)
                                     @endif
                                 </h1>
                                 @if($section->custom->subtitle)

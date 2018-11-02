@@ -7,7 +7,7 @@
                     @if($section->custom->title)
                         {{$section->custom->title}}
                     @else
-                        @lang('home.gallery')
+                        @lang('sections.gallery')
                     @endif
                  </h3>
                 @if($section->custom->subtitle)
@@ -18,7 +18,7 @@
             </div>
 
             <div class="col d-flex justify-content-end">
-                <a href="{{ route('media') }}" class="btn btn-outline-dark" role="button">@lang('home.view-all-gallery')</a>
+                <a href="{{ route('media') }}" class="btn btn-outline-dark" role="button">@lang('media.view-all-gallery')</a>
             </div>
 
             <div class="col-12" id="gallery-deck">
@@ -29,7 +29,7 @@
                                 <img class="img-thumbnail" src="{{ $medium->getUrl('thumb') }}" alt="{{ $medium->name }}">
                             </a>
                             <!-- The Gallery Modal -->
-                            @include('home-sections.partials.gallery-modal', ['modal' => 'home', 'url' => $medium->getUrl(), 'name' => $medium->name])
+                            @include('shared.modals.media', ['modal' => 'home', 'url' => $medium->getUrl(), 'name' => $medium->name])
                         </div>
                     </div>
 

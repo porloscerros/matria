@@ -7,7 +7,7 @@
                 @if($section->custom->title)
                     {{$section->custom->title}}
                 @else
-                    @lang('home.home')
+                    @lang('sections.header')
                 @endif
                 </h3>
                 <h1 class="m-3">
@@ -16,6 +16,10 @@
                 @if($section->custom->subtitle)
                     <h2 class="m-2">
                         {{$section->custom->subtitle}}
+                    </h2>
+                @else
+                    <h2 class="m-2">
+                        @lang('sections.welcome')
                     </h2>
                 @endif
             </div>

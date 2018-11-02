@@ -8,10 +8,10 @@
 
 @section('content')
     <div class="row">
-        <div class="col d-flex justify-content-start">
-            <a href="{{ url()->previous() }}" class="btn btn-default"><< Back</a>
+        <div class="col-6 d-flex justify-content-start">
+            <a href="{{route('posts')}}" class="btn btn-outline-dark" role="button"><< @lang('navigation.back')</a>
         </div>
-        <div class="col d-flex justify-content-end">
+        <div class="col-6 d-flex justify-content-end">
             <div class="row align-content-center">
             @include('shared.social-media.share-buttons')
             </div>

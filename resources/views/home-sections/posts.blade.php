@@ -7,7 +7,7 @@
                     @if($section->custom->title)
                         {{$section->custom->title}}
                     @else
-                        @lang('home.posts')
+                        @lang('sections.posts')
                     @endif
                 </h3>
                 @if($section->custom->subtitle)
@@ -18,7 +18,7 @@
             </div>
 
             <div class="col d-flex justify-content-end">
-                <a href="{{ route('posts') }}" class="btn btn-outline-dark" role="button">@lang('home.view-all-posts')</a>
+                <a href="{{ route('posts') }}" class="btn btn-outline-dark" role="button">@lang('posts.view-all-posts')</a>
             </div>
 
             <div class="container">
