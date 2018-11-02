@@ -4,8 +4,9 @@
         <tr>
             <th>@lang('media.attributes.image')</th>
             <th>@lang('media.attributes.name')</th>
+            <th>@lang('media.attributes.tags')</th>
             <th>@lang('media.attributes.url')</th>
-            <th>@lang('media.attributes.posted_at')</th>
+            <th class="text-center">@lang('media.attributes.published')</th>
             <th></th>
         </tr>
     </thead>
@@ -19,6 +20,11 @@
                 </td>
                 <td>{{ $medium->name }}</td>
                 <td>
+                    @foreach($medium->tags as $tag)
+                        #{{ $tag->name }}
+                    @endforeach
+                </td>
+                <td>
                     <div class="input-group">
                         {{ Form::text(null, url($medium->getUrl()), ['class' => 'form-control', 'readonly' => true, 'id' => "medium-{$medium->id}"]) }}
                         <div class="input-group-append">
@@ -28,10 +34,14 @@
                         </div>
                     </div>
                 </td>
-                <td>{{ humanize_date($medium->posted_at, 'd/m/Y H:i:s') }}</td>
+                <td class="text-center">{{ Form::checkbox('published', true, $medium->getCustomProperty('published'), ['disabled']) }}</td>
                 <td>
                     <a href="{{ $medium->getUrl() }}" title="{{ __('media.show') }}" class="btn btn-primary btn-sm" target="_blank">
                         <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="{{ route('admin.media.edit', $medium) }}" class="btn btn-primary btn-sm">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
                     </a>
 
                     <a href="{{ route('admin.media.show', $medium) }}" title="{{ __('media.download') }}" class="btn btn-primary btn-sm">

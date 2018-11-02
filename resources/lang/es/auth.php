@@ -13,21 +13,22 @@ return [
     |
     */
 
-    'failed'   => 'Ces identifiants ne correspondent pas à nos enregistrements',
-    'throttle' => 'Trop de tentatives de connexion. Veuillez essayer de nouveau dans :seconds secondes.',
-    'login'    => 'Se connecter',
-    'logout'    => 'Se déconnecter',
-    'register' => "S'inscrire",
-    'remember_me' => 'Se souvenir de moi',
-    'forgotten_password' => 'Mot de passe oublié ?',
-    'reset_password' => 'Réinitialiser le mot de passe',
-    'send_password_reset_link' => 'Envoyer un lien de réinitialisation du mot de passe',
-    'logged_in' => 'Vous êtes désormais connecté.',
-    'logged_in_provider' => 'Vous êtes désormais connecté avec :Provider.',
-    'not_authorized' => "Cette opération n'est pas autorisée.",
+    'failed' => 'Los datos ingresados no se encuentran en nuestra Base de Datos.',
+    'throttle' => 'Ha exedido los intentos de iniciar sesión. Intente de nuevo en :seconds segundos.',
+    'login'    => 'Iniciar sesión',
+    'logout'    => 'Cerrar sesión',
+    'register' => "Registrarse",
+    'remember_me' => 'Recordarme',
+    'forgotten_password' => 'Olvidó su contraseña ?',
+    'reset_password' => 'Resetear contraseña',
+    'send_password_reset_link' => 'Enviar link de reseteo de contraseña',
+    'logged_in' => 'Ya estas logueada',
+    'logged_in_provider' => 'Iniciaste sesión con :Provider.',
+    'not_authorized' => "No autorizada.",
 
     'services' => [
-        'github' => 'Se connecter avec Github',
-        'twitter' => 'Se connecter avec Twitter',
+        'github' => 'Login with Github',
+        'twitter' => 'Login with Twitter',
     ],
+
 ];

@@ -25,6 +25,7 @@ class Post extends Model
         'posted_at',
         'slug',
         'thumbnail_id',
+        'published',
     ];
 
     /**

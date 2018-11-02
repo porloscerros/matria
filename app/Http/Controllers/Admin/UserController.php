@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\UsersRequest;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
@@ -23,13 +24,47 @@ class UserController extends Controller
     }
 
     /**
+     * Show the form for create new user.
+     */
+    public function create(): View
+    {
+        return view('admin.users.create', [
+            'roles' => Role::where('name', '<>', 'developer')->get()
+        ]);
+    }
+
+    /**
+     * Create a new user.
+     */
+    public function store(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'name' => 'required|string|max:255|alpha_dash',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'email_verified_at' => now()
+        ]);
+
+        $role_ids = array_values($request->get('roles', []));
+        $user->roles()->sync($role_ids);
+
+        return redirect()->route('admin.users.index')->withSuccess(__('forms.users.created'));
+    }
+
+    /**
      * Display the specified resource edit form.
      */
     public function edit(User $user): View
     {
         return view('admin.users.edit', [
             'user' => $user,
-            'roles' => Role::all()
+            'roles' => Role::where('name', '<>', 'developer')->get()
         ]);
     }
 
@@ -50,5 +85,16 @@ class UserController extends Controller
         $user->roles()->sync($role_ids);
 
         return redirect()->route('admin.users.edit', $user)->withSuccess(__('users.updated'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(User  $user)
+    {
+        $user->roles()->detach();
+        $user->delete();
+
+        return redirect()->route('admin.users.index')->withSuccess(__('users.deleted'));
     }
 }

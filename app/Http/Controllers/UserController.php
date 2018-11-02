@@ -17,12 +17,7 @@ class UserController extends Controller
     public function show(Request $request, User $user): View
     {
         return view('users.show', [
-            'user' => $user,
-            'posts_count' => $user->posts()->count(),
-            'comments_count' => $user->comments()->count(),
-            'likes_count' => $user->likes()->count(),
-            'posts' => $user->posts()->withCount('likes', 'comments')->latest()->limit(5)->get(),
-            'comments' => $user->comments()->with('post.author')->latest()->limit(5)->get()
+            'user' => $user
         ]);
     }
 
@@ -51,6 +46,10 @@ class UserController extends Controller
         $this->authorize('update', $user);
 
         $user->update($request->validated());
+
+        if ($request->hasFile('avatar')) {
+            $user->addMediaFromRequest('avatar')->toMediaCollection('avatar');
+        }
 
         return redirect()->route('users.edit')->withSuccess(__('users.updated'));
     }

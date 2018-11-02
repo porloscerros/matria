@@ -3,5 +3,6 @@
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",
     "/js/admin.js": "/js/admin.js",
+    "/js/home.js": "/js/home.js",
     "/js/ui/icons.svg": "/js/ui/icons.svg"
 }

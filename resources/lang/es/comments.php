@@ -1,26 +1,26 @@
 <?php
 
 return [
-  'count' => ':count commentaire|:count commentaires',
-  'comment' => 'Commenter',
-  'comments' => 'Commentaires',
-  'delete' => 'Supprimer',
-  'last_comments' => 'Les derniers commentaires',
-  'updated' => 'Commentaire mis à jour avec succès',
-  'deleted' => 'Commentaire supprimé avec succès',
-  'new_comments' => 'nouveau commentaire|nouveaux commentaires',
-  'sign_in_to_comment' => 'Vous devez vous connecter pour commenter.',
-  'loading_comments' => 'Charger les commentaires',
-  'posted_on' => 'Posté sur',
+  'count' => ':count comment|:count comments',
+  'comment' => 'Comment',
+  'comments' => 'Comments',
+  'delete' => 'Delete',
+  'last_comments' => 'Latest comments',
+  'updated' => 'Comment updated',
+  'deleted' => 'Comment deleted',
+  'new_comments' => 'new comment|new comments',
+  'sign_in_to_comment' => 'You must be signed in to comment.',
+  'loading_comments' => 'Load comments',
+  'posted_on' => 'Posted on',
 
   'attributes' => [
-    'content' => 'Contenu',
-    'author' => 'Auteur',
-    'post' => 'Article',
-    'posted_at' => 'Posté le',
+    'content' => 'Content',
+    'author' => 'Author',
+    'post' => 'Post',
+    'posted_at' => 'Posted at',
   ],
 
   'placeholder' => [
-    'content' => 'Votre commentaire'
+    'content' => 'Your comment'
   ]
 ];

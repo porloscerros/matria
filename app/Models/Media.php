@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Spatie\MediaLibrary\Models\Media as BaseMedia;
-use App\Scopes\PostedScope;
+use \Spatie\Tags\HasTags;
 use Illuminate\Database\Eloquent\Builder;
 
 class Media extends BaseMedia
 {
+    use HasTags;
+
     /**
      * The attributes that should be mutated to dates.
      *
