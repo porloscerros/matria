@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  matria-server:
+  laravel-web-site-server:
     build: ./provisioning
-    image: matria
+    image: laravel-web-site
     depends_on:
       - mysql
       - mysql-test
@@ -13,7 +13,7 @@ services:
 
   horizon:
     build: ./provisioning
-    image: matria
+    image: laravel-web-site
     command: php artisan horizon
     depends_on:
       - mysql
@@ -26,8 +26,8 @@ services:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=secret
-      - MYSQL_DATABASE=matria
-      - MYSQL_USER=matria
+      - MYSQL_DATABASE=web_site_DB
+      - MYSQL_USER=porloscerros
       - MYSQL_PASSWORD=secret
     volumes:
       - ./storage/tmp/db:/var/lib/mysql:cached
@@ -48,7 +48,7 @@ services:
       - ./provisioning/nginx.conf:/etc/nginx/conf.d/default.conf:cached
       - ./:/application:cached
     depends_on:
-      - matria-server
+      - laravel-web-site-server
 
   redis:
     image: redis
