@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
+use App\Models\Contact;
 use App\Models\Media;
 use App\Models\Post;
 use App\Models\User;
@@ -21,6 +22,7 @@ class ShowDashboard extends Controller
             'media' => Media::lastWeek()->get(),
             'posts' => Post::lastWeek()->get(),
             'users' => User::lastWeek()->get(),
+            'contacts' => Contact::lastWeek()->get(),
         ]);
     }
 }

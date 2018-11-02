@@ -1,7 +1,7 @@
 <?php
 
 return [
-  'none' => 'Aucun',
-  'admin' => "Administrateur",
-  'editor' => "Éditeur",
+  'none' => 'Ninguno',
+  'admin' => "Administradora",
+  'editor' => "Editora",
 ];

@@ -1,34 +1,38 @@
 <?php
 
 return [
-  'profile' => 'Mon profil',
-  'public_profile' => 'Mon profil public',
-  'settings' => 'Réglages',
-  'edit' => 'Éditer le profil',
-  'show' => 'Voir le profil',
-  'updated' => 'Le profil a bien été mis à jour',
-  'password_updated' => 'Le mot de passe a bien été mis à jour',
-  'new_users' => 'nouvel utilisateur|nouveaux utilisateurs',
-  'count' => ':count utilisateur|:count utilisateurs',
-  'api_token' => "Clé d'API",
-  'security' => "Sécurité",
+    'profile' => 'Mi perfil',
+    'public_profile' => 'Mi perfil público',
+    'settings' => 'Configuración',
+    'edit' => 'Editar perfil',
+    'show' => 'Ver perfil',
+    'updated' => 'Perfil actualizado',
+    'deleted' => 'Usuario eliminado',
+    'password_updated' => 'Contraseña actualizada',
+    'new_users' => 'nueva usuaria|nuevas usuarias',
+    'count' => ':count usuaria|:count usuarias',
+    'api_token' => "Clave API",
+    'security' => "Seguridad",
 
-  'attributes' => [
-    'name' => 'Nom',
-    'email' => 'Email',
-    'current_password' => 'Mot de passe actuel',
-    'password' => 'Mot de passe',
-    'password_confirmation' => 'Confirmation du mot de passe',
-    'roles' => 'Rôles',
-    'registered_at' => 'Enregistré le',
-    'api_token' => "Clé d'API"
-  ],
+    'attributes' => [
+        'name' => 'Nombre',
+        'email' => 'Email',
+        'avatar' => 'Imagen de perfil',
+        'extract' => 'Sobre mí',
+        'current_password' => 'Contraseña actual',
+        'password' => 'Contraseña',
+        'password_confirmation' => 'Confirmar contraseña',
+        'roles' => 'Roles',
+        'registered_at' => 'Registrada el',
+        'api_token' => "Clave API"
+    ],
 
-  'placeholder' => [
-    'name' => 'Votre nom',
-    'email' => 'Votre email',
-    'current_password' => 'Votre mot de passe actuel',
-    'password' => 'Votre nouveau mot de passe',
-    'password_confirmation' => 'Confirmation du nouveau mot de passe'
-  ]
+    'placeholder' => [
+        'name' => 'Su nombre...',
+        'email' => 'Su email...',
+        'extract' => 'Algo que quieras decir sobre tí...',
+        'current_password' => 'Su contraseña actual',
+        'password' => 'Su nueva contraseña',
+        'password_confirmation' => 'Confirmar contraseña'
+    ]
 ];

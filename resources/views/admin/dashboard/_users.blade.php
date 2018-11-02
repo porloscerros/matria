@@ -1,4 +1,4 @@
-@component('components.cards.default', ['class' => 'bg-warning text-light m-2'])
+@component('components.cards.default', ['class' => 'bg-danger text-light m-2'])
     <div class="row justify-content-between">
         <i class="fa fa-users fa-5x" aria-hidden="true"></i>
         <div class="text-right">

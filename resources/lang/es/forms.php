@@ -1,31 +1,63 @@
 <?php
 
 return [
+    'edit' => 'Editar',
 
-  'actions' => [
-    'save' => 'Sauvegarder',
-    'update' => 'Mettre à jour',
-    'back' => 'Retour',
-    'generate' => 'Générer',
-    'delete' => 'Supprimer',
-    'add' => 'Ajouter',
-  ],
+    'actions' => [
+        'save' => 'Guardar',
+        'update' => 'Actualizar',
+        'back' => 'Volver',
+        'generate' => 'Generar',
+        'delete' => 'Borrar',
+        'add' => 'Agregar',
+        'send' => 'Enviar',
+    ],
 
-  'comments' => [
-    'delete' => 'Êtes-vous sûr de vouloir supprimer ce commentaires ?'
-  ],
+    'placeholder' => [
+        'name' => 'Nombre',
+        'email' => 'Email'
+    ],
 
-  'posts' => [
-    'delete' => 'Êtes-vous sûr de vouloir supprimer cet article ?',
-    'delete_thumbnail' => "Êtes-vous sûr de vouloir supprimer l'image à la une ?"
-  ],
+    'comments' => [
+        'delete' => 'Confirma borrar este comentario?'
+    ],
 
-  'tokens' => [
-    'generate' => 'Êtes-vous sûr de vouloir générer une clé ? Toutes ses API seront déconnectées.',
-  ],
+    'posts' => [
+        'delete' => 'Confirma borrar este artículo?',
+        'delete_thumbnail' => "Confirma borrar la imagen?",
+        'created' => 'Artículo creado',
+        'updated' => 'Artículo actualizado',
+        'deleted' => 'Artículo borrado',
+    ],
 
-  'media' => [
-    'delete' => 'Êtes-vous sûr de vouloir supprimer cette image ?',
-  ],
+    'tokens' => [
+        'generate' => 'Confirma que desea generar una clave? Todas estas APIs van a ser desconectadas.',
+    ],
 
+    'media' => [
+        'delete' => 'Confirma borrar esta imágen?',
+        'created' => 'Imagen agregada',
+        'updated' => 'Imagen actualizada',
+        'deleted' => 'Imagen borrada',
+    ],
+
+    'contacts' => [
+        'delete' => 'Confirma borrar este contacto?',
+        'created' => 'Contacto creado',
+        'updated' => 'Contacto actualizado',
+        'deleted' => 'Contacto borrado',
+    ],
+
+    'sections' => [
+        'updated' => 'Sección actualizada'
+    ],
+
+    'users' => [
+        'create' => 'Crear nueva usuaria',
+        'update' => 'Editar usuaria',
+        'delete' => 'Confirma borrar esta usuaria?',
+        'created' => 'Usuaria creada',
+        'updated' => 'Usuaria actualizada',
+        'deleted' => 'Usuaria borrada',
+    ],
 ];

@@ -9,6 +9,7 @@ use App\Models\MediaLibrary;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Spatie\Tags\Tag;
 
 class MediaLibraryController extends Controller
 {
@@ -34,11 +35,13 @@ class MediaLibraryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form to create a new resource.
      */
     public function create(Request $request): View
     {
-        return view('admin.media.create');
+        return view('admin.media.create', [
+            'tags_list' => Tag::all()->pluck('name')->toArray(),
+        ]);
     }
 
     /**
@@ -48,17 +51,50 @@ class MediaLibraryController extends Controller
     {
         $image = $request->file('image');
         $name = $image->getClientOriginalName();
+        $published = $request->input('publish');
 
         if ($request->filled('name')) {
             $name = $request->input('name');
         }
 
-        MediaLibrary::first()
+        $model = MediaLibrary::first()
             ->addMedia($image)
             ->usingName($name)
+            ->withCustomProperties(['published' => $published])
             ->toMediaCollection();
 
+        $model->attachTags($request->tags);
+
         return redirect()->route('admin.media.index')->withSuccess(__('media.created'));
+    }
+
+    /**
+     * Show the form to edit a resource.
+     */
+    public function edit(Media $medium): View
+    {
+
+        return view('admin.media.edit', [
+            'medium' => $medium,
+            'tags' => $medium->tags->pluck('name')->toArray(),
+            'publish' => $medium->getCustomProperty('published'),
+            'tags_list' => Tag::all()->pluck('name')->toArray(),
+        ]);
+    }
+
+    /**
+     * Update media resource name and tags
+     */
+    public function update(Request $request, Media $medium): RedirectResponse
+    {
+        $model = Media::findOrFail($medium->id);
+        $model->name = $request->input('name');
+        $model->setCustomProperty('published', $request->publish);
+        $model->save();
+
+        $model->syncTags($request->tags);
+
+        return redirect()->route('admin.media.index')->withSuccess(__('media.updated'));
     }
 
     /**

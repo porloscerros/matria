@@ -16,6 +16,7 @@
     <!-- Styles -->
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     <link href="{{ mix('/css/admin.css') }}" rel="stylesheet">
+    @stack('inline-styles')
 </head>
 <body class="admin-body bg-dark">
     @include('admin/shared/navbar')
@@ -39,5 +40,6 @@
     <!-- Scripts -->
     <script src="{{ mix('/js/app.js') }}"></script>
     <script src="{{ mix('/js/admin.js') }}"></script>
+    @stack('inline-scripts')
 </body>
 </html>

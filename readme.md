@@ -61,6 +61,26 @@ And then, compile the assets :
 $ docker run --rm -it -v $(pwd):/app -w /app node npm run dev
 ```
 
+Contact Form Config :
+
+We will use Mailgun to receive by email the messages that people send us from the Contact Form.
+
+In our Mailgun profile we have the option to configure a custom domain or use a subdomain created automatically for tests, for now we will take the second option.
+
+In the Mailgun Subdomains section click on the link to see the access credentials.
+
+And then replace the credentials in the .env file:
+```
+MAIL_DRIVER=mailgun
+MAILGUN_DOMAIN=sandbox_____________________________.mailgun.org
+MAILGUN_SECRET=key-______________________________
+```
+Also add the name and email address of who will receive the messages:
+```
+ADMIN_EMAIL=
+ADMIN_NAME=
+```
+
 Starting job for newsletter :
 ```
 $ docker-compose run matria-server php artisan tinker
