@@ -18,7 +18,8 @@
             </div>
 
             <div class="col d-flex justify-content-end">
-                <a href="{{ route('media') }}" class="btn btn-outline-dark" role="button">@lang('media.view-all-gallery')</a>
+                @include ('media/_search_form')
+                <a href="{{ route('media') }}" class="btn btn-outline-dark ml-1" role="button">@lang('media.view-all-gallery')</a>
             </div>
 
             <div class="col-12" id="gallery-deck">

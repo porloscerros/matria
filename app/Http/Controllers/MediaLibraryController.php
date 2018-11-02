@@ -18,13 +18,23 @@ class MediaLibraryController extends Controller
      */
     public function index(Request $request): View
     {
-        $media = MediaLibrary::first()
-            ->media()
-            ->where('custom_properties->published', '1')
-            ->paginate(10);
+        if (!empty($request->input('q'))) {
+            $tags = preg_split("/[\s,.]+/", $request->input('q'));
 
-        $section = SiteSection::where('name', 'gallery')
-            ->first();
+            $media = MediaLibrary::first()
+                ->media()
+                ->where('custom_properties->published', '1')
+                ->withAnyTags($tags)
+                ->paginate(10);
+        } else {
+            $media = MediaLibrary::first()
+                ->media()
+                ->where('custom_properties->published', '1')
+                ->paginate(10);
+        }
+
+
+        $section = SiteSection::where('name', 'gallery')->first();
 
         return view('media.index', [
             'section' => $section,

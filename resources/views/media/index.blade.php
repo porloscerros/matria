@@ -12,13 +12,14 @@
     </div>
     <div class="container-fluid p-3 bg-translucent">
         <div class="page-header d-flex justify-content-between">
-          <h1>
-              @if($section->custom->title)
-                  {{$section->custom->title}}
-              @else
-                  @lang('sections.gallery')
-              @endif
-          </h1>
+            <h1>
+                @if($section->custom->title)
+                    {{$section->custom->title}}
+                @else
+                    @lang('sections.gallery')
+                @endif
+            </h1>
+            @include ('media/_search_form')
         </div>
         @include('media/_list')
     </div>
