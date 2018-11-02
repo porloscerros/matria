@@ -15,10 +15,6 @@
     </div>
 
     <div class="col-xl-4 col-sm-6 mb-3">
-      @include('admin/dashboard/_contacts')
-    </div>
-
-    <div class="col-xl-4 col-sm-6 mb-3">
       @include('admin/dashboard/_users')
     </div>
   </div>
