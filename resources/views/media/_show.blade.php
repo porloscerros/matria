@@ -8,7 +8,9 @@
             <small class="text-muted">
                 <i class="fa fa-tag" aria-hidden="true"></i>
                 @foreach($medium->tags as $tag)
-                    #{{ $tag->name }}
+                    <a href="{{ route('media', ['q' => $tag->name]) }}">
+                        #{{ $tag->name }}
+                    </a>
                 @endforeach
             </small>
         </p>

@@ -18,7 +18,7 @@ class MediaLibraryController extends Controller
      */
     public function index(Request $request): View
     {
-        if (!empty($request->input('q'))) {
+        if ($request->filled('q')) {
             $tags = preg_split("/[\s,.]+/", $request->input('q'));
 
             $media = MediaLibrary::first()
