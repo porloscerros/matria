@@ -19,10 +19,6 @@ class CreateSiteSectionsTable extends Migration
             $table->string('name', 80)->unique();
             $table->boolean('public')->nullable();
         });
-
-        Artisan::call('db:seed', [
-            '--class' => SiteSectionsTableSeeder::class,
-        ]);
     }
 
     /**
