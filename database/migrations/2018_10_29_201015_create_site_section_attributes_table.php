@@ -27,10 +27,6 @@ class CreateSiteSectionAttributesTable extends Migration
                 ->onDelete('cascade');
             $table->foreign('bg_img_id')->references('id')->on('media');
         });
-
-        Artisan::call('db:seed', [
-            '--class' => SiteSectionAttributesTableSeeder::class,
-        ]);
     }
 
     /**
