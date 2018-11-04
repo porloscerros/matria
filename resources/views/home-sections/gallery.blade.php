@@ -17,10 +17,12 @@
                 @endif
             </div>
 
+            @if($media->count())
             <div class="col d-flex justify-content-end">
                 @include ('media/_search_form')
                 <a href="{{ route('media') }}" class="btn btn-outline-dark ml-1" role="button">@lang('media.view-all-gallery')</a>
             </div>
+            @endif
 
             <div class="col-12" id="gallery-deck">
                 @foreach($media as $medium)

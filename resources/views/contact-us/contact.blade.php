@@ -8,18 +8,18 @@
             <div class="">
                 <p>
                     <span class="fa fa-whatsapp"></span>  Tel/Wapp:
-                    <a href="tel:+5493454085001"> +54-9-345-4085001</a>
+                    <a href="tel:+66666666666"> +54-9-666-6666666</a>
                 </p>
             </div>
             <div class="">
                 <p>
                     <span class="fa fa-envelope-o"></span> Email:
-                    <a href="mailto:talladoscarteles@gmail.com"> talladoscarteles@gmail.com</a>
+                    <a href="mailto:darthvader@deathstar.ds"> darthvader@deathstar.ds</a>
                 </p>
             </div>
             <div class="">
                 <p>
-                    <span class="fa fa-map-marker"></span> Las Chacras, Traslasierra
+                    <span class="fa fa-map-marker"></span> Porloscerros
                 </p>
             </div>
 

@@ -11,4 +11,9 @@ return [
 
     'welcome' => 'bienvenida a mi sitio',
 
+    'footer' => [
+        'made-with-love' => 'Hecho con',
+        'by' => '',
+        ],
+
 ];

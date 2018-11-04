@@ -17,9 +17,11 @@
                 @endif
             </div>
 
+            @if($posts->count())
             <div class="col d-flex justify-content-end">
                 <a href="{{ route('posts') }}" class="btn btn-outline-dark" role="button">@lang('posts.view-all-posts')</a>
             </div>
+            @endif
 
             <div class="container">
             <div class="card-deck">

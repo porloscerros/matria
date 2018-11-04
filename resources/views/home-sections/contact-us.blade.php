@@ -14,20 +14,26 @@
             <div class="container p-3 bg-translucent">
                 <div class="row align-self-center">
                     <div class="col-md-5 align-self-center">
-                        <div class="row d-flex justify-content-center">
+                        <div class="row justify-content-center">
                             <p>
                                 <span class="fa fa-whatsapp"></span>  @lang('contact-us.phone')/Wapp:
-                                <a href="tel:+5493454085001"> +54-9-345-4085001</a>
-                            </p>
-                            <p>
-                                <span class="fa fa-envelope-o"></span> Email:
-                                <a href="mailto:talladoscarteles@gmail.com"> talladoscarteles@gmail.com</a>
-                            </p>
-                            <p>
-                                <span class="fa fa-map-marker"></span> @lang('contact-us.location'):
-                                <a href=""  data-toggle="modal" data-target="#mapModal"> Las Chacras, Traslasierra</a>
+                                <a href="tel:{{ $phone = '+54-9-666-6666666' }}"> {{ $phone = '+54-9-666-6666666' }}</a>
                             </p>
                         </div>
+                        <div class="row justify-content-center">
+                            <p>
+                                <span class="fa fa-envelope-o"></span> Email:
+                                <a href="mailto:{{ $email = 'darthvader@deathstar.ds' }}"> {{ $email = 'darthvader@deathstar.ds' }}</a>
+                            </p>
+                        </div>
+                        <div class="row justify-content-center">
+                            <p>
+                                <span class="fa fa-map-marker"></span> @lang('contact-us.location'):
+                                <a href=""  data-toggle="modal" data-target="#mapModal"> Dead Star</a>
+                            </p>
+                        </div>
+                        <!-- Map Modal -->
+                        @include('shared.modals.map')
 
                         <hr>
 
@@ -83,6 +89,3 @@
         </div>
     </div>
 </section>
-
-<!-- Map Modal -->
-@include('shared.modals.map')
