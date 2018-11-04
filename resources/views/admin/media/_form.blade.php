@@ -4,6 +4,7 @@
 
 @php
     $tags = isset($medium) ? $tags : null;
+    $description = isset($medium) ? $medium->getCustomProperty('description') : '';
 @endphp
 
 <div class="form-group">
@@ -32,9 +33,18 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('publish', __('media.attributes.publish')) !!}
-    {!! Form::hidden('publish', 0) !!}
-    {!! Form::checkbox('publish', true, ['class' => 'form-control']) !!}
+    {!! Form::label('description', __('media.attributes.description')) !!}
+    {!! Form::textarea('description', strip_tags($description), ['class' => 'form-control', 'maxlength'=> 255, 'rows' => 2, 'style' => 'resize:none;' . ($errors->has('description') ? ' is-invalid' : '')]) !!}
+
+    @if ($errors->has('description'))
+        <span class="invalid-feedback">{{ $errors->first('description') }}</span>
+    @endif
+</div>
+
+<div class="form-group">
+    {!! Form::label('public', __('media.attributes.public')) !!}
+    {!! Form::hidden('public', 0) !!}
+    {!! Form::checkbox('public', true, ['class' => 'form-control']) !!}
 </div>
 
 

@@ -51,8 +51,12 @@ class MediaLibraryController extends Controller
     {
         $image = $request->file('image');
         $name = $image->getClientOriginalName();
-        $public = $request->input('publish');
-        $description = $request->input('description');
+        $public = $request->input('public');
+        if ($request->filled('description')) {
+            $description = '<p class="text-center">';
+            $description .= $request->input('description');
+            $description .=  '</p>';
+        }
 
         if ($request->filled('name')) {
             $name = $request->input('name');
@@ -74,11 +78,10 @@ class MediaLibraryController extends Controller
      */
     public function edit(Media $medium): View
     {
-
         return view('admin.media.edit', [
             'medium' => $medium,
             'tags' => $medium->tags->pluck('name')->toArray(),
-            'publish' => $medium->getCustomProperty('public'),
+            'public' => $medium->getCustomProperty('public'),
             'description' => $medium->getCustomProperty('description'),
             'tags_list' => Tag::all()->pluck('name')->toArray(),
         ]);
@@ -89,10 +92,15 @@ class MediaLibraryController extends Controller
      */
     public function update(Request $request, Media $medium): RedirectResponse
     {
+        if ($request->filled('description')) {
+            $description = '<p class="text-center">';
+            $description .= $request->input('description');
+            $description .=  '</p>';
+        }
         $model = Media::findOrFail($medium->id);
         $model->name = $request->input('name');
-        $model->setCustomProperty('public', $request->input('publish'));
-        $model->setCustomProperty('description', $request->input('description'));
+        $model->setCustomProperty('public', $request->input('public'));
+        $model->setCustomProperty('description', $description);
         $model->save();
 
         $model->syncTags($request->tags);

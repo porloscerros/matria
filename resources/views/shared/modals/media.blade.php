@@ -9,6 +9,7 @@
             </div>
             <div class="modal-body text-center p-4" id="result">
                     <img class="img-fluid" src="{{ $url }}" alt="{{ $name }}">
+                {!! $medium->getCustomProperty('description') !!}
             </div>
             <div class="modal-footer border-0">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('modals.close')</button>

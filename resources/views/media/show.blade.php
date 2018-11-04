@@ -9,7 +9,7 @@
         <img src="{{ $medium->getUrl() }}" alt="{{ $medium->name }}" class="card-img-top">
 
         <div class="card-body">
-            <p class="card-text text-center">
+            <p class="card-text text-center text-dark">
                 <small class="text-muted">
                     <i class="fa fa-tag" aria-hidden="true"></i>
                         @foreach($medium->tags as $tag)
@@ -18,6 +18,8 @@
                             </a>
                         @endforeach
                 </small>
+
+                {!! $medium->getCustomProperty('description') !!}
             </p>
         </div>
     </div>
