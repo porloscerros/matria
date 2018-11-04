@@ -52,6 +52,7 @@ class MediaLibraryController extends Controller
         $image = $request->file('image');
         $name = $image->getClientOriginalName();
         $public = $request->input('publish');
+        $description = $request->input('description');
 
         if ($request->filled('name')) {
             $name = $request->input('name');
@@ -60,7 +61,7 @@ class MediaLibraryController extends Controller
         $model = MediaLibrary::first()
             ->addMedia($image)
             ->usingName($name)
-            ->withCustomProperties(['public' => $public])
+            ->withCustomProperties(['public' => $public, 'description' => $description])
             ->toMediaCollection();
 
         $model->attachTags($request->tags);
@@ -77,7 +78,8 @@ class MediaLibraryController extends Controller
         return view('admin.media.edit', [
             'medium' => $medium,
             'tags' => $medium->tags->pluck('name')->toArray(),
-            'publish' => $medium->getCustomProperty('published'),
+            'publish' => $medium->getCustomProperty('public'),
+            'description' => $medium->getCustomProperty('description'),
             'tags_list' => Tag::all()->pluck('name')->toArray(),
         ]);
     }
@@ -90,6 +92,7 @@ class MediaLibraryController extends Controller
         $model = Media::findOrFail($medium->id);
         $model->name = $request->input('name');
         $model->setCustomProperty('public', $request->input('publish'));
+        $model->setCustomProperty('description', $request->input('description'));
         $model->save();
 
         $model->syncTags($request->tags);
