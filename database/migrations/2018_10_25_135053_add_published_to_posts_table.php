@@ -14,7 +14,7 @@ class AddPublishedToPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->boolean('published');
+            $table->boolean('public')->default(false);
         });
     }
 
@@ -26,7 +26,7 @@ class AddPublishedToPostsTable extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->dropColumn('published');
+            $table->dropColumn('public');
         });
     }
 }
