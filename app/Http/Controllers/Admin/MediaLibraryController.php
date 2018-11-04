@@ -51,7 +51,7 @@ class MediaLibraryController extends Controller
     {
         $image = $request->file('image');
         $name = $image->getClientOriginalName();
-        $published = $request->input('publish');
+        $public = $request->input('publish');
 
         if ($request->filled('name')) {
             $name = $request->input('name');
@@ -60,7 +60,7 @@ class MediaLibraryController extends Controller
         $model = MediaLibrary::first()
             ->addMedia($image)
             ->usingName($name)
-            ->withCustomProperties(['published' => $published])
+            ->withCustomProperties(['public' => $public])
             ->toMediaCollection();
 
         $model->attachTags($request->tags);
@@ -89,7 +89,7 @@ class MediaLibraryController extends Controller
     {
         $model = Media::findOrFail($medium->id);
         $model->name = $request->input('name');
-        $model->setCustomProperty('published', $request->publish);
+        $model->setCustomProperty('public', $request->input('publish'));
         $model->save();
 
         $model->syncTags($request->tags);

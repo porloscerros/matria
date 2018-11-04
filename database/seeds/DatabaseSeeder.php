@@ -52,21 +52,15 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // Comments
-        Comment::firstOrCreate(
-            [
-                'author_id' => $user->id,
-                'post_id' => $post->id
-            ],
-            [
-                'posted_at' => now(),
-                'content' => "Hey ! I'm a comment as example."
-            ]
-        );
-
         // API tokens
         User::where('api_token', null)->get()->each->update([
             'api_token' => Token::generate()
+        ]);
+
+        // Site Sections
+        $this->call([
+            SiteSectionsTableSeeder::class,
+            SiteSectionAttributesTableSeeder::class,
         ]);
     }
 }

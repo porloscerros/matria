@@ -105,7 +105,7 @@ class User extends Authenticatable implements HasMedia, MustVerifyEmailContract
      */
     public function isAdmin(): bool
     {
-        return $this->hasRole(Role::ROLE_ADMIN);
+        return $this->hasRole(Role::ROLE_ADMIN || Role::ROLE_DEVELOPER);
     }
 
     /**
@@ -114,6 +114,14 @@ class User extends Authenticatable implements HasMedia, MustVerifyEmailContract
     public function isEditor(): bool
     {
         return $this->hasRole(Role::ROLE_EDITOR);
+    }
+
+    /**
+     * Check if the user has role editor
+     */
+    public function isDeveloper(): bool
+    {
+        return $this->hasRole(Role::ROLE_DEVELOPER);
     }
 
     /**

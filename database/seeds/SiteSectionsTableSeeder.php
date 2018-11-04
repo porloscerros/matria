@@ -15,31 +15,38 @@ class SiteSectionsTableSeeder extends Seeder
         DB::table('site_sections')->insert([
             [
                 'name' => 'header',
-                'public' => true
+                'public' => true,
+                'order' => (int) 1
             ],
             [
                 'name' => 'services',
-                'public' => false
+                'public' => false,
+                'order' => (int) 2
             ],
             [
                 'name' => 'products',
-                'public' => false
+                'public' => false,
+                'order' => (int) 3
             ],
             [
                 'name' => 'gallery',
-                'public' => true
+                'public' => true,
+                'order' => (int) 4
             ],
             [
                 'name' => 'posts',
-                'public' => true
+                'public' => true,
+                'order' => (int) 5
             ],
             [
                 'name' => 'about',
-                'public' => false
+                'public' => false,
+                'order' => (int) 6
             ],
             [
                 'name' => 'contact-us',
-                'public' => true
+                'public' => true,
+                'order' => (int) 7
             ]
         ]);
     }
