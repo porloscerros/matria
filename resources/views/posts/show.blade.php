@@ -3,8 +3,8 @@
 @section('page-title', ' | ' . __('sections.posts'))
 
 @section('body-tag')
-    @if( $section->custom->hasBackground() )
-        style="background-image: url({{ $section->background() }});"
+    @if( $section->hasCustomProperty('bg_img') )
+        style="background-image: url({{ $section->getCustomProperty('bg_img') }});"
     @endif
 @endsection
 

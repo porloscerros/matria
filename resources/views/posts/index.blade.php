@@ -5,9 +5,9 @@
 @section('social-title', __('sections.posts'))
 @section('social-description')@lang('sections.posts-description') @endsection
 
-@if( $section->custom->hasBackground() )
-    @section('body-styles', 'background-image:url(' . $section->background() . ');')
-    @section('social-image', url( $section->background() ))
+@if( $section->hasCustomProperty('bg_img') )
+    @section('body-styles', 'background-image:url(' . $section->getCustomProperty('bg_img') . ');')
+    @section('social-image', url( $section->getCustomProperty('bg_img') ))
 @endif
 
 @section('content')

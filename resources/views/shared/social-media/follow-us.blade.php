@@ -1,13 +1,15 @@
+@if($section->hasCustomProperty('fb_page'))
 <!-- Facebook like my page button code -->
-<div class="fb-like mx-1" data-href="https://www.facebook.com/{{ $fb_page }}/" data-layout="button" data-action="like" data-size="large" data-show-faces="true">
+<div class="fb-like mx-1" data-href="https://www.facebook.com/{{$section->getCustomProperty('fb_page')}}/" data-layout="button" data-action="like" data-size="large" data-show-faces="true">
 
 </div>
-
+@endif
+@if($section->hasCustomProperty('twitter'))
 <!-- Twitter follow button code -->
-<a href="https://twitter.com/{{ $twitter_user }}?ref_src=twsrc%5Etfw" class="twitter-follow-button mx-1" data-size="large" data-show-screen-name="false" data-lang="es" data-show-count="false">
-    Follow @ {{ $twitter_user }}
+<a href="https://twitter.com/{{$section->getCustomProperty('twitter')}}?ref_src=twsrc%5Etfw" class="twitter-follow-button mx-1" data-size="large" data-show-screen-name="false" data-lang="es" data-show-count="false">
+    Follow @ {{$section->getCustomProperty('twitter')}}
 </a>
-
+@endif
 @push('inline-scripts')
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>

@@ -30,7 +30,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-6 d-flex justify-content-start">
+            <div class="col-6 d-block justify-content-start">
                 <a href="{{ route('media') }}" class="btn btn-outline-dark ml-1" role="button">@lang('media.view-all-gallery')</a>
             </div>
             <div class="col-6 d-flex justify-content-end">

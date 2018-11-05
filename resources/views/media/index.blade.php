@@ -5,9 +5,9 @@
 @section('social-title', __('sections.gallery'))
 @section('social-description')@lang('sections.gallery-description') @endsection
 
-@if( $section->custom->hasBackground() )
-    @section('body-styles', 'background-image:url(' . $section->background() . ');')
-    @section('social-image', url( $section->background() ))
+@if( $section->hasCustomProperty('bg_img') )
+    @section('body-styles', 'background-image:url(' . $section->getCustomProperty('bg_img') . ');')
+    @section('social-image', url( $section->getCustomProperty('bg_img') ))
 @endif
 
 @section('content')
@@ -24,8 +24,8 @@
             <div class="row">
                 <div class="col-6">
                     <h1>
-                        @if($section->custom->title)
-                            {{$section->custom->title}}
+                        @if($section->hasCustomProperty('title'))
+                            {{$section->getCustomProperty('title')}}
                         @else
                             @lang('sections.gallery')
                         @endif

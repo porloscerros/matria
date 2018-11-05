@@ -1,11 +1,11 @@
 <!-- Contact Us Section-->
-<section id="home-contact-us" class="home-section" @if( $section->custom->hasBackground() )style="background-image: url({{$section->background()}});"@endif>
+<section id="home-contact-us" class="home-section" @if( $section->hasCustomProperty('bg_img') )style="background-image: url({{ $section->getCustomProperty('bg_img') }}) !important;"@endif>
     <div class="container h-100 bg-translucent">
         <div class="row h-100 p-3 align-items-center">
             <div class="col-12 text-center">
                 <h3 class="m-0 display-4">
-                    @if($section->custom->title)
-                        {{$section->custom->title}}
+                    @if( $section->hasCustomProperty('title') )
+                        {{ $section->getCustomProperty('title') }}
                     @else
                         @lang('sections.contact-us')
                     @endif
@@ -14,38 +14,44 @@
             <div class="container p-3 bg-translucent">
                 <div class="row align-self-center">
                     <div class="col-md-5 align-self-center">
-                        <div class="row justify-content-center">
-                            <p>
-                                <span class="fa fa-whatsapp"></span>  @lang('contact-us.phone')/Wapp:
-                                <a href="tel:{{ $phone = '+54-9-666-6666666' }}"> {{ $phone = '+54-9-666-6666666' }}</a>
-                            </p>
-                        </div>
-                        <div class="row justify-content-center">
-                            <p>
-                                <span class="fa fa-envelope-o"></span> Email:
-                                <a href="mailto:{{ $email = 'darthvader@deathstar.ds' }}"> {{ $email = 'darthvader@deathstar.ds' }}</a>
-                            </p>
-                        </div>
-                        <div class="row justify-content-center">
-                            <p>
-                                <span class="fa fa-map-marker"></span> @lang('contact-us.location'):
-                                <a href=""  data-toggle="modal" data-target="#mapModal"> Dead Star</a>
-                            </p>
-                        </div>
-                        <!-- Map Modal -->
-                        @include('shared.modals.map')
+                        @if($section->hasCustomProperty('phone'))
+                            <div class="row justify-content-center">
+                                <p>
+                                    <span class="fa fa-whatsapp"></span>  @lang('contact-us.phone')/Wapp:
+                                    <a href="tel:{{$section->getCustomProperty('phone')}}"> {{$section->getCustomProperty('phone')}}</a>
+                                </p>
+                            </div>
+                        @endif
+                        @if($section->hasCustomProperty('email'))
+                            <div class="row justify-content-center">
+                                <p>
+                                    <span class="fa fa-envelope-o"></span> Email:
+                                    <a href="mailto:{{$section->getCustomProperty('email')}}"> {{$section->getCustomProperty('email')}}</a>
+                                </p>
+                            </div>
+                        @endif
+                        @if($section->hasCustomProperty('location'))
+                            <div class="row justify-content-center">
+                                <p>
+                                    <span class="fa fa-map-marker"></span> @lang('contact-us.location'):
+                                    <a href=""  data-toggle="modal" data-target="#mapModal"> {{$section->getCustomProperty('location')}}</a>
+                                </p>
+                            </div>
+                            <!-- Map Modal -->
+                            @include('shared.modals.map')
 
-                        @if($section->hasSocialMedia)
-                        <hr>
+                        @endif
+                        @if($section->hasSocialMedia())
+                            <hr>
 
-                        <!-- Social Media Elements -->
-                        <div class="row d-flex justify-content-center">
-                            <p>@lang('contact-us.social-media'):</p>
-                        </div>
-                        <div class="row d-flex justify-content-center">
-                            @include('shared.social-media.links')
-                        </div>
-                        <!-- Social Media Elements -->
+                            <!-- Social Media Elements -->
+                            <div class="row d-flex justify-content-center">
+                                <p>@lang('contact-us.social-media'):</p>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                @include('shared.social-media.links')
+                            </div>
+                            <!-- Social Media Elements -->
                         @endif
                     </div>
 
@@ -72,7 +78,7 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::textarea('msg', null, ['class' => 'form-control trumbowyg-form' . ($errors->has('msg') ? ' is-invalid' : ''), 'placeholder' => __('contact-us.message'), 'rows' => 4, 'required' => 'required']) !!}
+                            {!! Form::textarea('msg', null, ['class' => 'form-control' . ($errors->has('msg') ? ' is-invalid' : ''), 'placeholder' => __('contact-us.message'), 'rows' => 4, 'required' => 'required']) !!}
 
                             @if ($errors->has('msg'))
                                 <span class="invalid-feedback">{{ $errors->first('msg') }}</span>
@@ -85,7 +91,7 @@
                     </div>
                 </div>
             </div>
-            @if($section->hasSocialMedia)
+            @if($section->hasSocialMedia())
                 <div class="col-12 d-flex justify-content-center">
                     @include('shared.social-media.follow-us')
                 </div>
