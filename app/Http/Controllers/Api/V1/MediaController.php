@@ -14,7 +14,7 @@ use Illuminate\Http\Response;
 class MediaController extends Controller
 {
     /**
-     * Return the comments.
+     * Return the media collection.
      */
     public function index(Request $request): ResourceCollection
     {

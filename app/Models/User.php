@@ -133,14 +133,6 @@ class User extends Authenticatable implements HasMedia, MustVerifyEmailContract
     }
 
     /**
-     * Return the user's comments
-     */
-    public function comments(): HasMany
-    {
-        return $this->hasMany(Comment::class, 'author_id');
-    }
-
-    /**
      * Return the user's likes
      */
     public function likes(): HasMany
