@@ -35,6 +35,7 @@
                         <!-- Map Modal -->
                         @include('shared.modals.map')
 
+                        @if($section->hasSocialMedia)
                         <hr>
 
                         <!-- Social Media Elements -->
@@ -45,6 +46,7 @@
                             @include('shared.social-media.links')
                         </div>
                         <!-- Social Media Elements -->
+                        @endif
                     </div>
 
                     <div class="col-md-7">
@@ -83,9 +85,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 d-flex justify-content-center">
-                @include('shared.social-media.follow-us')
-            </div>
+            @if($section->hasSocialMedia)
+                <div class="col-12 d-flex justify-content-center">
+                    @include('shared.social-media.follow-us')
+                </div>
+            @endif
         </div>
     </div>
 </section>

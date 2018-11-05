@@ -39,10 +39,18 @@ class SiteSectionAttributes extends Model
     }
 
     /**
-     * return true if the post has a thumbnail
+     * return true if the section has a custom background
      */
     public function hasBackground(): bool
     {
         return filled($this->bg_img_id);
+    }
+
+    /**
+     * return true if the section contact-us has social media pages
+     */
+    public function hasSocialMedia(): bool
+    {
+        return false;
     }
 }

@@ -8,6 +8,8 @@ return [
     'gallery' => 'Galería',
     'posts' => 'Artículos',
     'contact-us' => 'Contacto',
+    'gallery-description' => 'Nuestra galería de fotos',
+    'posts-description' => 'Artículos que escribimos',
 
     'welcome' => 'bienvenida a mi sitio',
 

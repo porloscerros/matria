@@ -1,18 +1,26 @@
 @extends('layouts.app')
 
-@section('body-tag')
-    @if( $section->custom->hasBackground() )
-        style="background-image: url({{ $section->background() }});"
-    @endif
-@endsection
+@section('page-title', ' | ' . __('sections.posts'))
+
+@section('social-title', __('sections.posts'))
+@section('social-description')@lang('sections.posts-description') @endsection
+
+@if( $section->custom->hasBackground() )
+    @section('body-styles', 'background-image:url(' . $section->background() . ');')
+    @section('social-image', url( $section->background() ))
+@endif
 
 @section('content')
-    <div class="d-flex justify-content-start">
-        <a href="{{route('home')}}/#home-posts" class="btn btn-outline-dark" role="button"><< @lang('navigation.back')</a>
+    <div class="row">
+        <div class="col-6 d-block justify-content-start">
+            <a href="{{route('home')}}/#home-posts" class="btn btn-outline-dark" role="button"><< @lang('navigation.back')</a>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+            @include('shared.social-media.share-buttons')
+        </div>
     </div>
 
     <div class="container-fluid p-3 bg-translucent">
-        <!-- @include ('posts/_search_form') -->
 
       <div class="d-flex justify-content-between">
         <div class="p-2">

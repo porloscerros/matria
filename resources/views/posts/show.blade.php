@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('page-title', ' | ' . __('sections.posts'))
+
 @section('body-tag')
     @if( $section->custom->hasBackground() )
         style="background-image: url({{ $section->background() }});"
@@ -8,13 +10,11 @@
 
 @section('content')
     <div class="row">
-        <div class="col-6 d-flex justify-content-start">
+        <div class="col-6 d-block justify-content-start">
             <a href="{{route('posts')}}" class="btn btn-outline-dark" role="button"><< @lang('navigation.back')</a>
         </div>
         <div class="col-6 d-flex justify-content-end">
-            <div class="row align-content-center">
             @include('shared.social-media.share-buttons')
-            </div>
         </div>
     </div>
 
