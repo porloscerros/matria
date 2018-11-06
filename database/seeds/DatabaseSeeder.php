@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        $user->roles()->sync([$role_admin->id]);
+        $user->roles()->sync([$role_admin->id, $role_dev->id]);
 
         // Posts
         $post = Post::firstOrCreate(
@@ -61,7 +61,6 @@ class DatabaseSeeder extends Seeder
         // Site Sections
         $this->call([
             SiteSectionsTableSeeder::class,
-            SiteSectionAttributesTableSeeder::class,
         ]);
     }
 }

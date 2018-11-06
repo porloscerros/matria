@@ -19,6 +19,7 @@ class CreateSiteSectionsTable extends Migration
             $table->string('name', 80)->unique();
             $table->tinyInteger('order');
             $table->boolean('public')->nullable();
+            $table->json('custom_properties')->nullable();
         });
     }
 

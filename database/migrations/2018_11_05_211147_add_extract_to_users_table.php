@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddCustomPropertiesToSiteSectionsTable extends Migration
+class AddExtractToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddCustomPropertiesToSiteSectionsTable extends Migration
      */
     public function up()
     {
-        Schema::table('site_sections', function (Blueprint $table) {
-            $table->json('custom_properties')->nullable();
+        Schema::table('users', function (Blueprint $table) {
+            $table->text('extract')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ class AddCustomPropertiesToSiteSectionsTable extends Migration
      */
     public function down()
     {
-        Schema::table('site_sections', function (Blueprint $table) {
-            $table->dropColumn('custom_properties');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('extract');
         });
     }
 }
