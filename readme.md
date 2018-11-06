@@ -2,7 +2,7 @@
 <h1 align="center">Laravel Web Site</h1>
 <h3 align="center">Generic web site made in Laravel 5.7</h3>
 
-Adapted from [Laravel-blog](https://github.com/guillaumebriday/laravel-blog)
+Originally adapted from [Laravel-blog](https://github.com/guillaumebriday/laravel-blog)
 
 ## Documentation
 
@@ -12,16 +12,16 @@ Adapted from [Laravel-blog](https://github.com/guillaumebriday/laravel-blog)
 Beside Laravel, this project uses other tools like:
 
 - [Bootstrap 4](https://getbootstrap.com/)
-- [PHP-CS-Fixer](https://github.com/FriendsOfPhp/PHP-CS-Fixer)
-- [Travis CI](https://travis-ci.org/)
 - [Font Awesome](http://fontawesome.io/)
 - [Vue.js](https://vuejs.org/)
 - [axios](https://github.com/mzabriskie/axios)
 - [Redis](https://redis.io/)
 - [spatie/laravel-medialibrary](https://github.com/spatie/laravel-medialibrary)
+- [spatie/laravel-tags](https://github.com/spatie/laravel-tags)
+- [vue-goodshare](https://github.com/koddr/vue-goodshare)
 - Many more to discover.
 
-You can find it on : 
+You can find it on : (not online yet)
 
 ### Installation
 
