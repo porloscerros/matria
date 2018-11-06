@@ -48,7 +48,7 @@ class SiteSection extends Model
      */
     public function hasSocialMedia(): bool
     {
-        if ($this->getCustomProperty('fb_page') || $this->getCustomProperty('instagram') || $this->getCustomProperty('twitter') || $this->getCustomProperty('google_plus')) {
+        if ($this->hasCustomProperty('fb_page') || $this->hasCustomProperty('instagram') || $this->hasCustomProperty('twitter') || $this->hasCustomProperty('google_plus')) {
             return true;
         }
 
