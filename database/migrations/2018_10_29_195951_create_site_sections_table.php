@@ -17,7 +17,9 @@ class CreateSiteSectionsTable extends Migration
         Schema::create('site_sections', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 80)->unique();
+            $table->tinyInteger('order');
             $table->boolean('public')->nullable();
+            $table->json('custom_properties')->nullable();
         });
     }
 

@@ -17,10 +17,11 @@ return [
     'attributes' => [
         'image' => 'Imágen',
         'name' => 'Nombre',
+        'description' => 'Descripción',
         'posted_at' => 'Subida el',
         'url' => 'URL',
         'publish' => 'Publicar',
-        'published' => 'Publicada',
+        'public' => 'Publicada',
         'tags' => 'Etiquetas',
     ],
 

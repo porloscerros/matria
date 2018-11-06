@@ -117,19 +117,19 @@ class User extends Authenticatable implements HasMedia, MustVerifyEmailContract
     }
 
     /**
+     * Check if the user has role editor
+     */
+    public function isDeveloper(): bool
+    {
+        return $this->hasRole(Role::ROLE_DEVELOPER);
+    }
+
+    /**
      * Return the user's posts
      */
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class, 'author_id');
-    }
-
-    /**
-     * Return the user's comments
-     */
-    public function comments(): HasMany
-    {
-        return $this->hasMany(Comment::class, 'author_id');
     }
 
     /**

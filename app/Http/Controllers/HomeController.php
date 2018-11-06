@@ -28,11 +28,11 @@ class HomeController extends Controller
 
         $media = MediaLibrary::first()
             ->media()
-            ->where('custom_properties->published', '1')
+            ->where('custom_properties->public', '1')
             ->orderBy('created_at', 'desc')
             ->simplePaginate(1, ['*'], 'gallery');
 
-        $posts = Post::where('published', true)
+        $posts = Post::where('public', true)
             ->latest()
             ->paginate(1, ['*'], 'posts');
 

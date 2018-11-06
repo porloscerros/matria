@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Concern\Likeable;
 use App\Scopes\PostedScope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -11,7 +10,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Post extends Model
 {
-    use Likeable;
 
     /**
      * The attributes that are mass assignable.
@@ -25,7 +23,7 @@ class Post extends Model
         'posted_at',
         'slug',
         'thumbnail_id',
-        'published',
+        'public',
     ];
 
     /**
@@ -109,14 +107,6 @@ class Post extends Model
     public function thumbnail(): BelongsTo
     {
         return $this->belongsTo(Media::class);
-    }
-
-    /**
-     * Return the post's comments
-     */
-    public function comments(): HasMany
-    {
-        return $this->hasMany(Comment::class);
     }
 
     /**

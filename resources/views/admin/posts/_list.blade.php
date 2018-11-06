@@ -5,10 +5,6 @@
             <th>@lang('posts.attributes.title')</th>
             <th>@lang('posts.attributes.author')</th>
             <th>@lang('posts.attributes.posted_at')</th>
-            <!--
-            <th><i class="fa fa-comments" aria-hidden="true"></i></th>
-            <th><i class="fa fa-heart" aria-hidden="true"></i></th>
-            -->
             <th class="text-center">@lang('posts.attributes.published')</th>
             <th></th>
         </tr>
@@ -19,11 +15,7 @@
                 <td>{{ $post->title }}</td>
                 <td>{{ link_to_route('admin.users.edit', $post->author->fullname, $post->author) }}</td>
                 <td>{{ humanize_date($post->posted_at, 'd/m/Y H:i:s') }}</td>
-                <!--
-                <td><span class="badge badge-pill badge-secondary">{{ $post->comments_count }}</span></td>
-                <td><span class="badge badge-pill badge-secondary">{{ $post->likes_count }}</span></td>
-                -->
-                <td class="text-center">{{ Form::checkbox('published', true, $post->published, ['disabled']) }}</td>
+                <td class="text-center">{{ Form::checkbox('public', true, $post->public, ['disabled']) }}</td>
                 <td>
                     <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-primary btn-sm">
                         <i class="fa fa-pencil" aria-hidden="true"></i>

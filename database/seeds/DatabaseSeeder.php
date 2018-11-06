@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     {
         // Roles
         Role::firstOrCreate(['name' => Role::ROLE_EDITOR]);
-        Role::firstOrCreate(['name' => Role::ROLE_ADMIN]);
+        $role_admin = Role::firstOrCreate(['name' => Role::ROLE_ADMIN]);
         $role_dev = Role::firstOrCreate(['name' => Role::ROLE_DEVELOPER]);
 
         // MediaLibrary
@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        $user->roles()->sync([$role_dev->id]);
+        $user->roles()->sync([$role_admin->id, $role_dev->id]);
 
         // Posts
         $post = Post::firstOrCreate(
@@ -44,6 +44,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'posted_at' => now(),
+                'public' => true,
                 'content' => "
                     Welcome to my site !<br><br>
                     Don't forget to read the README before starting.<br><br>
@@ -52,21 +53,14 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // Comments
-        Comment::firstOrCreate(
-            [
-                'author_id' => $user->id,
-                'post_id' => $post->id
-            ],
-            [
-                'posted_at' => now(),
-                'content' => "Hey ! I'm a comment as example."
-            ]
-        );
-
         // API tokens
         User::where('api_token', null)->get()->each->update([
             'api_token' => Token::generate()
+        ]);
+
+        // Site Sections
+        $this->call([
+            SiteSectionsTableSeeder::class,
         ]);
     }
 }

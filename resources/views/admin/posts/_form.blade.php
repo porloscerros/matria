@@ -51,7 +51,7 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('published', __('media.attributes.publish')) !!}
-    {!! Form::hidden('published', 0) !!}
-    {!! Form::checkbox('published', true, isset($post) ? $post->published : false) !!}
+    {!! Form::label('public', __('media.attributes.publish')) !!}
+    {!! Form::hidden('public', 0) !!}
+    {!! Form::checkbox('public', true, isset($post) ? $post->public : false) !!}
 </div>

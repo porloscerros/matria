@@ -13,9 +13,6 @@
 
 Route::prefix('v1')->namespace('Api\V1')->group(function () {
     Route::middleware(['auth:api', 'verified'])->group(function () {
-        // Comments
-        Route::apiResource('comments', 'CommentController')->only('destroy');
-        Route::apiResource('posts.comments', 'PostCommentController')->only('store');
 
         // Posts
         Route::apiResource('posts', 'PostController')->only(['update', 'store', 'destroy']);
@@ -31,10 +28,6 @@ Route::prefix('v1')->namespace('Api\V1')->group(function () {
 
     Route::post('/authenticate', 'Auth\AuthenticateController@authenticate')->name('authenticate');
 
-    // Comments
-    Route::apiResource('posts.comments', 'PostCommentController')->only('index');
-    Route::apiResource('users.comments', 'UserCommentController')->only('index');
-    Route::apiResource('comments', 'CommentController')->only(['index', 'show']);
 
     // Posts
     Route::apiResource('posts', 'PostController')->only(['index', 'show']);

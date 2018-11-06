@@ -3,7 +3,7 @@
         <img src="{{ $medium->getUrl('thumb') }}" alt="{{ $medium->name }}" class="card-img-top">
     </a>
 
-    <div class="card-body">
+    <div class="card-body text-dark">
         <p class="card-text text-center">
             <small class="text-muted">
                 <i class="fa fa-tag" aria-hidden="true"></i>
@@ -12,6 +12,7 @@
                         #{{ $tag->name }}
                     </a>
                 @endforeach
+                {!! $medium->getCustomProperty('description') !!}
             </small>
         </p>
     </div>

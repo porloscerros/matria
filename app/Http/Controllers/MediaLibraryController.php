@@ -23,13 +23,13 @@ class MediaLibraryController extends Controller
 
             $media = MediaLibrary::first()
                 ->media()
-                ->where('custom_properties->published', '1')
+                ->where('custom_properties->public', '1')
                 ->withAnyTags($tags)
                 ->paginate(10);
         } else {
             $media = MediaLibrary::first()
                 ->media()
-                ->where('custom_properties->published', '1')
+                ->where('custom_properties->public', '1')
                 ->paginate(10);
         }
 
@@ -47,6 +47,9 @@ class MediaLibraryController extends Controller
      */
     public function show(Media $medium): Media
     {
+        if ($medium->getCustomProperty('public', false))
+            return Redirect('media');
+
         return $medium;
     }
 
