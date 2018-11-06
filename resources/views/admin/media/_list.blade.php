@@ -5,7 +5,7 @@
             <th>@lang('media.attributes.image')</th>
             <th>@lang('media.attributes.name')</th>
             <th>@lang('media.attributes.tags')</th>
-            <th>@lang('media.attributes.url')</th>
+            <th>@lang('media.attributes.description')</th>
             <th class="text-center">@lang('media.attributes.published')</th>
             <th></th>
         </tr>
@@ -25,16 +25,9 @@
                     @endforeach
                 </td>
                 <td>
-                    <div class="input-group">
-                        {{ Form::text(null, url($medium->getUrl()), ['class' => 'form-control', 'readonly' => true, 'id' => "medium-{$medium->id}"]) }}
-                        <div class="input-group-append">
-                            <button class="input-group-text btn" data-clipboard-target="#medium-{{ $medium->id }}">
-                                <i class="fa fa-clipboard"></i>
-                            </button>
-                        </div>
-                    </div>
+                    {!! str_limit($medium->getCustomProperty('description'), 50) !!}
                 </td>
-                <td class="text-center">{{ Form::checkbox('published', true, $medium->getCustomProperty('published'), ['disabled']) }}</td>
+                <td class="text-center">{{ Form::checkbox('public', true, $medium->getCustomProperty('public'), ['disabled']) }}</td>
                 <td>
                     <a href="{{ $medium->getUrl() }}" title="{{ __('media.show') }}" class="btn btn-primary btn-sm" target="_blank">
                         <i class="fa fa-eye" aria-hidden="true"></i>

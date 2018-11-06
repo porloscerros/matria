@@ -1,7 +1,7 @@
 {
-    "name": "laravel 5.7 blog",
-    "description": "Laravel 5.7 blog.",
-    "keywords": ["framework", "laravel", "blog", "exemple"],
+    "name": "laravel 5.7 web site",
+    "description": "Laravel 5.7 web site.",
+    "keywords": ["framework", "laravel", "web site", "example"],
     "license": "MIT",
     "type": "project",
     "require": {

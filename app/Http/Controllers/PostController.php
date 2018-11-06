@@ -15,9 +15,9 @@ class PostController extends Controller
     public function index(Request $request): View
     {
         $posts = Post::search($request->input('q'))
-            ->where('published', true)
-            ->with('author', 'likes')
-            ->withCount('comments', 'thumbnail', 'likes')
+            ->where('public', true)
+            ->with('author')
+            ->withCount('thumbnail')
             ->latest()
             ->paginate(10);
 
@@ -35,8 +35,6 @@ class PostController extends Controller
      */
     public function show(Request $request, Post $post): View
     {
-        $post->comments_count = $post->comments()->count();
-        $post->likes_count = $post->likes()->count();
         $section = SiteSection::where('name', 'posts')
             ->first();
 

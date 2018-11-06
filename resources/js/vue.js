@@ -1,7 +1,9 @@
-import CommentForm from './components/comments/CommentForm.vue'
-import CommentList from './components/comments/CommentList.vue'
-import Like from './components/Like.vue'
 import Vue from 'vue'
+// Import vue-goodshare single elements
+import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
+import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
+import VueGoodshareGooglePlus from "vue-goodshare/src/providers/GooglePlus";
+import VueGoodshareWhatsApp from "vue-goodshare/src/providers/WhatsApp"
 
 Vue.config.productionTip = false
 
@@ -11,9 +13,10 @@ new Vue({
   el: '#app',
 
   components: {
-    CommentForm,
-    CommentList,
-    Like
+      VueGoodshareFacebook,
+      VueGoodshareTwitter,
+      VueGoodshareGooglePlus,
+      VueGoodshareWhatsApp
   },
 
   mounted() {

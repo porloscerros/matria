@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Comment;
 use App\Models\Contact;
 use App\Models\Media;
 use App\Models\Post;
@@ -18,7 +17,6 @@ class ShowDashboard extends Controller
     public function __invoke(): View
     {
         return view('admin.dashboard.index', [
-            'comments' =>  Comment::lastWeek()->get(),
             'media' => Media::lastWeek()->get(),
             'posts' => Post::lastWeek()->get(),
             'users' => User::lastWeek()->get(),

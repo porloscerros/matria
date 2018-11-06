@@ -10,19 +10,49 @@ class SiteSection extends Model
 {
     public $timestamps = false;
 
+    protected $fillable = [
+        'custom_properties'
+    ];
+
     /**
-     * Get the attributes for the section.
+     * Determine if the section has a custom property with the given name.
+     *
+     * @param string $propertyName
+     *
+     * @param array $default
+     *
+     * @return mixed
      */
-    public function custom(): HasOne
+    public function hasCustomProperty(string $propertyName, $default = []): bool
     {
-        return $this->hasOne(SiteSectionAttributes::class);
+        return array_key_exists($propertyName, json_decode($this->custom_properties)?: $default);
     }
 
     /**
-     * Return the sections's background image
+     * Get the value of custom property with the given name.
+     *
+     * @param string $propertyName
+     *
+     * @return mixed
      */
-    public function background()
+    public function getCustomProperty(string $propertyName)
     {
-        return $this->custom->background->getUrl();
+        $custom_properties = json_decode($this->custom_properties);
+        $property = $custom_properties->{$propertyName};
+
+        return $property;
     }
+
+    /**
+     * return true if the section contact-us has any social media data
+     */
+    public function hasSocialMedia(): bool
+    {
+        if ($this->hasCustomProperty('fb_page') || $this->hasCustomProperty('instagram') || $this->hasCustomProperty('twitter') || $this->hasCustomProperty('google_plus')) {
+            return true;
+        }
+
+        return false;
+    }
+
 }

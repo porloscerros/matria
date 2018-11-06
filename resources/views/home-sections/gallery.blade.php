@@ -1,26 +1,28 @@
 
-<section id="home-gallery" class="home-section"  @if( $section->custom->hasBackground() )style="background-image: url({{ $section->background() }});"@endif>
+<section id="home-gallery" class="home-section"  @if( $section->hasCustomProperty('bg_img') )style="background-image: url({{ $section->getCustomProperty('bg_img') }}) !important;"@endif>
     <div class="container h-100 bg-translucent">
         <div class="row h-100 align-items-center">
             <div class="col-12 text-center">
                 <h3 class="m-0 display-4">
-                    @if($section->custom->title)
-                        {{$section->custom->title}}
+                    @if( $section->hasCustomProperty('title') )
+                        {{ $section->getCustomProperty('title') }}
                     @else
                         @lang('sections.gallery')
                     @endif
                  </h3>
-                @if($section->custom->subtitle)
+                @if( $section->hasCustomProperty('subtitle') )
                     <h2 class="m-2">
-                        {{$section->custom->subtitle}}
+                    {{ $section->getCustomProperty('subtitle') }}
                     </h2>
                 @endif
             </div>
 
+            @if($media->count())
             <div class="col d-flex justify-content-end">
                 @include ('media/_search_form')
                 <a href="{{ route('media') }}" class="btn btn-outline-dark ml-1" role="button">@lang('media.view-all-gallery')</a>
             </div>
+            @endif
 
             <div class="col-12" id="gallery-deck">
                 @foreach($media as $medium)

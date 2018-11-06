@@ -11,6 +11,7 @@ use App\Models\SiteSection;
 use App\Models\SiteSectionAttributes;
 use App\Models\MediaLibrary;
 use Illuminate\Support\Facades\Log;
+use Spatie\MediaLibrary\Models\Media;
 
 class CustomizeSiteController extends Controller
 {
@@ -35,10 +36,16 @@ class CustomizeSiteController extends Controller
         $sections = SiteSection::where('public', true)
             ->get();
 
+        $customProperties = new \stdClass();
+
+        foreach ($sections as $section) {
+            $customProperties->{$section->id} = json_decode($section->custom_properties);
+        }
+
         return view('admin.customize-site.index', [
             'sections' => $sections,
             'media' => MediaLibrary::first()->media()->get()->pluck('name', 'id'),
-            'colors' => $colors
+            'customProperties' => $customProperties
         ]);
     }
 
@@ -48,8 +55,16 @@ class CustomizeSiteController extends Controller
     public function update(Request $request, $id): RedirectResponse
     {
         try {
-            $section = SiteSectionAttributes::findOrFail($id);
-            $section->update($request->only(['title', 'subtitle', 'bg_img_id', 'text_color']));
+            $customProperties = $request->except(['_method', '_token']);
+            $customProperties = array_filter($customProperties);
+            if (array_key_exists('bg_img_id', $customProperties)) {
+                $customProperties['bg_img'] = Media::findOrFail($customProperties['bg_img_id'])->getUrl();
+            }
+            $customProperties = json_encode($customProperties);
+
+            $section = SiteSection::findOrFail($id);
+            $section->custom_properties = $customProperties;
+            $section->save();
 
         } catch(\Exception $e) {
             Log::error($e->getMessage());

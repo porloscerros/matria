@@ -15,13 +15,7 @@ class DevDatabaseSeeder extends Seeder
     public function run()
     {
         factory(Post::class, 20)
-            ->create()
-            ->each(function ($post) {
-                factory(Comment::class, 5)
-                    ->create([
-                        'post_id' => $post->id
-                    ]);
-            });
+            ->create();
 
         factory(NewsletterSubscription::class, 5)->create();
     }
