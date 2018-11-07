@@ -16,7 +16,7 @@ class MediaLibrary extends Model implements HasMedia
     {
         try {
             $this->addMediaConversion('thumb')
-                ->queued()
+                ->nonQueued()
                 ->width(350)
                 ->height(250);
 
