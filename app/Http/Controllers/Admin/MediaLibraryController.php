@@ -10,6 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Spatie\Tags\Tag;
+use Illuminate\Support\Facades\Log;
 
 class MediaLibraryController extends Controller
 {
@@ -49,27 +50,33 @@ class MediaLibraryController extends Controller
      */
     public function store(MediaLibraryRequest $request): RedirectResponse
     {
-        $image = $request->file('image');
-        $name = $image->getClientOriginalName();
-        $public = $request->input('public');
-        $description = '';
-        if ($request->filled('description')) {
-            $description = '<p class="text-center">';
-            $description .= $request->input('description');
-            $description .=  '</p>';
+        try {
+            $image = $request->file('image');
+            $name = $image->getClientOriginalName();
+            $public = $request->input('public');
+            $description = '';
+            if ($request->filled('description')) {
+                $description = '<p class="text-center">';
+                $description .= $request->input('description');
+                $description .=  '</p>';
+            }
+
+            if ($request->filled('name')) {
+                $name = $request->input('name');
+            }
+
+            $model = MediaLibrary::first()
+                ->addMedia($image)
+                ->usingName($name)
+                ->withCustomProperties(['public' => $public, 'description' => $description])
+                ->toMediaCollection();
+
+            $model->attachTags($request->tags);
+
+        } catch(\Exception $e) {
+            Log::error($e->getMessage());
+            Log::debug($e->getTraceAsString());
         }
-
-        if ($request->filled('name')) {
-            $name = $request->input('name');
-        }
-
-        $model = MediaLibrary::first()
-            ->addMedia($image)
-            ->usingName($name)
-            ->withCustomProperties(['public' => $public, 'description' => $description])
-            ->toMediaCollection();
-
-        $model->attachTags($request->tags);
 
         return redirect()->route('admin.media.index')->withSuccess(__('media.created'));
     }
