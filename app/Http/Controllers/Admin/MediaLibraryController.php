@@ -52,6 +52,7 @@ class MediaLibraryController extends Controller
         $image = $request->file('image');
         $name = $image->getClientOriginalName();
         $public = $request->input('public');
+        $description = '';
         if ($request->filled('description')) {
             $description = '<p class="text-center">';
             $description .= $request->input('description');
