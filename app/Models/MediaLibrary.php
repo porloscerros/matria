@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
+use Illuminate\Support\Facades\Log;
 
 class MediaLibrary extends Model implements HasMedia
 {
@@ -13,8 +14,14 @@ class MediaLibrary extends Model implements HasMedia
 
     public function registerMediaConversions(Media $media = null): void
     {
-        $this->addMediaConversion('thumb')
-              ->width(350)
-              ->height(250);
+        try {
+            $this->addMediaConversion('thumb')
+                ->width(350)
+                ->height(250);
+
+        } catch(\Exception $e) {
+            Log::error($e->getMessage());
+            Log::debug($e->getTraceAsString());
+        }
     }
 }
