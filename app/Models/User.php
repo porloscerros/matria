@@ -157,6 +157,7 @@ class User extends Authenticatable implements HasMedia, MustVerifyEmailContract
             ->registerMediaConversions(function (Media $media) {
                 $this
                     ->addMediaConversion('thumb')
+                    ->nonQueued()
                     ->fit(Manipulations::FIT_CROP, 100, 100);
             });
     }
