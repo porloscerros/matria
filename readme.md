@@ -1,8 +1,9 @@
 <p align="center"><img src="https://porloscerros.github.io/img/portada-logo.svg"></p>
-<h1 align="center">Laravel Web Site</h1>
-<h3 align="center">Generic web site made in Laravel 5.7</h3>
+<h1 align="center">Matria site</h1>
+<h3 align="center">Website to show the works of the craftswoman Matria</h3>
 
-Originally adapted from [Laravel-blog](https://github.com/guillaumebriday/laravel-blog)
+
+You can find it on : [matriatallados.com.ar](https://matriatallados.com.ar)
 
 ## Documentation
 
@@ -12,16 +13,14 @@ Originally adapted from [Laravel-blog](https://github.com/guillaumebriday/larave
 Beside Laravel, this project uses other tools like:
 
 - [Bootstrap 4](https://getbootstrap.com/)
+- [PHP-CS-Fixer](https://github.com/FriendsOfPhp/PHP-CS-Fixer)
+- [Travis CI](https://travis-ci.org/)
 - [Font Awesome](http://fontawesome.io/)
 - [Vue.js](https://vuejs.org/)
 - [axios](https://github.com/mzabriskie/axios)
 - [Redis](https://redis.io/)
 - [spatie/laravel-medialibrary](https://github.com/spatie/laravel-medialibrary)
-- [spatie/laravel-tags](https://github.com/spatie/laravel-tags)
-- [vue-goodshare](https://github.com/koddr/vue-goodshare)
 - Many more to discover.
-
-You can find it on : (not online yet)
 
 ### Installation
 
@@ -31,13 +30,13 @@ Development environment requirements :
 
 Setting up your development environment on your local machine :
 ```
-$ git clone git@github.com:porloscerros/laravel-web-site.git
-$ cd laravel-web-site
+$ git clone git@github.com:porloscerros/matria.git
+$ cd matria
 $ cp .env.example .env
-$ docker-compose run --rm --no-deps laravel-web-site-server composer install
-$ docker-compose run --rm --no-deps laravel-web-site-server php artisan key:generate
-$ docker-compose run --rm --no-deps laravel-web-site-server php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"
-$ docker-compose run --rm --no-deps laravel-web-site-server php artisan storage:link
+$ docker-compose run --rm --no-deps matria-server composer install
+$ docker-compose run --rm --no-deps matria-server php artisan key:generate
+$ docker-compose run --rm --no-deps matria-server php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"
+$ docker-compose run --rm --no-deps matria-server php artisan storage:link
 $ docker run --rm -it -v $(pwd):/app -w /app node npm install
 $ docker-compose up -d
 ```
@@ -47,7 +46,7 @@ Now you can access the application via [http://localhost:8000](http://localhost:
 #### Before starting
 You need to run the migrations with the seeds :
 ```
-$ docker-compose run --rm laravel-web-site-server php artisan migrate --seed
+$ docker-compose run --rm matria-server php artisan migrate --seed
 ```
 
 This will create a new user that you can use to sign in :
@@ -83,44 +82,44 @@ ADMIN_NAME=
 
 Starting job for newsletter :
 ```
-$ docker-compose run laravel-web-site-server php artisan tinker
+$ docker-compose run matria-server php artisan tinker
 > PrepareNewsletterSubscriptionEmail::dispatch();
 ```
 
 #### Useful commands
 Seeding the database :
 ```
-$ docker-compose run --rm laravel-web-site-server php artisan db:seed
+$ docker-compose run --rm matria-server php artisan db:seed
 ```
 
 Running tests :
 ```
-$ docker-compose run --rm laravel-web-site-server ./vendor/bin/phpunit --cache-result --order-by=defects --stop-on-defect
+$ docker-compose run --rm matria-server ./vendor/bin/phpunit --cache-result --order-by=defects --stop-on-defect
 ```
 
 Running php-cs-fixer :
 ```
-$ docker-compose run --rm --no-deps laravel-web-site-server ./vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --dry-run --diff
+$ docker-compose run --rm --no-deps matria-server ./vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --dry-run --diff
 ```
 
 Generating backup :
 ```
-$ docker-compose run --rm laravel-web-site-server php artisan backup:run
+$ docker-compose run --rm matria-server php artisan backup:run
 ```
 
 Generating fake data :
 ```
-$ docker-compose run --rm laravel-web-site-server php artisan db:seed --class=DevDatabaseSeeder
+$ docker-compose run --rm matria-server php artisan db:seed --class=DevDatabaseSeeder
 ```
 
 Discover package
 ```
-$ docker-compose run --rm --no-deps laravel-web-site-server php artisan package:discover
+$ docker-compose run --rm --no-deps matria-server php artisan package:discover
 ```
 
 In development environnement, rebuild the database :
 ```
-$ docker-compose run --rm laravel-web-site-server php artisan migrate:fresh --seed
+$ docker-compose run --rm matria-server php artisan migrate:fresh --seed
 ```
 
 #### Accessing the API
@@ -131,10 +130,10 @@ Then, you can use this token either as url parameter or in Authorization header 
 
 ```
 # Url parameter
-GET http://laravel-web-site.app/api/v1/posts?api_token=your_private_token_here
+GET http://matria.app/api/v1/posts?api_token=your_private_token_here
 
 # Authorization Header
-curl --header "Authorization: Bearer your_private_token_here" http://laravel-web-site.app/api/v1/posts
+curl --header "Authorization: Bearer your_private_token_here" http://matria.app/api/v1/posts
 ```
 
 API are prefixed by ```api``` and the API version number like so ```v1```.
@@ -144,7 +143,7 @@ Do not forget to set the ```X-Requested-With``` header to ```XMLHttpRequest```. 
 To list all the available routes for API :
 
 ```bash
-$ docker-compose run --rm --no-deps laravel-web-site-server php artisan route:list --path=api
+$ docker-compose run --rm --no-deps matria-server php artisan route:list --path=api
 ```
 
 ## License
