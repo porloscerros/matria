@@ -10,7 +10,7 @@
                         @lang('sections.header')
                     @endif
                 </h3>
-                <h1 class="m-3">
+                <h1 class="m-3 display-4">
                     {{ config('app.name') }}
                 </h1>
                 @if( $section->hasCustomProperty('subtitle') )
