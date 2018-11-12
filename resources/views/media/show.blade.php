@@ -31,7 +31,7 @@
     <div class="container">
         <div class="row">
             <div class="col-6 d-block justify-content-start">
-                <a href="{{ route('media') }}" class="btn btn-outline-dark ml-1" role="button">@lang('media.view-all-gallery')</a>
+                <a href="{{ route('media') }}" class="btn btn-nav ml-1" role="button">@lang('media.view-all-gallery')</a>
             </div>
             <div class="col-6 d-flex justify-content-end">
                 @include('shared.social-media.share-buttons')

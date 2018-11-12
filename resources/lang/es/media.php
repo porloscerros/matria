@@ -12,7 +12,7 @@ return [
     'search' => "Buscar por etiqueta ...",
     'search_results' => ":count imágen encontrado|:count imágenes encontrados",
     'media' => 'Imágenes',
-    'view-all-gallery' => 'ver toda la galería',
+    'view-all-gallery' => 'ver todas',
 
     'attributes' => [
         'image' => 'Imágen',

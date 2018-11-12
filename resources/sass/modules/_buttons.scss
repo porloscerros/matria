@@ -14,3 +14,26 @@
         cursor: pointer;
     }
 }
+
+.btn-nav {
+    color: #fff;
+    background-image: url("/img/btn-nav.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+.btn-nav a{
+    color: #fff!important;
+}
+.btn-nav:hover {
+    -webkit-filter: drop-shadow(7px 7px 7px #222);
+    filter: drop-shadow(7px 7px 7px #222);
+}
+.btn-nav.active  {
+    transform: scale(0.8);
+}
+.btn-nav.active  a{
+    color: #777!important;
+}

@@ -15,7 +15,7 @@ return [
     'search' => "Buscar ...",
     'search_results' => ":count artículo encontrado|:count artículos encontrados",
     'continue-reading' => "continuar leyendo...",
-    'view-all-posts' => 'ver todos los artículos',
+    'view-all-posts' => 'ver todos',
 
     'attributes' => [
         'title' => 'Título',

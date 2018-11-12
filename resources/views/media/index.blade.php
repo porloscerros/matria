@@ -13,7 +13,7 @@
 @section('content')
     <div class="row">
         <div class="col-6 d-block justify-content-start">
-            <a href="{{route('home')}}/#home-gallery" class="btn btn-outline-dark" role="button"><< @lang('navigation.back')</a>
+            <a href="{{route('home')}}/#home-gallery" class="btn btn-nav" role="button">@lang('navigation.back')</a>
         </div>
         <div class="col-6 d-flex justify-content-end">
             @include('shared.social-media.share-buttons')

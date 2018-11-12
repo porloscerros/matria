@@ -19,7 +19,7 @@
 
             @if($posts->count())
             <div class="col d-flex justify-content-end">
-                <a href="{{ route('posts') }}" class="btn btn-outline-dark" role="button">@lang('posts.view-all-posts')</a>
+                <a href="{{ route('posts') }}" class="btn btn-nav" role="button">@lang('posts.view-all-posts')</a>
             </div>
             @endif
 

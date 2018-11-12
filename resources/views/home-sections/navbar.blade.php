@@ -23,17 +23,17 @@
             </ul>
 
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item grow">
+                <li class="nav-item btn-nav">
                     <a class="nav-link" href="#home-gallery" data-toggle="collapse" data-target=".navbar-collapse.show">
                         {{ __('media.gallery') }}
                     </a>
                 </li>
-                <li class="nav-item grow">
+                <li class="nav-item btn-nav">
                     <a class="nav-link" href="#home-posts" data-toggle="collapse" data-target=".navbar-collapse.show">
                         {{ __('posts.posts') }}
                     </a>
                 </li>
-                <li class="nav-item grow">
+                <li class="nav-item btn-nav">
                     <a class="nav-link" href="#home-contact-us" data-toggle="collapse" data-target=".navbar-collapse.show">
                         {{ __('contact-us.contact') }}
                     </a>
