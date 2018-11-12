@@ -1,3 +1,8 @@
+@font-face {
+    font-family: matriaFont;
+    src: url(/fonts/Faerytale_Woods.ttf);
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -12,6 +17,7 @@ body > #app > .container, {
     margin-bottom: 250px;
     padding-top: 15px;
     padding-bottom: 15px;
+    font-family: matriaFont;
 }
 
 @include media-breakpoint-down(xs) {
