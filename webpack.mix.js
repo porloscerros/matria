@@ -19,13 +19,13 @@ mix.js('resources/js/admin.js', 'public/js')
 
 mix.copy('node_modules/trumbowyg/dist/ui/icons.svg', 'public/js/ui/icons.svg')
 
-mix.copyDirectory('resources/img', 'public/img')
-
 mix.js('resources/js/home.js', 'public/js')
+
+mix.copyDirectory('resources/img', 'public/img')
+mix.copyDirectory('resources/fonts', 'public/fonts')
 
 if (mix.inProduction()) {
   mix.version()
 }
 
 
-mix.copyDirectory('resources/fonts', 'public/fonts')
