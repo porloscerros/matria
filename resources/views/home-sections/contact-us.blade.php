@@ -85,7 +85,7 @@
                             @endif
                         </div>
 
-                        {!! Form::submit(__('forms.actions.send'), ['class' => 'btn btn-info pull-right']) !!}
+                        {!! Form::submit(__('forms.actions.send'), ['class' => 'btn btn-action pull-right']) !!}
 
                         {!! Form::close() !!}
                     </div>

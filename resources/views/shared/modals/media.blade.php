@@ -13,7 +13,7 @@
             </div>
             <div class="modal-footer border-0 ">
                 @include('shared.social-media.share-buttons')
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('modals.close')</button>
+                <button type="button" class="btn btn-action" data-dismiss="modal">@lang('modals.close')</button>
             </div>
         </div>
     </div>
