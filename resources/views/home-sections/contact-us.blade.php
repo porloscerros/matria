@@ -1,9 +1,10 @@
 <!-- Contact Us Section-->
 <section id="home-contact-us" class="home-section" @if( $section->hasCustomProperty('bg_img') )style="background-image: url({{ $section->getCustomProperty('bg_img') }}) !important;"@endif>
     <div class="container h-100 bg-translucent">
-        <div class="row h-100 p-3 align-items-center">
-            <div class="col-12 text-center">
-                <h3 class="m-0 display-4">
+        <div class="d-flex justify-content-center flex-column h-100">
+
+            <div class="d-flex align-items-start flex-column">
+                <h3 class="align-self-center p-3 label1">
                     @if( $section->hasCustomProperty('title') )
                         {{ $section->getCustomProperty('title') }}
                     @else
@@ -11,31 +12,26 @@
                     @endif
                 </h3>
             </div>
-            <div class="container p-3 bg-translucent">
-                <div class="row align-self-center">
-                    <div class="col-md-5 align-self-center">
+
+            <div class="d-flex flex-md-column p-5 bg-translucent">
+                <div class="d-flex flex-md-row justify-content-around">
+                    <div class="justify-content-between">
                         @if($section->hasCustomProperty('phone'))
-                            <div class="row justify-content-center">
-                                <p>
-                                    <span class="fa fa-whatsapp"></span>  @lang('contact-us.phone')/Wapp:
-                                    <a href="tel:{{$section->getCustomProperty('phone')}}"> {{$section->getCustomProperty('phone')}}</a>
-                                </p>
+                            <div class=" align-items-center">
+                                <span class="fa fa-whatsapp"></span>  @lang('contact-us.phone')/Wapp:
+                                <a href="tel:{{$section->getCustomProperty('phone')}}"> {{$section->getCustomProperty('phone')}}</a>
                             </div>
                         @endif
                         @if($section->hasCustomProperty('email'))
-                            <div class="row justify-content-center">
-                                <p>
-                                    <span class="fa fa-envelope-o"></span> Email:
-                                    <a href="mailto:{{$section->getCustomProperty('email')}}"> {{$section->getCustomProperty('email')}}</a>
-                                </p>
+                            <div class=" align-items-stretch">
+                                <span class="fa fa-envelope-o"></span> Email:
+                                <a href="mailto:{{$section->getCustomProperty('email')}}"> {{$section->getCustomProperty('email')}}</a>
                             </div>
                         @endif
                         @if($section->hasCustomProperty('location'))
-                            <div class="row justify-content-center">
-                                <p>
-                                    <span class="fa fa-map-marker"></span> @lang('contact-us.location'):
-                                    <a href=""  data-toggle="modal" data-target="#mapModal"> {{$section->getCustomProperty('location')}}</a>
-                                </p>
+                            <div class="justify-content-center">
+                                <span class="fa fa-map-marker"></span> @lang('contact-us.location'):
+                                <a href=""  data-toggle="modal" data-target="#mapModal"> {{$section->getCustomProperty('location')}}</a>
                             </div>
                             <!-- Map Modal -->
                             @include('shared.modals.map')
@@ -45,17 +41,17 @@
                             <hr>
 
                             <!-- Social Media Elements -->
-                            <div class="row d-flex justify-content-center">
+                            <div class="">
                                 <p>@lang('contact-us.social-media'):</p>
                             </div>
-                            <div class="row d-flex justify-content-center">
+                            <div class="">
                                 @include('shared.social-media.links')
                             </div>
                             <!-- Social Media Elements -->
                         @endif
                     </div>
 
-                    <div class="col-md-7">
+                    <div class="justify-content-between">
                         @include('shared/alerts')
                         {!! Form::open(['route' => 'mail-to-admin']) !!}
 
@@ -91,9 +87,12 @@
                     </div>
                 </div>
             </div>
+
             @if($section->hasSocialMedia())
-                <div class="col-12 d-flex justify-content-center">
-                    @include('shared.social-media.follow-us')
+                <div class="d-flex align-items-end flex-column mt-3">
+                    <div class="d-flex align-self-center">
+                        @include('shared.social-media.follow-us')
+                    </div>
                 </div>
             @endif
         </div>
