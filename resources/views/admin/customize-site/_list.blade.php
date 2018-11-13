@@ -27,6 +27,9 @@
             <td>
                 {!! Form::model($customProperties->{$section->id}, ['route' => ['admin.customize-site.update', $section->id], 'method' =>'PUT']) !!}
                 @include('admin.customize-site._form')
+                @if($section->name === 'header')
+                    @include('admin.customize-site._header-form')
+                @endif
                 @if($section->name === 'contact-us')
                     @include('admin.customize-site._contact-us-form')
                 @endif

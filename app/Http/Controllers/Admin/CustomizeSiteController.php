@@ -39,7 +39,7 @@ class CustomizeSiteController extends Controller
         $customProperties = new \stdClass();
 
         foreach ($sections as $section) {
-            $customProperties->{$section->id} = json_decode($section->custom_properties);
+            $customProperties->{$section->id} = json_decode(strip_tags($section->custom_properties));
         }
 
         return view('admin.customize-site.index', [
@@ -57,6 +57,12 @@ class CustomizeSiteController extends Controller
         try {
             $customProperties = $request->except(['_method', '_token']);
             $customProperties = array_filter($customProperties);
+
+            if ($request->filled('content_list')) {
+                $content_list = nl2br($request->input('content_list'));
+                $customProperties['content_list'] = $content_list;
+            }
+
             if (array_key_exists('bg_img_id', $customProperties)) {
                 $customProperties['bg_img'] = Media::findOrFail($customProperties['bg_img_id'])->getUrl();
             }

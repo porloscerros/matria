@@ -9,12 +9,16 @@
                 @endif
             </h2>
             @if($section->name === 'header')
-                <h1>{{ config('app.name') }}</h1>
             @endif
             @if($section->hasCustomProperty('subtitle'))
                 <h3 class="m-2">
                     {{$section->getCustomProperty('subtitle')}}
                 </h3>
+            @endif
+            @if( $section->hasCustomProperty('content_list') )
+                <h4 class="align-self-center text-center mt-3">
+                    {!! $section->getCustomProperty('content_list') !!}
+                </h4>
             @endif
 
             @if($section->name === 'contact-us')

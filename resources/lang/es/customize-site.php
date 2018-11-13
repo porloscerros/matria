@@ -16,6 +16,7 @@ return [
     'section-attributes' => [
         'title' => 'Título',
         'subtitle' => 'Subítulo',
+        'content-list' => 'Listado de características',
         'content' => 'Contenido',
         'bg-img' => 'Imágen de Fondo',
         'text-color' => 'Color del Texto',
