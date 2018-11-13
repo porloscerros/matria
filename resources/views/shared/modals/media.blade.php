@@ -9,7 +9,9 @@
             </div>
             <div class="modal-body text-center p-4" id="result">
                 <img class="img-fluid" src="{{ $url }}" alt="{{ $name }}">
+                <h3 class="text-center">
                 {!! $medium->getCustomProperty('description') !!}
+                </h3>
             </div>
             <div class="modal-footer border-0 ">
                 @include('shared.social-media.share-buttons')
