@@ -16,3 +16,9 @@
         <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
     </a>
 @endif
+@if($section->hasCustomProperty('google_plus'))
+    <!-- Twitter -->
+    <a href="https://plus.google.com/{{$section->getCustomProperty('google_plus')}}" class="tw-ic" target="_blank">
+        <i class="fa fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+    </a>
+@endif
