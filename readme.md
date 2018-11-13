@@ -13,8 +13,6 @@ You can find it on : [matriatallados.com.ar](https://matriatallados.com.ar)
 Beside Laravel, this project uses other tools like:
 
 - [Bootstrap 4](https://getbootstrap.com/)
-- [PHP-CS-Fixer](https://github.com/FriendsOfPhp/PHP-CS-Fixer)
-- [Travis CI](https://travis-ci.org/)
 - [Font Awesome](http://fontawesome.io/)
 - [Vue.js](https://vuejs.org/)
 - [axios](https://github.com/mzabriskie/axios)
@@ -146,6 +144,3 @@ To list all the available routes for API :
 $ docker-compose run --rm --no-deps matria-server php artisan route:list --path=api
 ```
 
-## License
-
-This project is released under the [MIT](http://opensource.org/licenses/MIT) license.
