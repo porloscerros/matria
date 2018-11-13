@@ -6,7 +6,8 @@
             <th>@lang('media.attributes.name')</th>
             <th>@lang('media.attributes.tags')</th>
             <th>@lang('media.attributes.description')</th>
-            <th class="text-center">@lang('media.attributes.published')</th>
+            <th>@lang('media.attributes.url')</th>
+            <th class="text-center">@lang('media.attributes.public')</th>
             <th></th>
         </tr>
     </thead>
@@ -26,6 +27,16 @@
                 </td>
                 <td>
                     {!! str_limit($medium->getCustomProperty('description'), 50) !!}
+                </td>
+                <td>
+                    <div class="input-group">
+                        {{ Form::text(null, url($medium->getUrl()), ['class' => 'form-control', 'readonly' => true, 'id' => "medium-{$medium->id}"]) }}
+                        <div class="input-group-append">
+                            <button class="input-group-text btn" data-clipboard-target="#medium-{{ $medium->id }}">
+                                <i class="fa fa-clipboard"></i>
+                            </button>
+                        </div>
+                    </div>
                 </td>
                 <td class="text-center">{{ Form::checkbox('public', true, $medium->getCustomProperty('public'), ['disabled']) }}</td>
                 <td>
