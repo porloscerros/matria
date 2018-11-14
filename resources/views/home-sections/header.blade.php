@@ -4,13 +4,15 @@
         <div class="d-flex justify-content-center flex-column h-100">
 
             <div class="d-flex align-items-end flex-column">
-                <h1 class="align-self-center p-3 display-4">
-                    @if( $section->hasCustomProperty('title') )
-                        {{ $section->getCustomProperty('title') }}
-                    @else
-                        @lang('sections.header')
-                    @endif
-                </h1>
+                <div class="align-self-center">
+                    <h1 class="align-self-center display-3">
+                        @if( $section->hasCustomProperty('title') )
+                            {{ $section->getCustomProperty('title') }}
+                        @else
+                            @lang('sections.header')
+                        @endif
+                    </h1>
+                </div>
             </div>
 
             <div class="d-flex align-items-start flex-column">

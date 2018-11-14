@@ -22,16 +22,16 @@
 
     <div class="container-fluid p-3 bg-translucent">
 
-      <div class="d-flex justify-content-between">
-        <div class="p-2">
-          @if (request()->has('q'))
-            <h2>{{ trans_choice('posts.search_results', $posts->count(), ['query' => request()->input('q')]) }}</h2>
-          @else
-            <h2>@lang('posts.last_posts')</h2>
-          @endif
+        <div class="col-6 d-flex align-items-start flex-column">
+            <div class="py-4 px-3 label1">
+                @if (request()->has('q'))
+                    <h2>{{ trans_choice('posts.search_results', $posts->count(), ['query' => request()->input('q')]) }}</h2>
+                @else
+                    <h2>@lang('posts.last_posts')</h2>
+                @endif
+            </div>
         </div>
-      </div>
 
-      @include ('posts/_list')
+        @include ('posts/_list')
     </div>
 @endsection

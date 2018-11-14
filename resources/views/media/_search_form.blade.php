@@ -5,7 +5,7 @@
             {!! Form::text('q', null, ['class' => 'form-control', 'placeholder' => __('media.search')]) !!}
         </div>
 
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-action">
             <i class="fa fa-search" aria-hidden="true"></i>
         </button>
     {!! Form::close() !!}

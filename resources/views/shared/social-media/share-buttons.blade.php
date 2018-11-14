@@ -1,7 +1,7 @@
-<div>
+<div class="align-self-center pt-2 px-2 label1">
     <p>Compartir: </p>
 </div>
-<div id="share-buttons" class="text-dark">
+<div id="share-buttons" class="text-dark ml-2">
     <vue-goodshare-facebook
         has_icon
         button_design="outline"
