@@ -12,32 +12,38 @@
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
             @admin
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        {{ link_to_route('admin.dashboard', __('dashboard.dashboard'), [], ['class' => 'nav-link']) }}
-                    </li>
-                </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    {{ link_to_route('admin.dashboard', __('dashboard.dashboard'), [], ['class' => 'nav-link']) }}
+                </li>
+            </ul>
             @endadmin
 
             <ul class="navbar-nav">
             </ul>
 
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item btn-nav">
-                    <a class="nav-link" href="#home-gallery" data-toggle="collapse" data-target=".navbar-collapse.show">
-                        {{ __('media.gallery') }}
-                    </a>
-                </li>
-                <li class="nav-item btn-nav">
-                    <a class="nav-link" href="#home-posts" data-toggle="collapse" data-target=".navbar-collapse.show">
-                        {{ __('posts.posts') }}
-                    </a>
-                </li>
-                <li class="nav-item btn-nav">
-                    <a class="nav-link" href="#home-contact-us" data-toggle="collapse" data-target=".navbar-collapse.show">
-                        {{ __('contact-us.contact') }}
-                    </a>
-                </li>
+                <div class="d-flex align-items-end flex-column">
+                    <li class="nav-item btn-nav">
+                        <a class="nav-link" href="#home-gallery" data-toggle="collapse" data-target=".navbar-collapse.show">
+                            {{ __('media.gallery') }}
+                        </a>
+                    </li>
+                </div>
+                <div class="d-flex align-items-end flex-column">
+                    <li class="nav-item btn-nav">
+                        <a class="nav-link" href="#home-posts" data-toggle="collapse" data-target=".navbar-collapse.show">
+                            {{ __('posts.posts') }}
+                        </a>
+                    </li>
+                </div>
+                <div class="d-flex align-items-end flex-column">
+                    <li class="nav-item btn-nav">
+                        <a class="nav-link" href="#home-contact-us" data-toggle="collapse" data-target=".navbar-collapse.show">
+                            {{ __('contact-us.contact') }}
+                        </a>
+                    </li>
+                </div>
                 @guest
 
                 @else
@@ -53,8 +59,8 @@
                             <div class="dropdown-divider"></div>
 
                             <a href="{{ url('/logout') }}"
-                                class="dropdown-item"
-                                onclick="event.preventDefault();
+                               class="dropdown-item"
+                               onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                                 @lang('auth.logout')
                             </a>
