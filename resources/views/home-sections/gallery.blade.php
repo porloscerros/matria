@@ -46,10 +46,10 @@
                         <div class="row">
                             <div class="col d-flex justify-content-center" id="gallery-deck">
                             <p>
-                                <span class="badge badge-dark"><i class="fa fa-tag" aria-hidden="true"></i></span>
+                                <span class="badge"><i class="fa fa-tag" aria-hidden="true"></i></span>
                                 @foreach($medium->tags as $tag)
-                                    <a href="{{ route('media', ['q' => $tag->name]) }}">
-                                        <span class="badge badge-dark">#{{ $tag->name }}</span>
+                                    <a href="{{ route('media', ['q' => $tag->name]) }}" class="h4">
+                                        <span class="badge badge-dark font-weight-light">#{{ $tag->name }}</span>
                                     </a>
                                 @endforeach
                             </p>
