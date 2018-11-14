@@ -5,9 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
+use Spatie\Image\Manipulations;
 
-class SiteSection extends Model
+class SiteSection extends Model implements HasMedia
 {
+    use HasMediaTrait;
+
     public $timestamps = false;
 
     protected $fillable = [
@@ -55,4 +61,26 @@ class SiteSection extends Model
         return false;
     }
 
+    /**
+     * return true if the section has a custom background
+     */
+    public function hasBackground(): bool
+    {
+        if ($this->hasMedia('sections-background'))
+        return filled($this->thumbnail_id);
+    }
+
+    public function registerMediaCollections()
+    {
+        $this
+            ->addMediaCollection('sections-background')
+            ->singleFile()
+            ->registerMediaConversions(function (Media $media) {
+                $this
+                    ->addMediaConversion('bg')
+                    ->nonQueued()
+                    ->fit(Manipulations::FIT_MAX, 1080, 720)
+                    ->optimize();
+            });
+    }
 }

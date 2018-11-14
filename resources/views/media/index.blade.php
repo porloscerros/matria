@@ -5,9 +5,9 @@
 @section('social-title', __('sections.gallery'))
 @section('social-description')@lang('sections.gallery-description') @endsection
 
-@if( $section->hasCustomProperty('bg_img') )
-    @section('body-styles', 'background-image:url(' . $section->getCustomProperty('bg_img') . ');')
-@section('social-image', url( $section->getCustomProperty('bg_img') ))
+@if( $section->hasMedia('sections-background') )
+    @section('body-styles', 'background-image:url(' . $section->getFirstMedia('sections-background')->getUrl('bg') . ');')
+    @section('social-image', url( $section->getFirstMedia('sections-background')->getUrl('bg') ))
 @endif
 
 @section('content')

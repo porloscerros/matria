@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </td>
-            <td class="home-section-preview align-middle" @if( $section->hasCustomProperty('bg_img') )style="background-image: url({{ $section->getCustomProperty('bg_img') }}) !important;"@endif>
+            <td class="home-section-preview align-middle" @if( $section->hasMedia('sections-background') )style="background-image: url({{ $section->getFirstMedia('sections-background')->getUrl('bg') }}) !important;"@endif>
                 @include('admin.customize-site._preview')
             </td>
             <td>

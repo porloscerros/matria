@@ -3,15 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CustomizeSiteRequest;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use App\Models\SiteSection;
-use App\Models\SiteSectionAttributes;
 use App\Models\MediaLibrary;
 use Illuminate\Support\Facades\Log;
-use Spatie\MediaLibrary\Models\Media;
+use App\Models\Media;
 
 class CustomizeSiteController extends Controller
 {
@@ -55,6 +53,7 @@ class CustomizeSiteController extends Controller
     public function update(Request $request, $id): RedirectResponse
     {
         try {
+            $section = SiteSection::findOrFail($id);
             $customProperties = $request->except(['_method', '_token']);
             $customProperties = array_filter($customProperties);
 
@@ -64,11 +63,17 @@ class CustomizeSiteController extends Controller
             }
 
             if (array_key_exists('bg_img_id', $customProperties)) {
-                $customProperties['bg_img'] = Media::findOrFail($customProperties['bg_img_id'])->getUrl();
-            }
-            $customProperties = json_encode($customProperties);
+                $image = Media::findOrFail($customProperties['bg_img_id'])->getPath();
 
-            $section = SiteSection::findOrFail($id);
+                $section
+                    ->addMedia($image)
+                    ->preservingOriginal()
+                    ->toMediaCollection('sections-background');
+
+                unlink($section->getFirstMedia('sections-background')->getPath());
+            }
+
+            $customProperties = json_encode($customProperties);
             $section->custom_properties = $customProperties;
             $section->save();
 

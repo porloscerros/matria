@@ -1,5 +1,5 @@
 <!-- Header -->
-<header id="home-header" class="home-section"  @if( $section->hasCustomProperty('bg_img') )style="background-image: url({{ $section->getCustomProperty('bg_img') }}) !important;"@endif>
+<header id="home-header" class="home-section" @if( $section->hasMedia('sections-background') )style="background-image: url({{ $section->getFirstMedia('sections-background')->getUrl('bg') }}) !important;"@endif>
     <div class="container h-100 bg-translucent">
         <div class="d-flex justify-content-center flex-column h-100">
 
