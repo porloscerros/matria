@@ -17,19 +17,19 @@
                 <div class="d-flex flex-md-row justify-content-around">
                     <div class="justify-content-between">
                         @if($section->hasCustomProperty('phone'))
-                            <div class=" align-items-center">
+                            <div class="align-items-center h4">
                                 <span class="fa fa-whatsapp"></span>  @lang('contact-us.phone')/Wapp:
                                 <a href="tel:{{$section->getCustomProperty('phone')}}"> {{$section->getCustomProperty('phone')}}</a>
                             </div>
                         @endif
                         @if($section->hasCustomProperty('email'))
-                            <div class=" align-items-stretch">
+                            <div class="align-items-center h4">
                                 <span class="fa fa-envelope-o"></span> Email:
                                 <a href="mailto:{{$section->getCustomProperty('email')}}"> {{$section->getCustomProperty('email')}}</a>
                             </div>
                         @endif
                         @if($section->hasCustomProperty('location'))
-                            <div class="justify-content-center">
+                            <div class="align-items-center h4">
                                 <span class="fa fa-map-marker"></span> @lang('contact-us.location'):
                                 <a href=""  data-toggle="modal" data-target="#mapModal"> {{$section->getCustomProperty('location')}}</a>
                             </div>
@@ -42,7 +42,7 @@
 
                             <!-- Social Media Elements -->
                             <div class="">
-                                <p>@lang('contact-us.social-media'):</p>
+                                <p class="align-items-center h4">@lang('contact-us.social-media'):</p>
                             </div>
                             <div class="">
                                 @include('shared.social-media.links')
