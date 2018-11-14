@@ -29,30 +29,29 @@
             @endif
 
             <div class="d-flex align-items-center flex-column">
-                <div class="align-self-center" >
-                    @foreach($posts as $post)
-                        <div class="card col-md-12 p-3 mb-3 text-dark">
-                            <div class="row ">
-                                <div class="col-md-4">
+                @foreach($posts as $post)
+                    <div class="card mb-3 text-dark">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
                                     @if ($post->hasThumbnail())
                                         <a href="{{ route('posts.show', $post)}}" class="">
-                                            {{ Html::image($post->thumbnail->getUrl('thumb'), $post->thumbnail->name, ['class' => 'w-100']) }}
+                                            {{ Html::image($post->thumbnail->getUrl('thumb'), $post->thumbnail->name, ['class' => 'w-100 d-none d-md-block']) }}
                                         </a>
                                     @endif
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-6">
                                     <div class="h-75">
                                         <h4 class="card-title">{{ $post->title }}</h4>
-                                        <p class="card-text text-justify">{!! str_limit($post->content, 100) !!}</p>
+                                        <p class="card-text text-justify">{!! $post->excerpt() !!}</p>
                                     </div>
 
                                     <a href="{{ route('posts.show', $post)}}" class="align-bottom float-right">@lang('posts.continue-reading')</a>
-
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
                 <div class="col d-flex justify-content-center">
                     {{ $posts->fragment('home-posts')->links() }}
                 </div>

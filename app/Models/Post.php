@@ -112,7 +112,7 @@ class Post extends Model
     /**
      * return the excerpt of the post content
      */
-    public function excerpt(int $length = 50): string
+    public function excerpt(int $length = 100): string
     {
         return str_limit($this->content, $length);
     }
