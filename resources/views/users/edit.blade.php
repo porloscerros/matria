@@ -52,7 +52,7 @@
                 {!! Form::label('extract', __('users.attributes.extract'), ['class' => 'col-sm-3 col-form-label']) !!}
 
                 <div class="col-sm-5">
-                    {!! Form::textarea('extract', null, ['class' => 'form-control trumbowyg-form' . ($errors->has('extract') ? ' is-invalid' : ''), 'placeholder' => __('users.placeholder.extract')]) !!}
+                    {!! Form::textarea('extract', null, ['class' => 'form-control' . ($errors->has('extract') ? ' is-invalid' : ''), 'placeholder' => __('users.placeholder.extract')]) !!}
 
                     @if ($errors->has('extract'))
                         <span class="invalid-feedback">{{ $errors->first('extract') }}</span>

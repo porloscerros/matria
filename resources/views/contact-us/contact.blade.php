@@ -51,7 +51,7 @@
 
             <div class="form-group">
                 {!! Form::label('msg', __('contact-us.message')) !!}
-                {!! Form::textarea('msg', null, ['class' => 'form-control trumbowyg-form' . ($errors->has('msg') ? ' is-invalid' : ''), 'required' => 'required']) !!}
+                {!! Form::textarea('msg', null, ['class' => 'form-control' . ($errors->has('msg') ? ' is-invalid' : ''), 'required' => 'required']) !!}
 
                 @if ($errors->has('msg'))
                     <span class="invalid-feedback">{{ $errors->first('msg') }}</span>

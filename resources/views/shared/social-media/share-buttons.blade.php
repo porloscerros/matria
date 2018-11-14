@@ -22,6 +22,3 @@
         button_design="outline"
     ></vue-goodshare-whats-app>
 </div>
-
-@push('inline-scripts')
-@endpush
