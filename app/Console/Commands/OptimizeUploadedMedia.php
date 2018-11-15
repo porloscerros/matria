@@ -5,6 +5,8 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\MediaLibrary;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
+use Exception;
+use Illuminate\Support\Facades\Log;
 
 class OptimizeUploadedMedia extends Command
 {
@@ -22,6 +24,9 @@ class OptimizeUploadedMedia extends Command
      */
     protected $description = 'Optimize all uploaded media on default media collection';
 
+    protected $mediaItems;
+    protected $optimizerChain;
+
     /**
      * Create a new command instance.
      *
@@ -30,6 +35,9 @@ class OptimizeUploadedMedia extends Command
     public function __construct()
     {
         parent::__construct();
+
+        $this->mediaItems = MediaLibrary::first()->getMedia();
+        $this->optimizerChain = OptimizerChainFactory::create();
     }
 
     /**
@@ -39,12 +47,21 @@ class OptimizeUploadedMedia extends Command
      */
     public function handle()
     {
-        $mediaItems = MediaLibrary::first()->getMedia();
-        $optimizerChain = OptimizerChainFactory::create();
-        foreach ($mediaItems as $item) {
-            $path = $item->getPath();
+        try
+        {
+            foreach ($this->mediaItems as $item) {
+                $path = $item->getPath();
 
-            $optimizerChain->optimize($path);
+                $this->optimizerChain->optimize($path);
+
+                $this->info('optimizing ' . $path);
+            }
+        }
+        catch(Exception $e)
+        {
+            Log::error($e->getMessage());
+            Log::debug($e->getTraceAsString());
+            $this->error($e->getMessage());
         }
     }
 }
