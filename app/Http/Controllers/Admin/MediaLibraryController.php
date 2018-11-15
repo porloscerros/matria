@@ -100,6 +100,7 @@ class MediaLibraryController extends Controller
      */
     public function update(Request $request, Media $medium): RedirectResponse
     {
+        $description = '';
         if ($request->filled('description')) {
             $description = '<p class="text-center">';
             $description .= $request->input('description');
