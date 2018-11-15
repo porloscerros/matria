@@ -25,11 +25,13 @@ class MediaLibraryController extends Controller
                 ->media()
                 ->where('custom_properties->public', '1')
                 ->withAnyTags($tags)
+                ->orderBy('created_at', 'desc')
                 ->paginate(10);
         } else {
             $media = MediaLibrary::first()
                 ->media()
                 ->where('custom_properties->public', '1')
+                ->orderBy('created_at', 'desc')
                 ->paginate(10);
         }
 
