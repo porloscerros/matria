@@ -7,7 +7,7 @@
 
     <div class="card-body">
         <h4 v-pre class="card-title">{{ link_to_route('posts.show', $post->title, $post) }}</h4>
-        <p class="card-text text-justify">{!! str_limit($post->content, 120) !!}</p>
+        <p class="card-text text-justify">{!! $post->excerpt() !!}</p>
 
 
         <a href="{{ route('posts.show', $post)}}" class="align-bottom float-right">@lang('posts.continue-reading')</a>
