@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Spatie\Tags\Tag;
 use Illuminate\Support\Facades\Log;
+use Spatie\ImageOptimizer\OptimizerChainFactory;
 
 class MediaLibraryController extends Controller
 {
@@ -71,6 +72,8 @@ class MediaLibraryController extends Controller
                 ->withCustomProperties(['public' => $public, 'description' => $description])
                 ->toMediaCollection();
 
+            $this->optimize(Media::latest()->first()->getPath());
+
             $model->attachTags($request->tags);
 
         } catch(\Exception $e) {
@@ -79,6 +82,11 @@ class MediaLibraryController extends Controller
         }
 
         return redirect()->route('admin.media.index')->withSuccess(__('media.created'));
+    }
+
+    private function optimize ($path) {
+        $optimizerChain = OptimizerChainFactory::create();
+        $optimizerChain->optimize($path);
     }
 
     /**
