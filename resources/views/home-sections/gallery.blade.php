@@ -49,7 +49,7 @@
                                 <span class="badge"><i class="fa fa-tag" aria-hidden="true"></i></span>
                                 @foreach($medium->tags as $tag)
                                     <a href="{{ route('media', ['q' => $tag->name]) }}" class="h4">
-                                        <span class="badge badge-dark font-weight-light">#{{ $tag->name }}</span>
+                                        <span class="badge bg-translucent font-weight-light">#{{ $tag->name }}</span>
                                     </a>
                                 @endforeach
                             </p>
