@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="d-flex justify-content-center">
-        <div class="col-md-6"
+        <div class="col-md-6">
             <div class="card">
                 <img src="{{ $medium->getUrl('thumb') }}" alt="{{ $medium->name }}" class="card-img-top">
             </div>
