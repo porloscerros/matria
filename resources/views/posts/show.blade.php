@@ -13,9 +13,6 @@
         <div class="col-6 d-block justify-content-start">
             <a href="{{route('posts')}}" class="btn btn-nav" role="button">@lang('navigation.back')</a>
         </div>
-        <div class="col-6 d-flex justify-content-end">
-            @include('shared.social-media.share-buttons')
-        </div>
     </div>
 
     <div class="bg-white p-3 post-card">
@@ -32,6 +29,11 @@
 
         <div v-pre class="post-content">
             {!! $post->content !!}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-end">
+            @include('shared.social-media.share-buttons', ['url' => secure_url('/posts/' . $post->id)])
         </div>
     </div>
 @endsection

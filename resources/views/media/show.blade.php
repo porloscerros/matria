@@ -3,11 +3,16 @@
 @section('page-title', ' | ' . __('sections.gallery'))
 
 @section('social-title', __('sections.gallery'))
-@section('social-description')@foreach($medium->tags as $tag)#{{ $tag->name }} @endforeach @endsection
-@section('social-url', url('/media-card/' . $medium->id))
-@section('social-image', $medium->getUrl())
+@section('social-description', strip_tags($medium->getCustomProperty('description')))
+@section('social-url', secure_url('/media-card/' . $medium->id))
+@section('social-image', secure_url($medium->getUrl()))
 
 @section('content')
+    <div class="row">
+        <div class="col-6 d-block justify-content-start">
+            <a href="{{ route('media') }}" class="btn btn-nav ml-1" role="button">@lang('media.view-all-gallery')</a>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="card">
             <img src="{{ $medium->getUrl() }}" alt="{{ $medium->name }}" class="card-img-top">
@@ -30,11 +35,8 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-6 d-block justify-content-start">
-                <a href="{{ route('media') }}" class="btn btn-nav ml-1" role="button">@lang('media.view-all-gallery')</a>
-            </div>
-            <div class="col-6 d-flex justify-content-end">
-                @include('shared.social-media.share-buttons')
+            <div class="col-12 d-flex justify-content-end">
+                @include('shared.social-media.share-buttons', ['url' => secure_url('/media-card/'. $medium->id)])
             </div>
         </div>
     </div>
