@@ -21,13 +21,12 @@
             <i class="fa fa-google-plus fa-md"></i>
         </a>
     </button>
-    <button class="btn btn-action p-3 text-success">
-        <a href="whatsapp://send?text={{ urlencode($url) }}"
-           target="_blank">
-            <i class="fa fa-whatsapp fa-md"></i>
-        </a>
-    </button>
 </div>
+<button class="btn btn-action p-3 text-success">
+    <a href="whatsapp://send?text={{ urlencode($url) }}">
+        <i class="fa fa-whatsapp fa-md"></i>
+    </a>
+</button>
 
 @push('inline-scripts')
     <script>

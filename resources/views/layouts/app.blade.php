@@ -18,6 +18,9 @@
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     @stack('inline-styles')
 
+    <!-- Google Analytics script -->
+    @include('shared.google-analytics.gtag')
+
     <!-- Social Media meta tags -->
     @include('shared.social-media.meta-tags')
 </head>
