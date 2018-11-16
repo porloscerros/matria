@@ -45,6 +45,7 @@
     <div class="row">
         <div class="col-12 d-flex justify-content-end">
             @include('shared.social-media.share-buttons', ['url' => secure_url('/media')])
+            @include('shared.social-media.share-script')
         </div>
     </div>
 @endsection
