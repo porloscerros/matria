@@ -6,7 +6,7 @@
             height: 550
         };
 
-        $(document).on('click', '.social-buttons > button', function(e){
+        $(document).on('click', '.social-buttons > a', function(e){
 
             var
                 verticalPos = Math.floor(($(window).width() - popupSize.width) / 2),
