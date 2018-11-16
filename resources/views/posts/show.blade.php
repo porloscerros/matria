@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
-@section('page-title', ' | ' . __('sections.posts'))
+@section('page-title', ' | ' . $post->title)
 
-@section('body-tag')
-    @if( $section->hasCustomProperty('bg_img') )
-        style="background-image: url({{ $section->getCustomProperty('bg_img') }});"
-    @endif
-@endsection
+@section('social-title', $post->title)
+@section('social-description', strip_tags($post->excerpt()))
+
+@if ($post->hasThumbnail())
+    @section('social-image', url( $post->thumbnail->getUrl() ))
+@endif
 
 @section('content')
     <div class="row">
