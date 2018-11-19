@@ -5,7 +5,7 @@
 
             <div class="d-flex align-items-end flex-column">
                 <div class="align-self-center">
-                    <h1 class="align-self-center display-3">
+                    <h1 class="align-self-center display-1">
                         @if( $section->hasCustomProperty('title') )
                             {{ $section->getCustomProperty('title') }}
                         @else
