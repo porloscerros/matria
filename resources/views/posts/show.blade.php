@@ -17,13 +17,14 @@
     </div>
 
     <div class="bg-white p-3 post-card">
-        @if ($post->hasThumbnail())
-            {{ Html::image($post->thumbnail->getUrl(), $post->thumbnail->name, ['class' => 'card-img-top']) }}
-        @endif
 
-        <h1 v-pre>{{ $post->title }}</h1>
+    @if ($post->hasThumbnail())
+        {{ Html::image($post->thumbnail->getUrl('thumb'), $post->thumbnail->name, ['class' => 'img-thumbnail my-2']) }}
+    @endif
 
-        <div class="mb-3">
+        <h1 class="text-center">{{ $post->title }}</h1>
+
+        <div class="mb-3 text-right">
             <small v-pre class="text-muted">{{ link_to_route('users.show', $post->author->fullname, $post->author) }}</small>,
             <small class="text-muted">{{ humanize_date($post->posted_at) }}</small>
         </div>
