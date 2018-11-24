@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@if( $section->hasMedia('sections-background') )
+    @section('body-styles', 'background-image:url(' . $section->getFirstMedia('sections-background')->getUrl('bg') . ');')
+@endif
+
 @section('page-title', ' | ' . $post->title)
 
 @section('social-title', $post->title)
