@@ -3,19 +3,17 @@
     <div class="container h-100 bg-translucent">
         <div class="d-flex justify-content-center flex-column h-100">
 
-            <div class="d-flex align-items-end flex-column">
-                <div class="align-self-center">
-                    <h1 class="align-self-center display-1">
-                        @if( $section->hasCustomProperty('title') )
-                            {{ $section->getCustomProperty('title') }}
-                        @else
-                            @lang('sections.header')
-                        @endif
-                    </h1>
-                </div>
+            <div class="d-flex align-items-start flex-column">
+                <h1 class="align-self-center">
+                    @if( $section->hasCustomProperty('title') )
+                        {{ $section->getCustomProperty('title') }}
+                    @else
+                        @lang('sections.header')
+                    @endif
+                </h1>
             </div>
 
-            <div class="d-flex align-items-start flex-column">
+            <div class="d-flex align-items-center flex-column">
                 @if( $section->hasCustomProperty('subtitle') )
                     <h2 class="align-self-center">
                         {{ $section->getCustomProperty('subtitle') }}

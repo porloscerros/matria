@@ -1,4 +1,4 @@
-<nav id="homeNavbar" class="navbar navbar-dark bg-translucent fixed-top navbar-expand-md">
+<nav id="homeNavbar" class="navbar navbar-dark bg-transparent fixed-top navbar-expand-md">
     <div class="container">
         <!-- Branding Image -->
         <a class="navbar-brand" href="#page-top">
