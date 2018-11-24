@@ -53,18 +53,15 @@ class MediaLibraryController extends Controller
     {
         try {
             $image = $request->file('image');
-            $name = $image->getClientOriginalName();
-            $public = $request->input('public');
-            $description = '';
-            if ($request->filled('description')) {
-                $description = '<p class="text-center">';
-                $description .= $request->input('description');
-                $description .=  '</p>';
-            }
 
+            $name = $image->getClientOriginalName();
             if ($request->filled('name')) {
                 $name = $request->input('name');
             }
+
+            $description = $request->filled('description') ? $request->input('description') : '';
+
+            $public = $request->input('public');
 
             $model = MediaLibrary::first()
                 ->addMedia($image)
@@ -108,12 +105,8 @@ class MediaLibraryController extends Controller
      */
     public function update(Request $request, Media $medium): RedirectResponse
     {
-        $description = '';
-        if ($request->filled('description')) {
-            $description = '<p class="text-center">';
-            $description .= $request->input('description');
-            $description .=  '</p>';
-        }
+        $description = $request->filled('description') ? $request->input('description') : '';
+
         $model = Media::findOrFail($medium->id);
         $model->name = $request->input('name');
         $model->setCustomProperty('public', $request->input('public'));

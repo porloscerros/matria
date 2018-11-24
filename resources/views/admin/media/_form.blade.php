@@ -34,7 +34,7 @@
 
 <div class="form-group">
     {!! Form::label('description', __('media.attributes.description')) !!}
-    {!! Form::textarea('description', strip_tags($description), ['class' => 'form-control', 'maxlength'=> 255, 'rows' => 2, 'style' => 'resize:none;' . ($errors->has('description') ? ' is-invalid' : '')]) !!}
+    {!! Form::textarea('description', $description, ['class' => 'form-control trumbowyg-form', 'maxlength'=> 255 . ($errors->has('description') ? ' is-invalid' : '')]) !!}
 
     @if ($errors->has('description'))
         <span class="invalid-feedback">{{ $errors->first('description') }}</span>
@@ -60,6 +60,12 @@
             $('#tag_input').select2({
                 tags: true
             });
+        });
+    </script>
+
+    <script>
+        $('.trumbowyg-form').trumbowyg({
+            removeformatPasted: true
         });
     </script>
 @endpush

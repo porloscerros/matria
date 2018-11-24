@@ -55,3 +55,11 @@
     {!! Form::hidden('public', 0) !!}
     {!! Form::checkbox('public', true, isset($post) ? $post->public : false) !!}
 </div>
+
+@push('inline-scripts')
+    <script>
+        $('.trumbowyg-form').trumbowyg({
+            removeformatPasted: true
+        });
+    </script>
+@endpush
