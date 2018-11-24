@@ -26,7 +26,7 @@
                     @endforeach
                 </td>
                 <td>
-                    {!! str_limit($medium->getCustomProperty('description'), 50) !!}
+                    {!! str_limit(strip_tags($medium->getCustomProperty('description')), 15) !!}
                 </td>
                 <td>
                     <div class="input-group">
