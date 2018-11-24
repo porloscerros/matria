@@ -1,11 +1,10 @@
-.post-content img {
-    max-width: 100%;
-    height: auto;
-}
-
 .post-card {
     border-radius: 0.25rem;
     border: 1px solid rgba(0, 0, 0, 0.125);
+    h1 {
+        font-size: 3em !important;
+    }
+    font-size: 150% !important;
 }
 
 .post-card img {
@@ -14,4 +13,9 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
 }
