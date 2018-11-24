@@ -33,7 +33,6 @@ class HomeController extends Controller
             ->simplePaginate(1, ['*'], 'gallery');
 
         $posts = Post::where('public', true)
-            ->latest()
             ->paginate(1, ['*'], 'posts');
 
         $sections = SiteSection::where('public', true)
