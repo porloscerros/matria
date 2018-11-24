@@ -32,7 +32,7 @@
         @include ('posts/_list')
     </div>
     <div class="row">
-        <div class="col-12 d-flex justify-content-end">
+        <div class="col-12 d-flex justify-content-end align-items-center">
             @include('shared.social-media.share-buttons', ['url' => secure_url('/posts')])
             @include('shared.social-media.share-script')
         </div>

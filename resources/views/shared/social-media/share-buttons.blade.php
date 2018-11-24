@@ -1,9 +1,9 @@
-<div class="align-self-center pt-2 px-2 label1">
+<div class="align-self-center pt-2 px-2 label1 mr-1">
     <p>Compartir: </p>
 </div>
 
-<div class="bg-translucent p-1">
-    <div class="social-buttons ml-2">
+<div class="bg-translucent py-2">
+    <div class="social-buttons">
         <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode($url) }}"
            target="_blank">
             <i class="fa fa-facebook-official  mx-3 fa-2x text-light"></i>
