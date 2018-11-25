@@ -69,7 +69,10 @@ class MediaLibraryController extends Controller
             return redirect()->route('media');
         }
 
+        $section = SiteSection::where('name', 'gallery')->first();
+
         return view('media.show', [
+            'section' => $section,
             'medium' => $medium
         ]);
 

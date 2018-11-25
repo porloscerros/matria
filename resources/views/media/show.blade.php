@@ -7,6 +7,10 @@
 @section('social-url', secure_url('/media-card/' . $medium->id))
 @section('social-image', secure_url($medium->getUrl()))
 
+@if( $section->hasMedia('sections-background') )
+    @section('body-styles', 'background-image:url(' . $section->getFirstMedia('sections-background')->getUrl('bg') . ');')
+@endif
+
 @section('content')
     <div class="row">
         <div class="col-6 d-block justify-content-start">
