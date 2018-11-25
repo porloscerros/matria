@@ -20,6 +20,7 @@ class MediaLibraryController extends Controller
     {
         if ($request->filled('q')) {
             $tags = preg_split("/[\s,.]+/", $request->input('q'));
+            $q = preg_replace('/[^A-Za-z0-9\-]/', ' ', $request->input('q'));
 
             $media = MediaLibrary::first()
                 ->media()
@@ -33,6 +34,7 @@ class MediaLibraryController extends Controller
                 ->where('custom_properties->public', '1')
                 ->orderBy('created_at', 'desc')
                 ->paginate(10);
+            $q = '';
         }
 
 
@@ -40,7 +42,8 @@ class MediaLibraryController extends Controller
 
         return view('media.index', [
             'section' => $section,
-            'media' => $media
+            'media' => $media,
+            'q' => $q
         ]);
     }
 
