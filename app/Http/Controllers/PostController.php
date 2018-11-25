@@ -18,7 +18,6 @@ class PostController extends Controller
             ->where('public', true)
             ->with('author')
             ->withCount('thumbnail')
-            ->latest()
             ->paginate(10);
 
         $section = SiteSection::where('name', 'posts')
