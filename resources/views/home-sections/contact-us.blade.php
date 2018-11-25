@@ -21,19 +21,19 @@
                             @if($section->hasCustomProperty('phone'))
                                 <div class="align-items-center">
                                     <span class="fa fa-whatsapp"></span>  @lang('contact-us.phone')/Wapp:
-                                    <a href="tel:{{$section->getCustomProperty('phone')}}"> {{$section->getCustomProperty('phone')}}</a>
+                                    <a href="whatsapp:{{$section->getCustomProperty('phone')}}" class="btn btn-outline-light"> {{$section->getCustomProperty('phone')}}</a>
                                 </div>
                             @endif
                             @if($section->hasCustomProperty('email'))
                                 <div class="align-items-center">
                                     <span class="fa fa-envelope-o"></span> Email:
-                                    <a href="mailto:{{$section->getCustomProperty('email')}}"> {{$section->getCustomProperty('email')}}</a>
+                                    <a href="mailto:{{$section->getCustomProperty('email')}}" class="btn btn-outline-light"> {{$section->getCustomProperty('email')}}</a>
                                 </div>
                             @endif
                             @if($section->hasCustomProperty('location'))
                                 <div class="align-items-center">
                                     <span class="fa fa-map-marker"></span> @lang('contact-us.location'):
-                                    <a href=""  data-toggle="modal" data-target="#mapModal"> {{$section->getCustomProperty('location')}}</a>
+                                    <a href=""  data-toggle="modal" data-target="#mapModal" class="btn btn-outline-light"> {{$section->getCustomProperty('location')}}</a>
                                 </div>
                                 <!-- Map Modal -->
                                 @include('shared.modals.map')
@@ -43,7 +43,7 @@
                                 <hr>
                                 <!-- Social Media Elements -->
                                 <div class="">
-                                    <p class="align-items-center">@lang('contact-us.social-media'):</p>
+                                    <p class="align-items-center d-none d-md-block">@lang('contact-us.social-media'):</p>
                                 </div>
                                 <div class="text-center">
                                     @include('shared.social-media.links')

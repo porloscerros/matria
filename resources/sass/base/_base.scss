@@ -66,9 +66,18 @@ body > #app > .container-fluid {
     border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
+#home-contact-us {
+    & .btn-outline-light {
+        border: none;
+    }
+}
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     #contact-data {
         font-size: 150%;
+        & .btn-outline-light {
+            font-size: 100%;
+        }
     }
 }
