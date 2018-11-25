@@ -31,7 +31,7 @@
             @endif
 
             <div class="d-flex align-items-center flex-column">
-                <div class="align-self-center " id="gallery-deck">
+                <div class="align-self-center mt-1" id="gallery-deck">
                 @foreach($media as $medium)
                     <div class="row">
                         <div class="col d-flex justify-content-center" id="gallery-deck">
