@@ -2,7 +2,7 @@
     <div class="container">
         <!-- Branding Image -->
         <a class="navbar-brand" href="#page-top">
-            {{ config('app.name', 'Laravel') }}
+            <img src="{{ asset('img/logo.png') }}" height="64" width="auto" alt="logo">
         </a>
 
         <!-- Collapsed Hamburger -->

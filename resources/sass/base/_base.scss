@@ -43,6 +43,18 @@ body > #app > .container-fluid {
     color: #fff;
 }
 
+.navbar-brand {
+    & img {
+        -webkit-filter: drop-shadow(5px 5px 5px #000);
+        filter: drop-shadow(5px 5px 5px #000);
+        &:hover {
+            transform: scale(1.2);
+            -webkit-filter: drop-shadow(10px 10px 10px #000);
+            filter: drop-shadow(10px 10px 10px #000);
+        }
+    }
+}
+
 .avatar-thumb img {
     width: 100px;
     height: 100px;
