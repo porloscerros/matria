@@ -15,29 +15,36 @@
     background-repeat: no-repeat;
 }
 
-#home-header {
-    h1 {
-        font-size: 10em !important;
-    }
-    h2 {
-        font-size: 4em !important;
-    }
-    h4 {
-        font-size: 2em !important;
+#home-contact-us {
+    & .btn-outline-light {
+        border: none;
     }
 }
 
 @include media-breakpoint-up(sm) {
-    html {
-    }
 }
 
 @include media-breakpoint-up(md) {
-    html {
+
+    #home-header {
+        h1 {
+            font-size: 10em !important;
+        }
+        h2 {
+            font-size: 4em !important;
+        }
+        h4 {
+            font-size: 2em !important;
+        }
+    }
+
+    #contact-data {
+        font-size: 150%;
+        & .btn-outline-light {
+            font-size: 100%;
+        }
     }
 }
 
 @include media-breakpoint-up(lg) {
-    html {
-    }
 }

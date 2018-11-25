@@ -1,5 +1,4 @@
 .label1 {
-    font-size: 250% !important;
     color: #fff;
     background-image: url("/img/label1.png");
     background-repeat: no-repeat;
@@ -7,4 +6,18 @@
     background-size:  100% 100%;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
+}
+
+
+
+@include media-breakpoint-up(sm) {
+}
+
+@include media-breakpoint-up(md) {
+    & .label1 {
+        font-size: 250% !important;
+    }
+}
+
+@include media-breakpoint-up(lg) {
 }

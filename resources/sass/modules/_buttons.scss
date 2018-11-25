@@ -1,5 +1,4 @@
 .btn-nav {
-    font-size: 175% !important;
     color: #fff;
     background-image: url("/img/btn-nav.png");
     background-repeat: no-repeat;
@@ -34,7 +33,6 @@
 }
 
 .btn-action {
-    font-size: 150% !important;
     color: #fff;
     background: none;
     background-image: url("/img/btn-action.png");
@@ -58,4 +56,20 @@
             filter: drop-shadow(7px 7px 7px #222);
         }
     }
+}
+
+
+@include media-breakpoint-up(sm) {
+}
+
+@include media-breakpoint-up(md) {
+    & .btn-nav {
+        font-size: 175% !important;
+    }
+    & .btn-action {
+        font-size: 150% !important;
+    }
+}
+
+@include media-breakpoint-up(lg) {
 }
