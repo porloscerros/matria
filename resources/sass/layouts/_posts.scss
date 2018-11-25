@@ -1,10 +1,6 @@
 .post-card {
     border-radius: 0.25rem;
     border: 1px solid rgba(0, 0, 0, 0.125);
-    h1 {
-        font-size: 3em !important;
-    }
-    font-size: 150% !important;
 }
 
 .post-card img {
@@ -18,4 +14,20 @@
 .post-content img {
     max-width: 100%;
     height: auto;
+}
+
+
+@include media-breakpoint-up(sm) {
+}
+
+@include media-breakpoint-up(md) {
+    & .post-card {
+        h1 {
+            font-size: 3em !important;
+        }
+        font-size: 150% !important;
+    }
+}
+
+@include media-breakpoint-up(lg) {
 }
