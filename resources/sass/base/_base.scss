@@ -12,12 +12,19 @@ html {
     font-size: 40px;
 }
 
+body {
+    font-family: matriaFont;
+    background-image: url('/../img/photo-1920x1080.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 body > #app > .container, {
     margin-top: 100px;
     margin-bottom: 250px;
     padding-top: 15px;
     padding-bottom: 15px;
-    font-family: matriaFont;
 }
 
 @include media-breakpoint-down(xs) {
