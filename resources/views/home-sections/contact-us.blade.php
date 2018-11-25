@@ -21,7 +21,7 @@
                             @if($section->hasCustomProperty('phone'))
                                 <div class="align-items-center">
                                     <span class="fa fa-whatsapp"></span>  @lang('contact-us.phone')/Wapp:
-                                    <a href="whatsapp:{{$section->getCustomProperty('phone')}}" class="btn btn-outline-light"> {{$section->getCustomProperty('phone')}}</a>
+                                    <a href="https://api.whatsapp.com/send?phone=54{{$section->getCustomProperty('phone')}}" class="btn btn-outline-light"> {{$section->getCustomProperty('phone')}}</a>
                                 </div>
                             @endif
                             @if($section->hasCustomProperty('email'))
