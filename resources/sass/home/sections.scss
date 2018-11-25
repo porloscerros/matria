@@ -15,6 +15,12 @@
     background-repeat: no-repeat;
 }
 
+#home-header {
+    h1 {
+        font-size: 5em !important;
+    }
+}
+
 #home-contact-us {
     & .btn-outline-light {
         border: none;

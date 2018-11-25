@@ -45,7 +45,7 @@
 
                     <div class="row">
                         <div class="col d-flex justify-content-center" id="gallery-deck">
-                        <p>
+                        <p class="text-center">
                             <span class="badge"><i class="fa fa-tag" aria-hidden="true"></i></span>
                             @foreach($medium->tags as $tag)
                                 <a href="{{ route('media', ['q' => $tag->name]) }}" class="h4">
