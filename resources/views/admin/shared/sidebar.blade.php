@@ -1,4 +1,4 @@
-<ul class="navbar-nav navbar-sidenav">
+<ul class="navbar-nav navbar-sidenav bg-dark">
     <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.dashboard')">
         <a class="nav-link {{ request()->route()->named('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
             <i class="fa fa-bar-chart-o" aria-hidden="true"></i>&nbsp;

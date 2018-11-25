@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
+<nav class="navbar navbar-dark bg-transparent fixed-top navbar-expand-md">
     <div class="container">
         <!-- Branding Image -->
         {{ link_to_route('home', config('app.name', 'Laravel'), [], ['class' => 'navbar-brand']) }}
