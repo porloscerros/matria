@@ -31,10 +31,11 @@
                     </div>
                 </div>
                 <div class="d-flex align-items-center">
-                    @include ('media/_search_form')
                 @if(url()->full() !== url()->current())
                     <small class="ml-2">Filtros: {!! $q !!}</small>
                     <a href="{{ route('media') }}" class="btn btn-nav mx-1" role="button">@lang('media.view-all-gallery')</a>
+                @else
+                    @include ('media/_search_form')
                 @endif
                 </div>
             </div>
