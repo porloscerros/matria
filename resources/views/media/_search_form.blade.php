@@ -1,11 +1,7 @@
-
-<div class="d-flex align-content-center">
+<div class="d-flex">
     {!! Form::open(['route' => 'media', 'class' => 'd-flex', 'method' => 'GET']) !!}
-        <div class="input-group">
-            {!! Form::text('q', null, ['class' => 'form-control', 'placeholder' => __('media.search')]) !!}
-        </div>
-
-        <button type="submit" class="btn btn-action">
+        {!! Form::text('q', null, ['class' => 'form-control  align-self-center', 'placeholder' => __('media.search')]) !!}
+        <button type="submit" class="btn btn-action align-self-start">
             <i class="fa fa-search" aria-hidden="true"></i>
         </button>
     {!! Form::close() !!}
