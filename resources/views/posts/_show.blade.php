@@ -6,7 +6,7 @@
     @endif
 
     <div class="card-body">
-        <h4 v-pre class="card-title">{{ link_to_route('posts.show', $post->title, $post) }}</h4>
+        <h4 v-pre class="card-title">{{ $post->title }}</h4>
         <p class="card-text text-justify">{!! $post->excerpt() !!}</p>
 
 

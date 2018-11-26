@@ -1,6 +1,5 @@
 .post-card {
     border-radius: 0.25rem;
-    border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .post-card img {
@@ -26,6 +25,9 @@
             font-size: 3em !important;
         }
         font-size: 150% !important;
+    }
+    &.post-content {
+        padding: 30px;
     }
 }
 

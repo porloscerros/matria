@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <div class="bg-white p-3 post-card">
+    <div class="bg-light text-dark p-3 post-card">
 
     @if ($post->hasThumbnail())
         {{ Html::image($post->thumbnail->getUrl('thumb'), $post->thumbnail->name, ['class' => 'img-thumbnail my-2']) }}
