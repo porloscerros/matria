@@ -11,18 +11,18 @@ let mix = require('laravel-mix')
  |
  */
 
+mix.copyDirectory('resources/img', 'public/img')
+mix.copyDirectory('resources/fonts', 'public/fonts')
+
+mix.copy('node_modules/trumbowyg/dist/ui/icons.svg', 'public/js/ui/icons.svg')
+
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
 
 mix.js('resources/js/admin.js', 'public/js')
    .sass('resources/sass/admin.scss', 'public/css')
 
-mix.copy('node_modules/trumbowyg/dist/ui/icons.svg', 'public/js/ui/icons.svg')
-
 mix.js('resources/js/home.js', 'public/js')
-
-mix.copyDirectory('resources/img', 'public/img')
-mix.copyDirectory('resources/fonts', 'public/fonts')
 
 if (mix.inProduction()) {
   mix.version()

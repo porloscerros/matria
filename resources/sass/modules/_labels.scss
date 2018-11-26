@@ -16,8 +16,10 @@
     background-size:  100% 100%;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
-    padding: 30px;
-    padding-right: 75px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 35px;
 }
 
 @include media-breakpoint-up(sm) {
@@ -26,6 +28,13 @@
 @include media-breakpoint-up(md) {
     & .label1 {
         font-size: 250% !important;
+    }
+    & .label2 {
+        font-size: 200% !important;
+        padding-top: 35px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        padding-right: 75px;
     }
 }
 

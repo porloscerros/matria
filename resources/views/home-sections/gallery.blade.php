@@ -4,7 +4,7 @@
         <div class="d-flex justify-content-center flex-column h-100">
 
             <div class="d-flex align-items-start flex-column">
-                <h3 class="align-self-center p-3 label1">
+                <h3 class="align-self-center p-3 label1 mb-0">
                 @if( $section->hasCustomProperty('title') )
                     {{ $section->getCustomProperty('title') }}
                 @else
@@ -15,7 +15,7 @@
 
             @if( $section->hasCustomProperty('subtitle') )
             <div class="d-flex align-items-start flex-column">
-                <h2 class="align-self-center m-2 label2">
+                <h2 class="align-self-center m-2 label2 my-0">
                 {{ $section->getCustomProperty('subtitle') }}
                 </h2>
             </div>
@@ -23,7 +23,7 @@
 
             @if($media->count())
             <div class="d-flex flex-column">
-                <div class="d-flex align-self-end align-items-center">
+                <div class="d-flex align-self-end align-items-center my-0">
                     @include ('media/_search_form')
                     <a href="{{ route('media') }}" class="btn btn-nav ml-1" role="button">@lang('media.view-all-gallery')</a>
                 </div>
@@ -57,7 +57,7 @@
                     </div>
                 @endforeach
                 </div>
-                <div class="col d-flex justify-content-center" id="gallery-paginator">
+                <div class="col d-flex justify-content-center my-0" id="gallery-paginator">
                     {{ $media->fragment('home-gallery')->links() }}
                 </div>
             </div>

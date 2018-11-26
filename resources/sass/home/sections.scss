@@ -21,11 +21,18 @@
     }
 }
 
+#home-gallery {
+    h2 {
+        font-size: 1em !important;
+    }
+}
+
 #home-contact-us {
     & .btn-outline-light {
         border: none;
     }
 }
+
 
 @include media-breakpoint-up(sm) {
 }
@@ -41,6 +48,12 @@
         }
         h4 {
             font-size: 2em !important;
+        }
+    }
+
+    #home-gallery {
+        h2 {
+            font-size: 1.8em !important;
         }
     }
 
