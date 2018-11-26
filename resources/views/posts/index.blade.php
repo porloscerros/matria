@@ -24,7 +24,13 @@
                 @if (request()->has('q'))
                     <h2>{{ trans_choice('posts.search_results', $posts->count(), ['query' => request()->input('q')]) }}</h2>
                 @else
-                    <h2>@lang('posts.last_posts')</h2>
+                    <h2>
+                        @if( $section->hasCustomProperty('title') )
+                            {{ $section->getCustomProperty('title') }}
+                        @else
+                            @lang('sections.posts')
+                        @endif
+                    </h2>
                 @endif
             </div>
         </div>

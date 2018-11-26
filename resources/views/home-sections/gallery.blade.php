@@ -15,7 +15,7 @@
 
             @if( $section->hasCustomProperty('subtitle') )
             <div class="d-flex align-items-start flex-column">
-                <h2 class="align-self-center m-2">
+                <h2 class="align-self-center m-2 label2">
                 {{ $section->getCustomProperty('subtitle') }}
                 </h2>
             </div>

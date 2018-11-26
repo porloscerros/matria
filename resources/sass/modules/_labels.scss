@@ -8,7 +8,17 @@
     filter: drop-shadow(5px 5px 5px #222);
 }
 
-
+.label2 {
+    color: #fff;
+    background-image: url("/img/label2.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size:  100% 100%;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+    padding: 30px;
+    padding-right: 75px;
+}
 
 @include media-breakpoint-up(sm) {
 }
