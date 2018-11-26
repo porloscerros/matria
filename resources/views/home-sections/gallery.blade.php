@@ -4,7 +4,7 @@
         <div class="d-flex justify-content-center flex-column h-100">
 
             <div class="d-flex align-items-start flex-column">
-                <h3 class="align-self-center p-3 label1 mb-0">
+                <h3 class="align-self-center label0 mb-0">
                 @if( $section->hasCustomProperty('title') )
                     {{ $section->getCustomProperty('title') }}
                 @else

@@ -17,10 +17,10 @@
         </div>
     </div>
     <div class="container-fluid p-3 bg-translucent">
-        <div class="page-header">
+        <div class="page-header mb-1">
             <div class="d-flex flex-row justify-content-between">
                 <div class="d-flex">
-                    <div class="p-3 label1">
+                    <div class="label0 align-items-center">
                         <h1>
                         @if($section->hasCustomProperty('title'))
                             {{$section->getCustomProperty('title')}}

@@ -1,21 +1,27 @@
-.label1 {
-    color: #fff;
-    background-image: url("/img/label1.png");
+.label0, .label1, .label2 {
     background-repeat: no-repeat;
     background-position: left;
     background-size:  100% 100%;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
 }
+.label0 {
+    color: #fff;
+    background-image: url("/img/label0.png");
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.label1 {
+    color: #fff;
+    background-image: url("/img/label1.png");
+}
 
 .label2 {
     color: #fff;
     background-image: url("/img/label2.png");
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size:  100% 100%;
-    -webkit-filter: drop-shadow(5px 5px 5px #222);
-    filter: drop-shadow(5px 5px 5px #222);
     padding-top: 20px;
     padding-bottom: 15px;
     padding-left: 15px;

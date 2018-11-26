@@ -19,8 +19,8 @@
 
     <div class="container-fluid p-3 bg-translucent">
 
-        <div class="col-6 d-flex align-items-start flex-column">
-            <div class="py-4 px-3 label1">
+        <div class="col-6 d-flex align-items-start flex-column mb-1">
+            <div class="label0">
                 @if (request()->has('q'))
                     <h2>{{ trans_choice('posts.search_results', $posts->count(), ['query' => request()->input('q')]) }}</h2>
                 @else
