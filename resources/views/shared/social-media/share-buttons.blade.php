@@ -1,4 +1,4 @@
-<div class="align-self-center pt-2 px-2 label1 mr-1">
+<div class="align-self-center label1 mr-1">
     <p>Compartir: </p>
 </div>
 

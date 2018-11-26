@@ -1,15 +1,12 @@
 .btn-nav {
     color: #fff;
-    background-image: url("/img/label0.png");
+    background-image: url("/img/btn-nav.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 6px;
     &:hover {
         color: #fff;
         transform: scale(1.2);
@@ -109,7 +106,7 @@
 
 @include media-breakpoint-up(md) {
     & .btn-nav {
-        font-size: 150% !important;
+        font-size: 175% !important;
     }
     & .btn-action {
         font-size: 150% !important;

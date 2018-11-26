@@ -36,7 +36,9 @@
                     <div class="row">
                         <div class="col d-flex justify-content-center" id="gallery-deck">
                             <a href="#gallery-modal-home" data-toggle="modal">
-                                <img class="img-thumbnail" src="{{ $medium->getUrl('thumb') }}" alt="{{ $medium->name }}">
+                                <div class="card">
+                                    <img class="img-thumbnail" src="{{ $medium->getUrl('thumb') }}" alt="{{ $medium->name }}">
+                                </div>
                             </a>
                             <!-- The Gallery Modal -->
                             @include('shared.modals.media', ['modal' => 'home', 'url' => $medium->getUrl(), 'name' => $medium->name])

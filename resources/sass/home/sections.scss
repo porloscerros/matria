@@ -6,6 +6,10 @@
     background-position: center;
     background-repeat: no-repeat;
     font-family: matriaFont;
+    & .form-control {
+        -webkit-filter: drop-shadow(5px 5px 5px #222);
+        filter: drop-shadow(5px 5px 5px #222);
+    }
 }
 
 .home-section-preview {

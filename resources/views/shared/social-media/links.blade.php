@@ -19,6 +19,6 @@
 @if($section->hasCustomProperty('google_plus'))
     <!-- Twitter -->
     <a href="https://plus.google.com/{{$section->getCustomProperty('google_plus')}}" class="btn btn-outline-light mx-1" target="_blank">
-        <i class="fa fa-google-plus fa-lg"> </i>
+        <i class="fa fa-google-plus-official fa-lg"> </i>
     </a>
 @endif
