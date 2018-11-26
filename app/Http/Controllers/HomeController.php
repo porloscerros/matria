@@ -30,7 +30,7 @@ class HomeController extends Controller
             ->media()
             ->where('custom_properties->public', '1')
             ->orderBy('created_at', 'desc')
-            ->simplePaginate(1, ['*'], 'gallery');
+            ->paginate(1, ['*'], 'gallery');
 
         $posts = Post::where('public', true)
             ->paginate(1, ['*'], 'posts');
