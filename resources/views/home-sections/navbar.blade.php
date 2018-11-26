@@ -24,21 +24,21 @@
 
             <ul class="navbar-nav ml-auto">
                 <div class="d-flex align-items-end flex-column">
-                    <li class="nav-item btn-nav">
+                    <li class="nav-item btn-nav py-0">
                         <a class="nav-link" href="#home-gallery" data-toggle="collapse" data-target=".navbar-collapse.show">
                             {{ __('media.gallery') }}
                         </a>
                     </li>
                 </div>
                 <div class="d-flex align-items-end flex-column">
-                    <li class="nav-item btn-nav">
+                    <li class="nav-item btn-nav py-0">
                         <a class="nav-link" href="#home-posts" data-toggle="collapse" data-target=".navbar-collapse.show">
                             {{ __('posts.posts') }}
                         </a>
                     </li>
                 </div>
                 <div class="d-flex align-items-end flex-column">
-                    <li class="nav-item btn-nav">
+                    <li class="nav-item btn-nav py-0">
                         <a class="nav-link" href="#home-contact-us" data-toggle="collapse" data-target=".navbar-collapse.show">
                             {{ __('contact-us.contact') }}
                         </a>
