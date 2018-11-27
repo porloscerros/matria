@@ -12,7 +12,7 @@
         @endauth
 
         <meta name="description" content="Carteles Tallados en Madera">
-        <meta name="keywords" content="traslasierra, cordoba, argentina">
+        <meta name="keywords" content="carteles, tallado, tallado madera, madera, pintado, artesana, artesanias, traslasierra, cordoba, argentina">
         <meta name="author" content="porloscerros">
         @yield('meta')
 
