@@ -13,6 +13,7 @@
 
     <title>{{config('app.name')}}@yield('page-title')</title>
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
+    <meta name="keywords" content="matria, carteles, tallado, tallado madera, madera, pintado, artesana, artesanias, letrista, las chacras, traslasierra, cordoba, argentina">
 
     <!-- Styles -->
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
