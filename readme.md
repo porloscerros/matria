@@ -3,7 +3,6 @@
 <h3 align="center">Website to show the works of the craftswoman Matria</h3>
 
 
-You can find it on : [matriatallados.com.ar](https://matriatallados.com.ar)
 
 ## Documentation
 
